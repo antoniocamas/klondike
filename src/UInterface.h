@@ -3,6 +3,9 @@
  *
  *  Created on: Oct 1, 2017
  *      Author: antonio
+ *
+ *  This module is OS system dependent. This implementation is meant for Linux Terminal.
+ *
  */
 
 #ifndef UINTERFACE_H_

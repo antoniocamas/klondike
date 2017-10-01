@@ -22,7 +22,7 @@ class Card {
 	int number;
 	st_suit suit;
 public:
-	Card() {};
+	Card() {number = 0; suit.name=""; suit.color="";};
 	string card2string(){return to_string(number) + ", " + suit.name;};
 	Card(int n, st_suit s);
 

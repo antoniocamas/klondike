@@ -16,7 +16,8 @@ using namespace std;
 namespace klondike {
 
 class TableLayout {
-	//vector<int> deck;
+private:
+
 	vector<int> pile;
 	vector<int> visible_pile;
 	array<vector<int>, 4> suit_piles;
