@@ -6,16 +6,19 @@
  */
 
 #include <iostream>
+#include <string>
 #include <algorithm>
 #include "Deck.h"
 #include "Card.h"
 
+using namespace std;
+
 Deck::Deck() {
 
-	suits[clubs] = black;
-	suits[diamonds] = red;
-	suits[hearts] = red;
-	suits[spades] = black;
+	suits["clubs"] = "black";
+	suits["diamonds"] = "red";
+	suits["hearts"] = "red";
+	suits["spades"] = "black";
 
 	st_suit suit;
 	for (auto s=suits.begin(); s != suits.end(); ++s)
@@ -30,16 +33,15 @@ Deck::Deck() {
 	}
 
 	std::random_shuffle(this->cards.begin(), this->cards.end());
-	this->printDeck();
+
+	cout << this->deck2string();
 }
 
-Deck::~Deck() {
-	// TODO Auto-generated destructor stub
-}
-
-void Deck::printDeck()
+string Deck::deck2string()
 {
+	string deck_repr = "";
 	for (auto card = this->cards.begin(); card != this->cards.end(); ++card)
-		std::cout << (*card).card2string() << std::endl;
+		  deck_repr += (*card).card2string() + "\n";
+	return deck_repr;
 }
 

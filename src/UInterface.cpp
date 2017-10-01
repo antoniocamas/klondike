@@ -8,6 +8,7 @@
 #include <iostream>
 #include <string>
 #include "UInterface.h"
+#include "LinuxTerminalColor.h"
 
 using namespace std;
 
@@ -21,7 +22,7 @@ void UInterface::printTableLayout(void)
 {
 
 	cout << string(50, '\n');
-	cout << "Pile(" << this->table.getPileSize() <<") [p]";
+	cout << RED << "Pile(" << this->table.getPileSize() <<") [p]\n" << RESET;
 }
 
 } /* namespace klondike */
