@@ -5,24 +5,30 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
 ../src/Card.cpp \
+../src/CardStack.cpp \
 ../src/Deck.cpp \
 ../src/Klondike.cpp \
+../src/Suit.cpp \
 ../src/TableLayout.cpp \
 ../src/UInterface.cpp \
 ../src/main.cpp 
 
 OBJS += \
 ./src/Card.o \
+./src/CardStack.o \
 ./src/Deck.o \
 ./src/Klondike.o \
+./src/Suit.o \
 ./src/TableLayout.o \
 ./src/UInterface.o \
 ./src/main.o 
 
 CPP_DEPS += \
 ./src/Card.d \
+./src/CardStack.d \
 ./src/Deck.d \
 ./src/Klondike.d \
+./src/Suit.d \
 ./src/TableLayout.d \
 ./src/UInterface.d \
 ./src/main.d 

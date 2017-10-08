@@ -5,15 +5,24 @@
  *      Author: antonio
  */
 
+#include <string>
 #include "Card.h"
+#include "Suit.h"
 
-Card::Card(int n, st_suit s) {
-	this->number=n;
-	this->suit.name=s.name;
-	this->suit.color=s.color;
+namespace card {
+Card::Card(int number, Suit suit) {
+	this->number = number;
+	this->suit = suit;
+	this->upTurned = false;
 }
 
 Card::~Card() {
 	// TODO Auto-generated destructor stub
 }
 
+string Card::card2string() {
+
+	return std::to_string(this->number) + ", " + this->suit.getName();
+}
+
+}

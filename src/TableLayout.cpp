@@ -5,24 +5,24 @@
  *      Author: antonio
  */
 
-#include "TableLayout.h"
-#include "Deck.h"
-
-namespace klondike {
-
-TableLayout::TableLayout() {
-	// TODO Auto-generated constructor stub
-
-}
-
-TableLayout::~TableLayout() {
-	// TODO Auto-generated destructor stub
-}
-
-void TableLayout::Deal()
-{
-	Deck deck;
-
-}
-
-} /* namespace klondike */
+//#include "TableLayout.h"
+//#include "Deck.h"
+//
+//namespace klondike {
+//
+//TableLayout::TableLayout() {
+//	// TODO Auto-generated constructor stub
+//
+//}
+//
+//TableLayout::~TableLayout() {
+//	// TODO Auto-generated destructor stub
+//}
+//
+//void TableLayout::Deal()
+//{
+//	Deck deck;
+//
+//}
+//
+//} /* namespace klondike */

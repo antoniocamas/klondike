@@ -31,6 +31,8 @@ public:
 	virtual ~UInterface();
 };
 
+void clear_screen();
+
 } /* namespace klondike */
 
 #endif /* UINTERFACE_H_ */

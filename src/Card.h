@@ -8,25 +8,37 @@
 #ifndef CARD_H_
 #define CARD_H_
 
+#include "Suit.h"
 #include <string>
 
 using namespace std;
 
-typedef struct suit
-{
-	string name;
-	string color;
-}st_suit;
+namespace card {
+
+//typedef struct suit
+//{
+//	string name;
+//	string color;
+//}st_suit;
 
 class Card {
 	int number;
-	st_suit suit;
+	Suit suit;
+	bool upTurned;
 public:
-	Card() {number = 0; suit.name=""; suit.color="";};
-	string card2string(){return to_string(number) + ", " + suit.name;};
-	Card(int n, st_suit s);
-
+	Card(){}
+	Card(int number, Suit suit);
 	virtual ~Card();
+	string card2string();
+	inline bool isUpTurned(){return this->upTurned;}
+	inline void turn(){this->upTurned = !this->upTurned;}
+	inline bool isConsecutiveNumber(Card other){return this->number == other.number-1;}
+	inline bool isReverseConsecutiveNumber(Card other){return this->number-1 == other.number;}
+	inline bool isSameColor(Card other){return other.suit.isSameColor(this->suit);}
+	inline bool isSameSuit(Card other){return other.suit == this->suit;}
+
 };
+
+} /* namespace card */
 
 #endif /* CARD_H_ */

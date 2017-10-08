@@ -8,24 +8,29 @@
 #ifndef DECK_H_
 #define DECK_H_
 
-#include <vector>
-#include <string>
 #include <map>
-#include "Card.h"
+#include <string>
+#include "CardStack.h"
 
 using namespace std;
 
-class Deck {
-private:
-	map<string, string> suits;
-	//int number_of_suits = 4;
-	int cards_per_suit = 2;
-	vector<Card> cards;
+namespace card {
 
+const int nCards = 13;
+const map<string, string> suits = {
+		{"clubs", "black"},
+		{"diamonds", "red"},
+		{"spades", "black"},
+		{"hearts", "red"}
+};
+
+class Deck: public CardStack {
+private:
+	int numberOfCardsPerSuit;
 public:
 	Deck();
-	string deck2string();
 	virtual ~Deck(){};
 };
 
+}
 #endif /* DECK_H_ */
