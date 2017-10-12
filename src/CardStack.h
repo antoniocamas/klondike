@@ -11,6 +11,9 @@
 #include <vector>
 #include "Card.h"
 
+//just for debuggin
+#include <string>
+
 using namespace std;
 namespace card {
 
@@ -18,6 +21,7 @@ class CardStack {
 protected:
 	vector<Card> cards;
 
+	vector<Card>::iterator findCard(Card card);
 public:
 	CardStack(){};
 	virtual ~CardStack();
@@ -29,6 +33,11 @@ public:
 	vector<Card> giveTopCardAway(int numberOfCards);
 	vector<Card> getUpTurnedCards();
 	void shuffle();
+
+	//debug funtion
+	string cards2string(){
+		string repr;
+		for (auto card : cards){repr += card.card2string() + "\n\t";} return repr;}
 
 private:
 	static int randomGenerator(int i);

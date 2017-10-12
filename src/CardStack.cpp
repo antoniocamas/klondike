@@ -36,7 +36,7 @@ vector<Card> CardStack::giveTopCardAway(int numberOfCards) {
 	vector<Card> topCards;
 
 	int cards2give = std::min(size_t(numberOfCards), this->cards.size());
-	for (int i; i < cards2give; ++i){
+	for (int i=0; i < cards2give; ++i){
 		topCards.push_back(this->giveTopCardAway());
 	}
 	return topCards;
@@ -51,6 +51,13 @@ vector<Card> CardStack::getUpTurnedCards() {
 		}
 	}
 	return upTurnedCards;
+}
+
+vector<Card>::iterator CardStack::findCard(Card card) {
+	for (vector<Card>::iterator it = this->cards.begin(); it != this->cards.end(); ++it)
+		if (card == (*it)){ return it;}
+
+	return this->cards.end();
 }
 
 int CardStack::randomGenerator (int i) {

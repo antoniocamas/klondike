@@ -20,9 +20,19 @@ Card::~Card() {
 	// TODO Auto-generated destructor stub
 }
 
-string Card::card2string() {
+bool Card::operator ==(Card otherCard) {
+	return this->number == otherCard.number and this->suit == otherCard.suit;
+}
 
-	return std::to_string(this->number) + ", " + this->suit.getName();
+Card& Card::operator =(Card other) {
+	this->number = other.number;
+	this->suit = other.suit;
+	this->upTurned = other.upTurned;
+	return *this;
+}
+
+string Card::card2string() {
+	return this->suit.getNickName(this->number) + ", " + this->suit.getName();
 }
 
 }

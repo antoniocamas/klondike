@@ -7,7 +7,9 @@ CPP_SRCS += \
 ../src/Card.cpp \
 ../src/CardStack.cpp \
 ../src/Deck.cpp \
+../src/Foundation.cpp \
 ../src/Klondike.cpp \
+../src/Pile.cpp \
 ../src/Suit.cpp \
 ../src/TableLayout.cpp \
 ../src/UInterface.cpp \
@@ -17,7 +19,9 @@ OBJS += \
 ./src/Card.o \
 ./src/CardStack.o \
 ./src/Deck.o \
+./src/Foundation.o \
 ./src/Klondike.o \
+./src/Pile.o \
 ./src/Suit.o \
 ./src/TableLayout.o \
 ./src/UInterface.o \
@@ -27,7 +31,9 @@ CPP_DEPS += \
 ./src/Card.d \
 ./src/CardStack.d \
 ./src/Deck.d \
+./src/Foundation.d \
 ./src/Klondike.d \
+./src/Pile.d \
 ./src/Suit.d \
 ./src/TableLayout.d \
 ./src/UInterface.d \
