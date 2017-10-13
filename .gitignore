@@ -2,7 +2,4 @@
 *.d
 *~
 *.pyc
-.cproject
-.project
-.settings
 /Default/

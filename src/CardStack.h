@@ -10,9 +10,11 @@
 
 #include <vector>
 #include "Card.h"
+#include "CardIterator.h"
+#include <string>
 
 //just for debuggin
-#include <string>
+
 
 using namespace std;
 namespace card {
@@ -32,6 +34,8 @@ public:
 	Card giveTopCardAway();
 	vector<Card> giveTopCardAway(int numberOfCards);
 	vector<Card> getUpTurnedCards();
+	vector<Card>::const_iterator cbegin(){return this->cards.begin();}
+	const vector<Card>::const_iterator cend(){return this->cards.end();}
 	void shuffle();
 
 	//debug funtion

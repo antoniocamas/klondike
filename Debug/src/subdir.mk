@@ -10,8 +10,9 @@ CPP_SRCS += \
 ../src/Foundation.cpp \
 ../src/Klondike.cpp \
 ../src/Pile.cpp \
+../src/Score.cpp \
 ../src/Suit.cpp \
-../src/TableLayout.cpp \
+../src/Tableau.cpp \
 ../src/UInterface.cpp \
 ../src/main.cpp 
 
@@ -22,8 +23,9 @@ OBJS += \
 ./src/Foundation.o \
 ./src/Klondike.o \
 ./src/Pile.o \
+./src/Score.o \
 ./src/Suit.o \
-./src/TableLayout.o \
+./src/Tableau.o \
 ./src/UInterface.o \
 ./src/main.o 
 
@@ -34,8 +36,9 @@ CPP_DEPS += \
 ./src/Foundation.d \
 ./src/Klondike.d \
 ./src/Pile.d \
+./src/Score.d \
 ./src/Suit.d \
-./src/TableLayout.d \
+./src/Tableau.d \
 ./src/UInterface.d \
 ./src/main.d 
 

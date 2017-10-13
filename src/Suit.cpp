@@ -25,9 +25,9 @@ Suit::~Suit() {
 	// TODO Auto-generated destructor stub
 }
 
-string Suit::getNickName(int number) {
+string Suit::getNickName(int number) const {
 
-	std::map<int,string>::iterator iterator;
+	std::map<int,string>::const_iterator iterator;
 
 	iterator = this->nicknames.find(number);
 	if (iterator != this->nicknames.end())
@@ -46,3 +46,4 @@ Suit& Suit::operator =(Suit other) {
 	this->nicknames = other.nicknames;
 	return *this;
 }
+

@@ -32,8 +32,8 @@ public:
 	Card & operator=(Card other);
 	bool operator==(const Card otherCard);
 	bool operator!=(const Card otherCard){return !((*this) == otherCard);};
-	string card2string();
-	inline bool isUpTurned(){return this->upTurned;}
+	string card2string() const;
+	inline bool isUpTurned() const {return this->upTurned;}
 	inline void turn(){this->upTurned = !this->upTurned;}
 	inline void upTurn(){if(!this->upTurned){this->turn();}}
 	inline bool isConsecutiveNumber(Card other){return this->number == other.number-1;}
@@ -42,8 +42,6 @@ public:
 	inline bool isSameSuit(Card other){return other.suit == this->suit;}
 	inline bool isFirstNumberOfSuit(){return this->suit.isFirstNumberOfSuit(this->number);}
 	inline bool isLastNumberOfSuit(){return this->suit.isLastNumberOfSuit(this->number);}
-
-
 };
 
 } /* namespace card */

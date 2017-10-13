@@ -31,8 +31,11 @@ Card& Card::operator =(Card other) {
 	return *this;
 }
 
-string Card::card2string() {
-	return this->suit.getNickName(this->number) + ", " + this->suit.getName();
+string Card::card2string() const {
+//	if (!this->isUpTurned())
+//		return "@";
+
+	return this->suit.getNickName(this->number) + " " + this->suit.getName();
 }
 
 }

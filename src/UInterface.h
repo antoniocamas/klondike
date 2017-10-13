@@ -13,7 +13,8 @@
 
 #include <iostream>
 #include <string>
-#include "TableLayout.h"
+
+#include "Tableau.h"
 
 using namespace std;
 
@@ -21,11 +22,11 @@ namespace klondike {
 
 class UInterface {
 
-TableLayout table;
+Tableau table;
 
 public:
 	UInterface(){};
-	void inline updateTable(TableLayout &t){table = t;}
+	void inline updateTable(Tableau &t){table = t;}
 	void printTableLayout(void);
 	static void inline printMessage(const string message) { cout << message << endl; }
 	virtual ~UInterface();

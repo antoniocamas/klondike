@@ -13,9 +13,12 @@
 #include "Suit.h"
 #include "Card.h"
 #include "CardStack.h"
+#include "CardIterator.h"
 #include "Deck.h"
 #include "Pile.h"
 #include "Foundation.h"
+#include "Score.h"
+#include "Tableau.h"
 
 using namespace std;
 using namespace card;
@@ -280,6 +283,86 @@ int main ()
 
 		if(foundation1.isComplete())
 			cout << "\t" << "Foundation1 is complete!!!" << endl;
+
+	}
+
+	cout << "Testing Score" << endl;
+	{
+		Score score;
+
+		cout << "\t" << "Score: " << score.getPoints() << endl;
+
+		score.addPoints(10);
+
+		cout << "\t" << "Score: " << score.getPoints() << endl;
+
+		score.addPoints(-9);
+
+		cout << "\t" << "Score: " << score.getPoints() << endl;
+
+		score.addPoints(-10);
+
+		cout << "\t" << "Score: " << score.getPoints() << endl;
+
+	}
+
+	cout << "Testing CardIterator" << endl;
+	{
+		vector<Card> clubCards {cardClub1, cardClub2, cardClub3, cardClub4, cardClub5,
+					cardClub6, cardClub7, cardClub8, cardClub9, cardClub10, cardClub11,
+					cardClub12, cardClub13};
+
+		CardIterator from(&clubCards.front());
+		CardIterator until(&clubCards.back()+1);
+
+		cout << "\t" << "First element of vector<Card> is: "
+				<< clubCards.front().card2string()
+				<< " with address: "<< &clubCards.front() << endl;
+		cout << "\t" << "Last element of vector<Card> is: "
+				<< clubCards.back().card2string()
+				<< " with address: "<< &clubCards.back() << endl;
+
+		for (CardIterator it=from; it!=until; ++it)
+		    cout << "\t" << (*it).card2string() << " address: " << &(*it) << endl;
+
+		cout << "\t" << "The address pointed by from is:" << &(*from) << endl;
+		cout << "\t" << "The address pointed by until is:" << &(*until) << endl;
+
+	}
+
+	cout << "Testing Represent CardStack" << endl;
+	{
+		vector<Card> clubCards {cardClub1, cardClub2, cardClub3, cardClub4, cardClub5,
+			cardClub6, cardClub7, cardClub8, cardClub9, cardClub10, cardClub11,
+			cardClub12, cardClub13};
+
+		CardStack mystack;
+		mystack.putCardOnTop(clubCards);
+
+		for (auto it=mystack.cbegin(); it != mystack.cend(); ++it){
+			cout << "\t" << "Card is: " << (*it).card2string() << endl;
+		}
+	}
+
+	cout << "Testing Tableau" << endl;
+
+	{
+		Tableau tableau;
+
+		cout << "\t" << "Remainder: ";
+		for (auto it = tableau.remainderCbegin(); it != tableau.remainderCend(); ++it){
+			cout << "\t" << (*it).card2string();
+		}
+		cout << endl;
+
+		for (int i=0; i < 7; ++i){
+			cout << "\t" << "P[" << i+1 << "]: ";
+			for (auto it = tableau.pileCbegin(i); it != tableau.pileCend(i); ++it){
+				cout << "["<< (*it).card2string();
+			}
+			cout <<"]"<< endl;
+		}
+
 
 	}
 
