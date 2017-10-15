@@ -16,6 +16,7 @@ namespace card {
 Suit::Suit(string name, string color,
 		int numberOfCards, map<int, string> nicknames) {
 	this->name = name;
+	this->shortName = this->name.at(0);
 	this->color = color;
 	this->numberOfCardsperSuit = numberOfCards;
 	this->nicknames = nicknames;
@@ -41,6 +42,7 @@ string Suit::getNickName(int number) const {
 
 Suit& Suit::operator =(Suit other) {
 	this->name = other.name;
+	this->shortName = this->name.at(0);
 	this->color = other.color;
 	this->numberOfCardsperSuit = other.numberOfCardsperSuit;
 	this->nicknames = other.nicknames;

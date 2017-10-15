@@ -6,6 +6,8 @@
 CPP_SRCS += \
 ../src/Card.cpp \
 ../src/CardStack.cpp \
+../src/CardStackRepresenter.cpp \
+../src/CardStackRepresenterConsoleLinux.cpp \
 ../src/Deck.cpp \
 ../src/Foundation.cpp \
 ../src/Klondike.cpp \
@@ -13,12 +15,13 @@ CPP_SRCS += \
 ../src/Score.cpp \
 ../src/Suit.cpp \
 ../src/Tableau.cpp \
-../src/UInterface.cpp \
 ../src/main.cpp 
 
 OBJS += \
 ./src/Card.o \
 ./src/CardStack.o \
+./src/CardStackRepresenter.o \
+./src/CardStackRepresenterConsoleLinux.o \
 ./src/Deck.o \
 ./src/Foundation.o \
 ./src/Klondike.o \
@@ -26,12 +29,13 @@ OBJS += \
 ./src/Score.o \
 ./src/Suit.o \
 ./src/Tableau.o \
-./src/UInterface.o \
 ./src/main.o 
 
 CPP_DEPS += \
 ./src/Card.d \
 ./src/CardStack.d \
+./src/CardStackRepresenter.d \
+./src/CardStackRepresenterConsoleLinux.d \
 ./src/Deck.d \
 ./src/Foundation.d \
 ./src/Klondike.d \
@@ -39,7 +43,6 @@ CPP_DEPS += \
 ./src/Score.d \
 ./src/Suit.d \
 ./src/Tableau.d \
-./src/UInterface.d \
 ./src/main.d 
 
 

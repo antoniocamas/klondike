@@ -13,12 +13,14 @@
 #include "Suit.h"
 #include "Card.h"
 #include "CardStack.h"
+#include "CardStackRepresenter.h"
 #include "CardIterator.h"
 #include "Deck.h"
 #include "Pile.h"
 #include "Foundation.h"
 #include "Score.h"
 #include "Tableau.h"
+#include "view/UInterface.h"
 
 using namespace std;
 using namespace card;
@@ -219,15 +221,15 @@ int main ()
 
 		vector<Card> auxCards2 {card1, card5};
 
-		pile1.putCardOnTop(auxCards2);
-		cout << "\t" << pile1.cards2string() << endl;
-		if (pile1.isPuttingDownPossible(card4))
-			cout << "\t" << "It is possible to put a " << card4.card2string()
-			<< " on top of pile1" << endl;
-
-		if (!pile1.isPuttingDownPossible(card3))
-			cout << "\t" << "It is NOT possible to put a " << card3.card2string()
-			<< " on top of pile1\n";
+//		pile1.putCardOnTop(auxCards2);
+//		cout << "\t" << pile1.cards2string() << endl;
+//		if (pile1.isPuttingDownPossible(card4))
+//			cout << "\t" << "It is possible to put a " << card4.card2string()
+//			<< " on top of pile1" << endl;
+//
+//		if (!pile1.isPuttingDownPossible(card3))
+//			cout << "\t" << "It is NOT possible to put a " << card3.card2string()
+//			<< " on top of pile1\n";
 	}
 
 	cout << "Testing Foundation" << endl;
@@ -266,7 +268,7 @@ int main ()
 
 		foundation1.putCardOnTop(clubCards);
 
-		cout << "\t" << foundation1.cards2string() << endl;
+//		cout << "\t" << foundation1.cards2string() << endl;
 
 		if(!foundation1.isComplete())
 			cout << "\t" << "Foundation1 is not complete" << endl;
@@ -330,7 +332,7 @@ int main ()
 
 	}
 
-	cout << "Testing Represent CardStack" << endl;
+	cout << "Testing CardStackRepresenter" << endl;
 	{
 		vector<Card> clubCards {cardClub1, cardClub2, cardClub3, cardClub4, cardClub5,
 			cardClub6, cardClub7, cardClub8, cardClub9, cardClub10, cardClub11,
@@ -339,30 +341,54 @@ int main ()
 		CardStack mystack;
 		mystack.putCardOnTop(clubCards);
 
-		for (auto it=mystack.cbegin(); it != mystack.cend(); ++it){
-			cout << "\t" << "Card is: " << (*it).card2string() << endl;
-		}
+		CardStackRepresenter cardRepresenter = mystack.getCardsRepresenter();
+
+		cout << "\t" << "ClubCards: ";
+		for (auto cardRepresentation : cardRepresenter.allCard2String())
+			cout << cardRepresentation << " ";
+		cout << endl;
+
+		cout << "\t" << "Last 2 ClubCards: ";
+		for (auto cardRepresentation : cardRepresenter.topCard2String(3))
+			cout << cardRepresentation << " ";
+		cout << endl;
+
+		cout << "\t" << "Top ClubCards: " << cardRepresenter.topCard2String() << endl;
 	}
 
 	cout << "Testing Tableau" << endl;
 
 	{
 		Tableau tableau;
-
+		CardStackRepresenter cardRepresenter;
 		cout << "\t" << "Remainder: ";
-		for (auto it = tableau.remainderCbegin(); it != tableau.remainderCend(); ++it){
-			cout << "\t" << (*it).card2string();
-		}
+
+		cardRepresenter = tableau.getRemainderRepresenter();
+
+		for (auto card : cardRepresenter.allCard2String())
+			cout << "\t" << card;
 		cout << endl;
+
 
 		for (int i=0; i < 7; ++i){
 			cout << "\t" << "P[" << i+1 << "]: ";
-			for (auto it = tableau.pileCbegin(i); it != tableau.pileCend(i); ++it){
-				cout << "["<< (*it).card2string();
+			cardRepresenter = tableau.getPileRepresenter(i);
+			for (auto card : cardRepresenter.allCard2String()){
+				cout << "["<< card;
 			}
 			cout <<"]"<< endl;
 		}
 
+
+	}
+
+	cout << "Testing UInterface" << endl;
+
+	{
+		Tableau tableau;
+		UInterface uinterface;
+
+		uinterface.showTableau(tableau);
 
 	}
 

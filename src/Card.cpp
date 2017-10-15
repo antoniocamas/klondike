@@ -20,7 +20,7 @@ Card::~Card() {
 	// TODO Auto-generated destructor stub
 }
 
-bool Card::operator ==(Card otherCard) {
+bool Card::operator ==(Card otherCard) const {
 	return this->number == otherCard.number and this->suit == otherCard.suit;
 }
 
@@ -32,10 +32,14 @@ Card& Card::operator =(Card other) {
 }
 
 string Card::card2string() const {
-//	if (!this->isUpTurned())
-//		return "@";
-
 	return this->suit.getNickName(this->number) + " " + this->suit.getName();
 }
+
+//string Card::getCardRepesentation() const {
+//	if (!this->isUpTurned())
+//		return "";
+//
+//	return this->suit.getNickName(this->number) + " " + this->suit.getShortName();
+//}
 
 }

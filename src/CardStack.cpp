@@ -60,6 +60,12 @@ vector<Card>::iterator CardStack::findCard(Card card) {
 	return this->cards.end();
 }
 
+CardStackRepresenter CardStack::getCardsRepresenter() const {
+	return CardStackRepresenter(
+			vector<Card>::const_iterator(this->cards.begin()),
+			vector<Card>::const_iterator(this->cards.end()));
+}
+
 int CardStack::randomGenerator (int i) {
 	std::srand ( unsigned ( std::time(0) ) );
 	return std::rand()%i;

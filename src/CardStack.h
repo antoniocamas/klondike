@@ -9,9 +9,10 @@
 #define CARDSTACK_H_
 
 #include <vector>
-#include "Card.h"
-#include "CardIterator.h"
 #include <string>
+#include "Card.h"
+#include "CardStackRepresenter.h"
+
 
 //just for debuggin
 
@@ -22,6 +23,7 @@ namespace card {
 class CardStack {
 protected:
 	vector<Card> cards;
+
 
 	vector<Card>::iterator findCard(Card card);
 public:
@@ -34,14 +36,13 @@ public:
 	Card giveTopCardAway();
 	vector<Card> giveTopCardAway(int numberOfCards);
 	vector<Card> getUpTurnedCards();
-	vector<Card>::const_iterator cbegin(){return this->cards.begin();}
-	const vector<Card>::const_iterator cend(){return this->cards.end();}
 	void shuffle();
+	CardStackRepresenter getCardsRepresenter() const;
 
 	//debug funtion
-	string cards2string(){
-		string repr;
-		for (auto card : cards){repr += card.card2string() + "\n\t";} return repr;}
+//	string cards2string(){
+//		string repr;
+//		for (auto card : cards){repr += card.card2string() + "\n\t";} return repr;}
 
 private:
 	static int randomGenerator(int i);

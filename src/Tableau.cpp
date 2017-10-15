@@ -25,7 +25,7 @@ void Tableau::deal()
 	deck.shuffle();
 	Card card;
 
-	for (int pilesFull = 0; pilesFull < 7; ++pilesFull) {
+	for (int pilesFull = 0; pilesFull < numberOfPiles; ++pilesFull) {
 		for (int i=7 ; i > pilesFull-1 ; --i){
 			card = deck.giveTopCardAway();
 			if (i == pilesFull)

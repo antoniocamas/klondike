@@ -18,16 +18,16 @@ namespace card {
 
 const int nCards = 13;
 const map<string, string> frenchSuits = {
-		{"clubs", "black"}, {"diamonds", "red"},
-		{"spades", "black"}, {"hearts", "red"}
+		{"Clubs", "black"}, {"Diamonds", "red"},
+		{"Spades", "black"}, {"Hearts", "red"}
 };
 
 const map<int, string> frechNicknames = {
 		{1, "A"}, {11, "J"}, {12, "Q"}, {13, "K"}
 };
-const map<string, string> othersuits = {
-		{"bastos", "verde"}, {"copas", "rojo"},
-		{"oros", "amarillo"}, {"espadas", "azul"}
+const map<string, string> spanishSuits = {
+		{"Bastos", "verde"}, {"Copas", "rojo"},
+		{"Oros", "amarillo"}, {"Espadas", "azul"}
 };
 
 const map<int, char> spanishNicknames = {};

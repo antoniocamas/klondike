@@ -14,26 +14,23 @@
 #include <iostream>
 #include <string>
 
-#include "Tableau.h"
+#include "../Tableau.h"
+#include "UIConsoleLinux.h"
 
 using namespace std;
 
-namespace klondike {
-
 class UInterface {
 
-Tableau table;
+UIConsoleLinux io;
 
 public:
 	UInterface(){};
-	void inline updateTable(Tableau &t){table = t;}
-	void printTableLayout(void);
-	static void inline printMessage(const string message) { cout << message << endl; }
 	virtual ~UInterface();
+	void showTableau(Tableau &t);
+	static void inline printMessage(const string message) { cout << message << endl; }
+
 };
 
 void clear_screen();
-
-} /* namespace klondike */
 
 #endif /* UINTERFACE_H_ */
