@@ -39,6 +39,7 @@ public:
 	void shuffle();
 	CardStackRepresenter getCardsRepresenter() const;
 
+	virtual bool isPuttingDownPossible(Card) const {return false;}
 	//debug funtion
 //	string cards2string(){
 //		string repr;

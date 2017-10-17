@@ -5,11 +5,11 @@
  *      Author: antonio
  */
 
-#include <iostream>
-#include <vector>
-//#include "Klondike.h"
+#include "Klondike.h"
 
 //Delete. Just Tests
+#include <iostream>
+#include <vector>
 #include "Suit.h"
 #include "Card.h"
 #include "CardStack.h"
@@ -20,6 +20,8 @@
 #include "Foundation.h"
 #include "Score.h"
 #include "Tableau.h"
+#include "Movement.h"
+
 #include "view/UInterface.h"
 
 using namespace std;
@@ -29,9 +31,10 @@ int main ()
 {
 	cout << "Clondike Project" << endl;
 
-	//klondike::Klondike game;
-	//game.startGame();
-
+//	Klondike game;
+//	game.startGame();
+//
+//	return 0;
 /////////////////////////////////
 	cout << "Testing Suit" << endl;
 
@@ -382,16 +385,39 @@ int main ()
 
 	}
 
-	cout << "Testing UInterface" << endl;
+//	cout << "Testing UInterface" << endl;
+//
+//	{
+//		Tableau tableau;
+//		UInterface uinterface;
+//
+//		uinterface.showTableau(tableau);
+//
+//	}
+
+	cout << "Testing Movement";
 
 	{
-		Tableau tableau;
-		UInterface uinterface;
+//		Pile pile1;
+//		Foundation foundation1;
+//
+//		vector<Card> clubCards {cardClub1, cardClub2, cardClub3, cardClub4, cardClub5,
+//			cardClub6, cardClub7, cardClub8, cardClub9, cardClub10, cardClub11,
+//			cardClub12};
+//
+//		foundation1.putCardOnTop(clubCards);
+//
+//		vector<Card> otherCards {card1, card2, cardClub12};
+//		pile1.putCardOnTop(otherCards);
+//
+		Card card2move = cardClub1;
+		Movement movement("pile", 1, "foundation", 3, card2move);
 
-		uinterface.showTableau(tableau);
+		Tableau tableau;
+
+		tableau.applyMovement(movement);
 
 	}
-
 	return 0;
 }
 

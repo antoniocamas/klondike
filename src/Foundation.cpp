@@ -7,6 +7,8 @@
 
 #include "Foundation.h"
 
+using namespace card;
+
 Foundation::Foundation() {
 	// TODO Auto-generated constructor stub
 
@@ -23,7 +25,10 @@ bool Foundation::isComplete() {
 	return this->cards.back().isLastNumberOfSuit();
 }
 
-bool Foundation::isPuttingDownPossible(Card inCommingCard) {
+bool Foundation::isPuttingDownPossible(Card inCommingCard) const {
+#include <iostream>
+	std::cout << "In foundation" << std::endl;
+
 	if (this->cards.empty())
 		return inCommingCard.isFirstNumberOfSuit();
 

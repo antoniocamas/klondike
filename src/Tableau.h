@@ -17,8 +17,16 @@
 #include "Deck.h"
 #include "Pile.h"
 #include "Foundation.h"
+#include "Movement.h"
 
 using namespace std;
+
+typedef enum {
+	remainder,
+	waste,
+	pile,
+	foundation
+}TableauArea;
 
 const int numberOfFoundations = 4;
 const int numberOfPiles = 7;
@@ -36,17 +44,17 @@ private:
 
 public:
 	Tableau();
+	virtual ~Tableau();
+
 	inline int getNumberOfPiles() const {return piles.size();}
 	inline int getNumberOfFundations() const {return foundations.size();}
 	CardStackRepresenter getRemainderRepresenter() const {return this->remainder.getCardsRepresenter();}
 	CardStackRepresenter getWasterRepresenter() const {return this->waste.getCardsRepresenter();}
 	CardStackRepresenter getFoundationRepresenter(int foundationNumber) const {return this->foundations.at(foundationNumber).getCardsRepresenter();}
 	CardStackRepresenter getPileRepresenter(int pileNumber) const {return this->piles.at(pileNumber).getCardsRepresenter();}
-//	vector<Card>::const_iterator remainderCbegin(){return this->remainder.cbegin();}
-//	vector<Card>::const_iterator remainderCend(){return this->remainder.cend();}
-//	vector<Card>::const_iterator pileCbegin(int index){return this->piles.at(index).cbegin();}
-//	vector<Card>::const_iterator pileCend(int index){return this->piles.at(index).cend();}
-	virtual ~Tableau();
+
+	void applyMovement(Movement movement);
+
 };
 
 

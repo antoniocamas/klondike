@@ -11,6 +11,7 @@ CPP_SRCS += \
 ../src/Deck.cpp \
 ../src/Foundation.cpp \
 ../src/Klondike.cpp \
+../src/Movement.cpp \
 ../src/Pile.cpp \
 ../src/Score.cpp \
 ../src/Suit.cpp \
@@ -25,6 +26,7 @@ OBJS += \
 ./src/Deck.o \
 ./src/Foundation.o \
 ./src/Klondike.o \
+./src/Movement.o \
 ./src/Pile.o \
 ./src/Score.o \
 ./src/Suit.o \
@@ -39,6 +41,7 @@ CPP_DEPS += \
 ./src/Deck.d \
 ./src/Foundation.d \
 ./src/Klondike.d \
+./src/Movement.d \
 ./src/Pile.d \
 ./src/Score.d \
 ./src/Suit.d \

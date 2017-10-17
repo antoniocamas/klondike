@@ -11,12 +11,14 @@
 #include "Pile.h"
 #include "Card.h"
 
+using namespace card;
+
 class Foundation: public Pile {
 public:
 	Foundation();
 	virtual ~Foundation();
 	bool isComplete();
-	bool isPuttingDownPossible(Card inCommingCard);
+	bool isPuttingDownPossible(Card inCommingCard) const;
 
 };
 

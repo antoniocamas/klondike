@@ -31,8 +31,8 @@ public:
 
 	Suit & operator=(Suit other);
 	//Suit & operator=(Suit& ) = delete;
-	inline bool isSameColor(Suit & other) const {return other.color == this->color;}
-	inline bool operator==(Suit & other) const {return other.name == this->name;}
+	inline bool isSameColor(const Suit& other) const {return other.color == this->color;}
+	inline bool operator==(const Suit & other) const {return other.name == this->name;}
 	inline string getColor(){return this->color;}
 	inline string getName()const {return this->name;}
 	inline string getShortName()const {return this->shortName;}

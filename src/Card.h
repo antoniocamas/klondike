@@ -38,10 +38,10 @@ public:
 	inline bool isUpTurned()const{return this->upTurned;}
 	inline void turn(){this->upTurned = !this->upTurned;}
 	inline void upTurn(){if(!this->upTurned){this->turn();}}
-	inline bool isConsecutiveNumber(Card other){return this->number == other.number-1;}
-	inline bool isReverseConsecutiveNumber(Card other){return this->number-1 == other.number;}
-	inline bool isSameColor(Card other){return other.suit.isSameColor(this->suit);}
-	inline bool isSameSuit(Card other){return other.suit == this->suit;}
+	inline bool isConsecutiveNumber(Card other) const {return this->number == other.number-1;}
+	inline bool isReverseConsecutiveNumber(Card other) const {return this->number-1 == other.number;}
+	inline bool isSameColor(Card other) const{return other.suit.isSameColor(this->suit);}
+	inline bool isSameSuit(Card other) const{return other.suit == this->suit;}
 	inline bool isFirstNumberOfSuit(){return this->suit.isFirstNumberOfSuit(this->number);}
 	inline bool isLastNumberOfSuit(){return this->suit.isLastNumberOfSuit(this->number);}
 };
