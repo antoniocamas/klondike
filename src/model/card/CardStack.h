@@ -10,8 +10,8 @@
 
 #include <vector>
 #include <string>
+#include "../../CardStackRepresenter.h"
 #include "Card.h"
-#include "CardStackRepresenter.h"
 
 
 //just for debuggin

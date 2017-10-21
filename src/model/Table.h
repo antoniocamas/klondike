@@ -12,26 +12,25 @@
 #include <array>
 #include <string>
 #include "Score.h"
-#include "CardStack.h"
-#include "CardStackRepresenter.h"
-#include "Deck.h"
+#include "../CardStackRepresenter.h"
 #include "Pile.h"
 #include "Foundation.h"
-#include "Movement.h"
+#include "CardStack.h"
+#include "Deck.h"
 
 using namespace std;
 
-typedef enum {
-	remainder,
-	waste,
-	pile,
-	foundation
-}TableauArea;
+//typedef enum {
+//	remainder,
+//	waste,
+//	pile,
+//	foundation
+//}TableauArea;
 
 const int numberOfFoundations = 4;
 const int numberOfPiles = 7;
 
-class Tableau {
+class Table {
 private:
 
 	Score score;
@@ -43,8 +42,8 @@ private:
 	void deal();
 
 public:
-	Tableau();
-	virtual ~Tableau();
+	Table();
+	virtual ~Table();
 
 	inline int getNumberOfPiles() const {return piles.size();}
 	inline int getNumberOfFundations() const {return foundations.size();}
@@ -53,8 +52,8 @@ public:
 	CardStackRepresenter getFoundationRepresenter(int foundationNumber) const {return this->foundations.at(foundationNumber).getCardsRepresenter();}
 	CardStackRepresenter getPileRepresenter(int pileNumber) const {return this->piles.at(pileNumber).getCardsRepresenter();}
 
-	void applyMovement(Movement movement);
-
+	CardStack* getRemainder(){return &this->remainder;}
+	CardStack* getWaste(){return &this->waste;}
 };
 
 

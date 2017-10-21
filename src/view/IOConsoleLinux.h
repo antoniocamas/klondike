@@ -15,10 +15,10 @@
 using namespace std;
 
 const char backCardRepresentation = '@';
-class UIConsoleLinux {
+class IOConsoleLinux {
 public:
-	UIConsoleLinux();
-	virtual ~UIConsoleLinux();
+	IOConsoleLinux();
+	virtual ~IOConsoleLinux();
 
 	string niceConsoleCard(string card);
 	void printHeader();
@@ -29,6 +29,12 @@ public:
 	void printMessage(string message);
 	void printSplitter();
 	void printNewLine();
+
+	string getInput();
+
+private:
+	void lowercase(string* message);
+
 };
 
 void clear_screen();

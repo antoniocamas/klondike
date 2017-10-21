@@ -8,8 +8,8 @@
 #ifndef CARD_H_
 #define CARD_H_
 
-#include "Suit.h"
 #include <string>
+#include "Suit.h"
 
 using namespace std;
 

@@ -24,5 +24,9 @@ C_DEPS :=
 # Every subdirectory with source files must be described here
 SUBDIRS := \
 src \
+src/controller \
+src/model \
+src/model/card \
 src/view \
+test \
 

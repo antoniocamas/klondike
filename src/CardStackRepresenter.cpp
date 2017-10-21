@@ -8,6 +8,7 @@
 #include <vector>
 #include <string>
 #include <algorithm>
+
 #include "CardStackRepresenter.h"
 #include "Card.h"
 

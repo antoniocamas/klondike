@@ -8,11 +8,11 @@
 #ifndef KLONDIKE_H_
 #define KLONDIKE_H_
 
-#include "Tableau.h"
+#include "Table.h"
 
 class Klondike {
 private:
-Tableau tableau;
+Table table;
 
 public:
 	Klondike(){};

@@ -10,19 +10,18 @@
 //Delete. Just Tests
 #include <iostream>
 #include <vector>
-#include "Suit.h"
-#include "Card.h"
-#include "CardStack.h"
 #include "CardStackRepresenter.h"
-#include "CardIterator.h"
-#include "Deck.h"
 #include "Pile.h"
 #include "Foundation.h"
+#include "Card.h"
+#include "CardIterator.h"
+#include "CardStack.h"
+#include "Deck.h"
+#include "MovementController.h"
+#include "Suit.h"
 #include "Score.h"
-#include "Tableau.h"
-#include "Movement.h"
-
-#include "view/UInterface.h"
+#include "Table.h"
+#include "UInterfaceConsoleLinux.h"
 
 using namespace std;
 using namespace card;
@@ -31,10 +30,10 @@ int main ()
 {
 	cout << "Clondike Project" << endl;
 
-//	Klondike game;
-//	game.startGame();
-//
-//	return 0;
+	Klondike game;
+	game.startGame();
+
+	return 0;
 /////////////////////////////////
 	cout << "Testing Suit" << endl;
 
@@ -362,7 +361,7 @@ int main ()
 	cout << "Testing Tableau" << endl;
 
 	{
-		Tableau tableau;
+		Table tableau;
 		CardStackRepresenter cardRepresenter;
 		cout << "\t" << "Remainder: ";
 
@@ -411,11 +410,11 @@ int main ()
 //		pile1.putCardOnTop(otherCards);
 //
 		Card card2move = cardClub1;
-		Movement movement("pile", 1, "foundation", 3, card2move);
-
-		Tableau tableau;
-
-		tableau.applyMovement(movement);
+//		Movement movement("pile", 1, "foundation", 3, card2move);
+//
+//		Tableau tableau;
+//
+//		tableau.applyMovement(movement);
 
 	}
 	return 0;

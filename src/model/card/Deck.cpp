@@ -5,10 +5,12 @@
  *      Author: antonio
  */
 
+#include "Deck.h"
+
 #include <iostream>
 #include <string>
 #include <algorithm>
-#include "Deck.h"
+
 #include "Card.h"
 
 using namespace std;

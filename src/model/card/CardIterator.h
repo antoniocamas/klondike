@@ -5,10 +5,11 @@
  *      Author: antonio
  */
 
-#ifndef SRC_CARDITERATOR_H_
-#define SRC_CARDITERATOR_H_
+#ifndef SRC_MODEL_CARD_CARDITERATOR_H_
+#define SRC_MODEL_CARD_CARDITERATOR_H_
 
 #include <iterator>
+
 #include "Card.h"
 namespace card {
 
@@ -31,4 +32,4 @@ public:
 
 } /* namespace card */
 
-#endif /* SRC_CARDITERATOR_H_ */
+#endif /* SRC_MODEL_CARD_CARDITERATOR_H_ */

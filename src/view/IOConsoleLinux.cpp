@@ -5,24 +5,25 @@
  *      Author: antonio
  */
 
-#include "UIConsoleLinux.h"
+#include "IOConsoleLinux.h"
 #include <iostream>
+#include <algorithm>
 #include <vector>
 #include <string>
 #include <cstdlib>
 
 using namespace std;
 
-UIConsoleLinux::UIConsoleLinux() {
+IOConsoleLinux::IOConsoleLinux() {
 	// TODO Auto-generated constructor stub
 
 }
 
-UIConsoleLinux::~UIConsoleLinux() {
+IOConsoleLinux::~IOConsoleLinux() {
 	// TODO Auto-generated destructor stub
 }
 
-string UIConsoleLinux::niceConsoleCard(string card) {
+string IOConsoleLinux::niceConsoleCard(string card) {
 
 string newCardRepresentation = card;
 //	if (card.empty())
@@ -46,25 +47,25 @@ string newCardRepresentation = card;
 	return newCardRepresentation;
 }
 
-void UIConsoleLinux::printNewLine() {
+void IOConsoleLinux::printNewLine() {
 	cout << endl;
 }
 
-void UIConsoleLinux::printMessage(string message) {
-	cout << message << endl;
+void IOConsoleLinux::printMessage(string message) {
+	cout << message;
 }
 
-void UIConsoleLinux::printSplitter() {
+void IOConsoleLinux::printSplitter() {
 	cout << string(60, '-') << endl;
 }
 
-void UIConsoleLinux::printHeader() {
+void IOConsoleLinux::printHeader() {
 	clear_screen();
 	this->printMessage("  Klondike - Enter your movement");
 	this->printSplitter();
 }
 
-void UIConsoleLinux::printRemainder(bool cardLeft) {
+void IOConsoleLinux::printRemainder(bool cardLeft) {
 	string remainderRepresentation;
 	if (cardLeft)
 		remainderRepresentation = "[" + string(1,backCardRepresentation) + "]";
@@ -74,7 +75,7 @@ void UIConsoleLinux::printRemainder(bool cardLeft) {
 	cout << "R: " << remainderRepresentation << " ";
 }
 
-void UIConsoleLinux::printWaste(vector<string> cardsRepresentation) {
+void IOConsoleLinux::printWaste(vector<string> cardsRepresentation) {
 	cout << "W: (";
 	for (auto card : cardsRepresentation)
 		cout << "[" << this->niceConsoleCard(card);
@@ -86,7 +87,7 @@ void UIConsoleLinux::printWaste(vector<string> cardsRepresentation) {
 	cout << ")   ";
 }
 
-void UIConsoleLinux::printFoundation(string cardsRepresentation,
+void IOConsoleLinux::printFoundation(string cardsRepresentation,
 		int foundationNumber) {
 
 	cout << "F" << foundationNumber << "(";
@@ -97,7 +98,7 @@ void UIConsoleLinux::printFoundation(string cardsRepresentation,
 	cout << ")   ";
 }
 
-void UIConsoleLinux::printPile(vector<string> cardsRepresentation,
+void IOConsoleLinux::printPile(vector<string> cardsRepresentation,
 		int pileNumber) {
 
 	cout << "P" << pileNumber << ": ";
@@ -119,3 +120,15 @@ void clear_screen()
     std::system ("clear");
 #endif
 }
+
+string IOConsoleLinux::getInput() {
+	string input;
+	cin >> input;
+	lowercase(&input);
+	return input;
+}
+
+void IOConsoleLinux::lowercase(string* message) {
+	std::transform(message->begin(), message->end(), message->begin(), ::tolower);
+}
+

@@ -5,12 +5,14 @@
  *      Author: antonio
  */
 
+#include "CardStack.h"
+
 #include <vector>
 #include <algorithm>
 #include <cstdlib>
 #include <ctime>
+
 #include "Card.h"
-#include "CardStack.h"
 
 using namespace card;
 

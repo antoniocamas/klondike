@@ -4,8 +4,9 @@
  *  Created on: Oct 8, 2017
  *      Author: antonio
  */
-#include <iostream>
 #include "Suit.h"
+
+#include <iostream>
 #include <string>
 
 using namespace std;

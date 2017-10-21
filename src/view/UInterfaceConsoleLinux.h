@@ -12,23 +12,27 @@
 #define UINTERFACE_H_
 
 #include <iostream>
+#include <vector>
 #include <string>
+#include <memory>
 
-#include "../Tableau.h"
-#include "UIConsoleLinux.h"
+#include "Table.h"
+#include "ActionController.h"
+#include "IOConsoleLinux.h"
 
 using namespace std;
 
-class UInterface {
+class UInterfaceConsoleLinux {
 
-UIConsoleLinux io;
+IOConsoleLinux io;
+Table * table;
 
 public:
-	UInterface(){};
-	virtual ~UInterface();
-	void showTableau(Tableau &t);
+	UInterfaceConsoleLinux(Table * table){ this->table = table;};
+	virtual ~UInterfaceConsoleLinux();
+	void showTable();
+	shared_ptr<ActionController> getAction();
 	static void inline printMessage(const string message) { cout << message << endl; }
-
 };
 
 void clear_screen();

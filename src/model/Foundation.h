@@ -8,8 +8,8 @@
 #ifndef FOUNDATION_H_
 #define FOUNDATION_H_
 
-#include "Pile.h"
 #include "Card.h"
+#include "Pile.h"
 
 using namespace card;
 

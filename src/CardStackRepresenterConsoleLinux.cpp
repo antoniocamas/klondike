@@ -5,10 +5,11 @@
  *      Author: antonio
  */
 
-#include "Suit.h"
 #include "CardStackRepresenter.h"
 #include "CardStackRepresenterConsoleLinux.h"
-#include "view/LinuxTerminalColor.h"
+
+#include "Suit.h"
+#include "LinuxTerminalColor.h"
 
 namespace card {
 

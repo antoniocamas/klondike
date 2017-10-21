@@ -5,9 +5,9 @@
  *      Author: antonio
  */
 
-#include <string>
 #include "Card.h"
 #include "Suit.h"
+#include <string>
 
 namespace card {
 Card::Card(int number, Suit suit) {
