@@ -10,10 +10,8 @@
 #include "MovementController.h"
 #include "ActionGame.h"
 
-ActionGame::ActionGame(Table * t): ActionController(t) {
-
-	shared_ptr<Remainder2WasteController> theMovement(new Remainder2WasteController(this->table));
-	this->movement = theMovement;
+ActionGame::ActionGame(Table * t, shared_ptr<MovementController> movement): ActionController(t) {
+	this->movement = movement;
 };
 ActionGame::~ActionGame() {
 	// TODO Auto-generated destructor stub

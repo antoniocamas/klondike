@@ -13,6 +13,7 @@
 #include "../CardStackRepresenterConsoleLinux.h"
 #include "ActionController.h"
 #include "ActionGame.h"
+#include "MovementBuilderTextMode.h"
 
 using namespace std;
 
@@ -54,29 +55,46 @@ shared_ptr<ActionController> UInterfaceConsoleLinux::getAction() {
 	bool completeInput = false;
 	vector<char> actionDescriber;
 
-	shared_ptr<ActionGame> action(new ActionGame(this->table));
+	MovementBuilderTextMode movementBuilder(this->table);
 
-
+	string message = "\tEnter next movement: ";
 	do{
-		io.printMessage("\tEnter next movement: ");
+
+		io.printMessage(message);
 		string input = io.getInput();
 		if (input == "c")
 			completeInput = true;
 		else
 		{
-			if (input[0] == 'r'){
-				completeInput = true;
-				actionDescriber.push_back(input[0]);
-			}
-			else if (input[0] == 'w'){
-				completeInput = false;
-				io.printMessage("\tWaste to: ");
+			if (movementBuilder.isInputCorrect(input)){
+				movementBuilder.addNewInput(input);
 			}
 			else
-				io.printMessage("\tNot Valid Input!\n");
+				io.printMessage("Bad Input!: \n");
+
+			if (movementBuilder.isEnoughInput()){
+	#include <iostream>
+				cout << "in";
+
+				completeInput = true;
+				shared_ptr<ActionGame> action(new ActionGame(this->table,
+						movementBuilder.getMovement()));
+				return action;
+			}
+
+//			if (input[0] == 'r'){
+//				completeInput = true;
+//				actionDescriber.push_back(input[0]);
+//			}
+//			else if (input[0] == 'w'){
+//				completeInput = false;
+//				io.printMessage("\tWaste to: ");
+//			}
+//			else
+//				io.printMessage("\tNot Valid Input!\n");
 		}
 
 	}while(!completeInput);
-
-	return action;
+#include <iostream>
+	cout << "out";
 }
