@@ -18,7 +18,7 @@ Foundation::~Foundation() {
 	// TODO Auto-generated destructor stub
 }
 
-bool Foundation::isComplete() {
+bool Foundation::isComplete() const {
 	if (this->cards.empty())
 			return false;
 

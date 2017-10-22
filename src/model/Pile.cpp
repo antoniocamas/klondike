@@ -30,7 +30,7 @@ vector<Card> Pile::giveTopCardAway(Card fistCard2Lift) {
 	return cards2Return;
 }
 
-bool Pile::isPuttingDownPossible(Card inCommingCard) {
+bool Pile::isPuttingDownPossible(Card inCommingCard) const{
 	if (this->cards.empty())
 		return inCommingCard.isLastNumberOfSuit();
 

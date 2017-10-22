@@ -36,10 +36,11 @@ public:
 	Card giveTopCardAway();
 	vector<Card> giveTopCardAway(int numberOfCards);
 	vector<Card> getUpTurnedCards();
+	const Card * showTopCard(){return &(this->cards.back());};
 	void shuffle();
 	CardStackRepresenter getCardsRepresenter() const;
 
-	virtual bool isPuttingDownPossible(Card) const {return false;}
+	virtual bool isPuttingDownPossible(Card) const;
 	//debug funtion
 //	string cards2string(){
 //		string repr;

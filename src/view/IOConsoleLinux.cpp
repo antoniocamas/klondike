@@ -65,51 +65,56 @@ void IOConsoleLinux::printHeader() {
 }
 
 void IOConsoleLinux::printRemainder(bool cardLeft) {
-	string remainderRepresentation;
-	remainderRepresentation = this->tableElementRepresenter["remainder"];
-	this->uppercase(&remainderRepresentation);
-	remainderRepresentation += ": ";
+	string representation = this->getBasicRepresentation("remainder");
 	if (cardLeft)
-		remainderRepresentation += "[" + \
+		representation += "[" + \
 		     this->tableElementRepresenter["backCard"] + "]";
 	else
-		remainderRepresentation += "   ";
+		representation += ")   ";
 
-	cout << remainderRepresentation << " ";
+	cout << representation << " ";
 }
 
 void IOConsoleLinux::printWaste(vector<string> cardsRepresentation) {
-	cout << "W: (";
-	for (auto card : cardsRepresentation)
-		cout << "[" << this->niceConsoleCard(card);
-	if (!cardsRepresentation.empty())
-		cout << "]";
-	else
-		cout << " ";
+	string representation = this->getBasicRepresentation("waste");
 
-	cout << ")   ";
+
+	for (auto card : cardsRepresentation)
+		representation += "[" + this->niceConsoleCard(card);
+	if (!cardsRepresentation.empty())
+		representation += "]";
+
+	else
+		representation += " ";
+
+	representation += ")  |  ";
+	cout << representation;
 }
 
 void IOConsoleLinux::printFoundation(string cardsRepresentation,
 		int foundationNumber) {
 
-	cout << "F" << foundationNumber << "(";
+	string representation = this->getBasicRepresentation("foundation", foundationNumber);
 	if (!cardsRepresentation.empty())
-		cout << "]";
+		representation += "]";
 	else
-		cout << " ";
-	cout << ")   ";
+		representation += " ";
+
+	representation += ")   ";
+	cout << representation;
 }
 
 void IOConsoleLinux::printPile(vector<string> cardsRepresentation,
 		int pileNumber) {
 
-	cout << "P" << pileNumber << ": ";
+	string representation = this->getBasicRepresentation("pile", pileNumber);
 	for (auto card : cardsRepresentation)
-		cout << "[" << this->niceConsoleCard(card);
+		representation += "[" + this->niceConsoleCard(card);
 	if (!cardsRepresentation.empty())
-		cout << "]";
-	 cout << endl;
+		representation += "]";
+	else
+		representation += " )";
+	cout << representation << endl;
 }
 
 
@@ -138,3 +143,14 @@ void IOConsoleLinux::lowercase(string* message) {
 void IOConsoleLinux::uppercase(string* message) {
 	std::transform(message->begin(), message->end(), message->begin(), ::toupper);
 }
+
+string IOConsoleLinux::getBasicRepresentation(string element, int number){
+	string representation;
+	representation = this->tableElementRepresenter[element];
+	this->uppercase(&representation);
+	if (number != 0)
+		representation += to_string(number);
+	representation += ":(";
+	return representation;
+}
+

@@ -394,7 +394,7 @@ int main ()
 //
 //	}
 
-	cout << "Testing Movement";
+	cout << "Testing Movement" << endl;
 
 	{
 //		Pile pile1;
@@ -417,6 +417,24 @@ int main ()
 //		tableau.applyMovement(movement);
 
 	}
+
+	cout << "Testing CardStack Polymorphism" << endl;
+
+	{
+		CardStack * stack;
+		Pile * pile1 = new Pile();
+		Pile pile2;
+		Foundation foundation1;
+
+		stack = pile1;
+		stack->isPuttingDownPossible(card1);
+
+		stack = &pile2;
+		stack->isPuttingDownPossible(card1);
+
+
+	}
+
 	return 0;
 }
 

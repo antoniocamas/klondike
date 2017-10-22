@@ -38,6 +38,8 @@ public:
 private:
 	void lowercase(string* message);
 	void uppercase(string* message);
+	string getBasicRepresentation(string element){return this->getBasicRepresentation(element, 0);};
+	string getBasicRepresentation(string element, int number);
 
 };
 

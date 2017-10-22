@@ -43,7 +43,7 @@ public:
 	inline bool isSameColor(Card other) const{return other.suit.isSameColor(this->suit);}
 	inline bool isSameSuit(Card other) const{return other.suit == this->suit;}
 	inline bool isFirstNumberOfSuit(){return this->suit.isFirstNumberOfSuit(this->number);}
-	inline bool isLastNumberOfSuit(){return this->suit.isLastNumberOfSuit(this->number);}
+	inline bool isLastNumberOfSuit() const {return this->suit.isLastNumberOfSuit(this->number);}
 };
 
 } /* namespace card */

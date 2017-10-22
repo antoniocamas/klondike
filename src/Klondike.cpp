@@ -23,11 +23,12 @@ void Klondike::startGame()
 {
 	shared_ptr<ActionController> action;
 	UInterfaceConsoleLinux uinterface(&table);
-	uinterface.showTable();
-	action = uinterface.getAction();
-	if (action->isValid())
-		action->execute();
-	uinterface.showTable();
+	do{
+		uinterface.showTable();
+		action = uinterface.getAction();
+		if (action->isValid())
+			action->execute();
+	}while(!this->table.areAllFoundationsComplete());
 
-
+	uinterface.showTable();
 }

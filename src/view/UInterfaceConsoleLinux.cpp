@@ -58,33 +58,32 @@ shared_ptr<ActionController> UInterfaceConsoleLinux::getAction() {
 	io.printSplitter();
 	io.printMessage("type C to enter a system command. \n");
 
-	bool completeInput = false;
-	vector<char> actionDescriber;
 
-	InputManagerTextMode inputManager(this->table, this->tableElementRepresenter);
 
+
+
+	shared_ptr<ActionGame> action = NULL;
 	string message = "\tEnter next movement: ";
-	do{
 
-		io.printMessage(message);
-		string input = io.getInput();
-		if (input == "c")
-			completeInput = true;
-		else
-		{
+	do{
+		InputManagerTextMode inputManager(this->table, this->tableElementRepresenter);
+
+		do{
+			io.printMessage(message);
+			string input = io.getInput();
+
 			if (inputManager.isInputCorrect(input)){
-				inputManager.addNewInput(input);
+					inputManager.addNewInput(input);
 			}
 			else
 				io.printMessage("Bad Input!: \n");
 
-			if (inputManager.isEnoughInput()){
-				completeInput = true;
-				MovementBuilderTextMode movementBuilder(this->table, inputManager.getUserData());
-				shared_ptr<ActionGame> action(new ActionGame(this->table, movementBuilder.getMovement()));
-				return action;
-			}
-		}
+		}while(!inputManager.isEnoughInput());
 
-	}while(!completeInput);
+		MovementBuilderTextMode movementBuilder(this->table,
+				inputManager.getUserData(),	this->tableElementRepresenter);
+		shared_ptr<MovementController> movement = movementBuilder.getMovement();
+		action = (shared_ptr<ActionGame>) new ActionGame(this->table, movement);
+	}while(!action->isValid());
+	return action;
 }

@@ -38,6 +38,14 @@ void Table::deal()
 	this->remainder.putCardOnTop(deck.giveTopCardAway(deck.getNumberOfCards()));
 }
 
+bool Table::areAllFoundationsComplete() const {
+	for (unsigned int i = 0; i < this->foundations.size(); ++i){
+		if(!this->foundations[i].isComplete())
+			return false;
+	}
+
+	return true;
+}
 //void Tableau::applyMovement(Movement movement) {
 //	std::string::size_type sz;
 //	switch (std::stoi(movement.getStackDestination(), sz)){

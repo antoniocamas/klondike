@@ -17,7 +17,7 @@ public:
 	virtual ~Pile();
 	using CardStack::giveTopCardAway;
 	vector<Card> giveTopCardAway(Card fistCard2Lift);
-	bool isPuttingDownPossible(Card inCommingCard);
+	virtual bool isPuttingDownPossible(Card inCommingCard)const;
 };
 
 #endif /* PILE_H_ */

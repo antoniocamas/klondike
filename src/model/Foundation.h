@@ -17,7 +17,7 @@ class Foundation: public Pile {
 public:
 	Foundation();
 	virtual ~Foundation();
-	bool isComplete();
+	bool isComplete() const;
 	bool isPuttingDownPossible(Card inCommingCard) const;
 
 };

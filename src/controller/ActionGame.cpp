@@ -18,6 +18,8 @@ ActionGame::~ActionGame() {
 }
 
 bool ActionGame::isValid() {
+	if (movement == NULL)
+		return false;
 	return this->movement->isValid();
 }
 

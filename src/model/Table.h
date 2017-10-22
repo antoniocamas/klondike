@@ -45,6 +45,7 @@ public:
 	Table();
 	virtual ~Table();
 
+	bool areAllFoundationsComplete() const;
 	inline int getNumberOfPiles() const {return piles.size();}
 	inline int getNumberOfFundations() const {return foundations.size();}
 	CardStackRepresenter getRemainderRepresenter() const {return this->remainder.getCardsRepresenter();}
@@ -54,6 +55,8 @@ public:
 
 	CardStack* getRemainder(){return &this->remainder;}
 	CardStack* getWaste(){return &this->waste;}
+	Pile* getPile(int pileNumber){return &this->piles[pileNumber];}
+	Foundation* getFoundation(int foundationNumber){return &this->foundations[foundationNumber];}
 };
 
 

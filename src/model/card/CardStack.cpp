@@ -14,6 +14,9 @@
 
 #include "Card.h"
 
+//debug
+#include <iostream>
+
 using namespace card;
 
 namespace card {
@@ -60,6 +63,12 @@ vector<Card>::iterator CardStack::findCard(Card card) {
 		if (card == (*it)){ return it;}
 
 	return this->cards.end();
+}
+
+bool CardStack::isPuttingDownPossible(Card inCommingCard) const {
+
+	cout << "debug: In CardStack is Putting Down Possible: " << inCommingCard.card2string() << endl;
+	return false;
 }
 
 CardStackRepresenter CardStack::getCardsRepresenter() const {
