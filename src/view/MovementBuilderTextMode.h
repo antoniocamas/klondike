@@ -1,7 +1,7 @@
 /*
  * MovementBuilderTextMode.h
  *
- *  Created on: Oct 21, 2017
+ *  Created on: Oct 22, 2017
  *      Author: antonio
  */
 
@@ -11,26 +11,19 @@
 #include <vector>
 #include <string>
 #include <memory>
-#include <regex>
-#include "MovementController.h"
 #include "Table.h"
+#include "MovementController.h"
+
+using namespace std;
 
 class MovementBuilderTextMode {
-	string remainder;
-	string waste;
-	string foundation;
-	string pile;
-	std::regex validCommandsRegex;
+private:
 	Table * table;
-	vector<string> dataFromUser;
-
+	vector<string> userInput;
 public:
-	MovementBuilderTextMode(Table* table);
+	MovementBuilderTextMode(Table * t, vector<string> u);
 	virtual ~MovementBuilderTextMode();
 
-	bool isInputCorrect(string data)const;
-	bool isEnoughInput();
-	void addNewInput(string data);
 	shared_ptr<MovementController> getMovement() const;
 };
 

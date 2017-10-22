@@ -11,13 +11,16 @@
 #include "LinuxTerminalColor.h"
 #include <vector>
 #include <string>
+#include <map>
 
 using namespace std;
 
-const char backCardRepresentation = '@';
 class IOConsoleLinux {
+private:
+	map<string, string> tableElementRepresenter;
 public:
-	IOConsoleLinux();
+	IOConsoleLinux(){};
+	IOConsoleLinux(std::map<string, string>& r);
 	virtual ~IOConsoleLinux();
 
 	string niceConsoleCard(string card);
@@ -34,6 +37,7 @@ public:
 
 private:
 	void lowercase(string* message);
+	void uppercase(string* message);
 
 };
 

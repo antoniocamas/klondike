@@ -14,9 +14,8 @@
 
 using namespace std;
 
-IOConsoleLinux::IOConsoleLinux() {
-	// TODO Auto-generated constructor stub
-
+IOConsoleLinux::IOConsoleLinux(std::map<string, string>& tableElementRepresenter) {
+	this->tableElementRepresenter = tableElementRepresenter;
 }
 
 IOConsoleLinux::~IOConsoleLinux() {
@@ -61,18 +60,22 @@ void IOConsoleLinux::printSplitter() {
 
 void IOConsoleLinux::printHeader() {
 	clear_screen();
-	this->printMessage("  Klondike - Enter your movement");
+	this->printMessage("\t\tKlondike\n");
 	this->printSplitter();
 }
 
 void IOConsoleLinux::printRemainder(bool cardLeft) {
 	string remainderRepresentation;
+	remainderRepresentation = this->tableElementRepresenter["remainder"];
+	this->uppercase(&remainderRepresentation);
+	remainderRepresentation += ": ";
 	if (cardLeft)
-		remainderRepresentation = "[" + string(1,backCardRepresentation) + "]";
+		remainderRepresentation += "[" + \
+		     this->tableElementRepresenter["backCard"] + "]";
 	else
-		remainderRepresentation = "   ";
+		remainderRepresentation += "   ";
 
-	cout << "R: " << remainderRepresentation << " ";
+	cout << remainderRepresentation << " ";
 }
 
 void IOConsoleLinux::printWaste(vector<string> cardsRepresentation) {
@@ -132,3 +135,6 @@ void IOConsoleLinux::lowercase(string* message) {
 	std::transform(message->begin(), message->end(), message->begin(), ::tolower);
 }
 
+void IOConsoleLinux::uppercase(string* message) {
+	std::transform(message->begin(), message->end(), message->begin(), ::toupper);
+}

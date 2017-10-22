@@ -14,8 +14,16 @@
 #include "ActionController.h"
 #include "ActionGame.h"
 #include "MovementBuilderTextMode.h"
+#include "InputManagerTextMode.h"
+#include "IOConsoleLinux.h"
 
 using namespace std;
+
+UInterfaceConsoleLinux::UInterfaceConsoleLinux(Table * table){
+	this->table = table;
+	IOConsoleLinux io(this->tableElementRepresenter);
+	this->io = io;
+}
 
 UInterfaceConsoleLinux::~UInterfaceConsoleLinux() {
 	// TODO Auto-generated destructor stub
@@ -24,8 +32,6 @@ UInterfaceConsoleLinux::~UInterfaceConsoleLinux() {
 void UInterfaceConsoleLinux::showTable() {
 	//card::CardStackRepresenter cardRepresenter;
 	card::CardStackRepresenterConsoleLinux cardRepresenter;
-
-	cout << "\t" << "Remainder: ";
 
 	io.printHeader();
 	cardRepresenter = table->getRemainderRepresenter();
@@ -55,7 +61,7 @@ shared_ptr<ActionController> UInterfaceConsoleLinux::getAction() {
 	bool completeInput = false;
 	vector<char> actionDescriber;
 
-	MovementBuilderTextMode movementBuilder(this->table);
+	InputManagerTextMode inputManager(this->table, this->tableElementRepresenter);
 
 	string message = "\tEnter next movement: ";
 	do{
@@ -66,35 +72,19 @@ shared_ptr<ActionController> UInterfaceConsoleLinux::getAction() {
 			completeInput = true;
 		else
 		{
-			if (movementBuilder.isInputCorrect(input)){
-				movementBuilder.addNewInput(input);
+			if (inputManager.isInputCorrect(input)){
+				inputManager.addNewInput(input);
 			}
 			else
 				io.printMessage("Bad Input!: \n");
 
-			if (movementBuilder.isEnoughInput()){
-	#include <iostream>
-				cout << "in";
-
+			if (inputManager.isEnoughInput()){
 				completeInput = true;
-				shared_ptr<ActionGame> action(new ActionGame(this->table,
-						movementBuilder.getMovement()));
+				MovementBuilderTextMode movementBuilder(this->table, inputManager.getUserData());
+				shared_ptr<ActionGame> action(new ActionGame(this->table, movementBuilder.getMovement()));
 				return action;
 			}
-
-//			if (input[0] == 'r'){
-//				completeInput = true;
-//				actionDescriber.push_back(input[0]);
-//			}
-//			else if (input[0] == 'w'){
-//				completeInput = false;
-//				io.printMessage("\tWaste to: ");
-//			}
-//			else
-//				io.printMessage("\tNot Valid Input!\n");
 		}
 
 	}while(!completeInput);
-#include <iostream>
-	cout << "out";
 }
