@@ -19,7 +19,6 @@ class IOConsoleLinux {
 private:
 	map<string, string> tableElementRepresenter;
 public:
-	IOConsoleLinux(){};
 	IOConsoleLinux(std::map<string, string>& r);
 	virtual ~IOConsoleLinux();
 

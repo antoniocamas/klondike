@@ -29,8 +29,8 @@ private:
 			{"remainder", "r"}, {"waste", "w"}, {"foundation","f"},
 			{"pile", "p"}, {"backCard", "@"}
 	};
-	IOConsoleLinux io;
 	Table * table;
+	IOConsoleLinux io;
 
 public:
 	UInterfaceConsoleLinux(Table * table);

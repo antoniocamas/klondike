@@ -19,10 +19,7 @@
 
 using namespace std;
 
-UInterfaceConsoleLinux::UInterfaceConsoleLinux(Table * table){
-	this->table = table;
-	IOConsoleLinux io(this->tableElementRepresenter);
-	this->io = io;
+UInterfaceConsoleLinux::UInterfaceConsoleLinux(Table * table):table(table), io(this->tableElementRepresenter){
 }
 
 UInterfaceConsoleLinux::~UInterfaceConsoleLinux() {
@@ -83,7 +80,8 @@ shared_ptr<ActionController> UInterfaceConsoleLinux::getAction() {
 		MovementBuilderTextMode movementBuilder(this->table,
 				inputManager.getUserData(),	this->tableElementRepresenter);
 		shared_ptr<MovementController> movement = movementBuilder.getMovement();
-		action = (shared_ptr<ActionGame>) new ActionGame(this->table, movement);
+		action = make_shared<ActionGame>(this->table, movement);
+
 	}while(!action->isValid());
 	return action;
 }

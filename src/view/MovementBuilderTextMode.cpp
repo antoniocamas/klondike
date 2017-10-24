@@ -37,13 +37,12 @@ shared_ptr<MovementController> MovementBuilderTextMode::getMovement() const{
 
 	vector<string> origin = classifiers.front();
 	if (origin.front() == "remainder")
-		return (shared_ptr<MovementController>) new Remainder2WasteController(this->table);
+		return make_shared<Remainder2WasteController>(this->table);
 
 	vector<string> destination = classifiers.at(1);
 	if (origin.front() == "waste"){
 		if(destination.front() == "pile")
-			return (shared_ptr<MovementController>) new Waste2PileController(
-					this->table, stoi(destination.back())-1);
+			return make_shared<Waste2PileController>(this->table, stoi(destination.back())-1);
 	}
 
 //	if(classifiers.at(0) == "remainder"){
