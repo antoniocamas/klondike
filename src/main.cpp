@@ -10,7 +10,6 @@
 //Delete. Just Tests
 #include <iostream>
 #include <vector>
-#include "CardStackRepresenter.h"
 #include "Pile.h"
 #include "Foundation.h"
 #include "Card.h"
@@ -22,6 +21,7 @@
 #include "Score.h"
 #include "Table.h"
 #include "UInterfaceConsoleLinux.h"
+#include "view/CardStackView.h"
 
 using namespace std;
 using namespace card;
@@ -343,7 +343,7 @@ int main ()
 		CardStack mystack;
 		mystack.putCardOnTop(clubCards);
 
-		CardStackRepresenter cardRepresenter = mystack.getCardsRepresenter();
+		CardStackView cardRepresenter = mystack.getCardsRepresenter();
 
 		cout << "\t" << "ClubCards: ";
 		for (auto cardRepresentation : cardRepresenter.allCard2String())
@@ -362,7 +362,7 @@ int main ()
 
 	{
 		Table tableau;
-		CardStackRepresenter cardRepresenter;
+		CardStackView cardRepresenter;
 		cout << "\t" << "Remainder: ";
 
 		cardRepresenter = tableau.getRemainderRepresenter();

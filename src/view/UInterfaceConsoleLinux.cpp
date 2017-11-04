@@ -9,10 +9,10 @@
 #include <string>
 #include <memory>
 #include "UInterfaceConsoleLinux.h"
-#include "../CardStackRepresenter.h"
-#include "../CardStackRepresenterConsoleLinux.h"
+#include "CardStackView.h"
 #include "ActionController.h"
 #include "ActionGame.h"
+#include "CardStackViewConsoleLinux.h"
 #include "MovementBuilderTextMode.h"
 #include "InputManagerTextMode.h"
 #include "IOConsoleLinux.h"
@@ -53,27 +53,21 @@ void UInterfaceConsoleLinux::showTable() {
 shared_ptr<ActionController> UInterfaceConsoleLinux::getAction() {
 
 	io.printSplitter();
-	io.printMessage("type C to enter a system command. \n");
-
-
-
-
 
 	shared_ptr<ActionGame> action = NULL;
-	string message = "\tEnter next movement: ";
+	string message = "\tEnter the ";
 
 	do{
 		InputManagerTextMode inputManager(this->table, this->tableElementRepresenter);
-
 		do{
-			io.printMessage(message);
+			io.printMessage(message + inputManager.getNextExpectedElement() + ": ");
 			string input = io.getInput();
 
 			if (inputManager.isInputCorrect(input)){
 					inputManager.addNewInput(input);
 			}
 			else
-				io.printMessage("Bad Input!: \n");
+				io.printMessage("\tI coudn't understand what you mean \n");
 
 		}while(!inputManager.isEnoughInput());
 
@@ -82,6 +76,10 @@ shared_ptr<ActionController> UInterfaceConsoleLinux::getAction() {
 		shared_ptr<MovementController> movement = movementBuilder.getMovement();
 		action = make_shared<ActionGame>(this->table, movement);
 
+		if (!action->isValid())
+			io.printMessage("\t\tInvalid Movement!!\n");
+
 	}while(!action->isValid());
+
 	return action;
 }

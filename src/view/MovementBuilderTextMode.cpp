@@ -35,6 +35,7 @@ shared_ptr<MovementController> MovementBuilderTextMode::getMovement() const{
 	shared_ptr<MovementController> movement = NULL;
 
 
+
 	vector<string> origin = classifiers.front();
 	if (origin.front() == "remainder")
 		return make_shared<Remainder2WasteController>(this->table);
@@ -44,6 +45,10 @@ shared_ptr<MovementController> MovementBuilderTextMode::getMovement() const{
 		if(destination.front() == "pile")
 			return make_shared<Waste2PileController>(this->table, stoi(destination.back())-1);
 	}
+
+
+
+
 
 //	if(classifiers.at(0) == "remainder"){
 //		shared_ptr<MovementController> movement(new Remainder2WasteController(this->table));
@@ -74,13 +79,13 @@ vector<vector<string>> MovementBuilderTextMode::translateInput() const {
 		}
 	}
 
-//	for (auto it = classifiers.begin(); it != classifiers.end(); ++it) {
-//		cout << "Element: ";
-//		for(unsigned int i = 0; i < (*it).size(); ++i){
-//			cout << " " << (*it)[i];
-//		}
-//
-//	}
+	for (auto it = classifiers.begin(); it != classifiers.end(); ++it) {
+		cout << "Element: ";
+		for(unsigned int i = 0; i < (*it).size(); ++i){
+			cout << " " << (*it)[i];
+		}
+		cout << endl;
+	}
 
 	return classifiers;
 }

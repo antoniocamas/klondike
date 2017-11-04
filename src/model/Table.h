@@ -11,8 +11,9 @@
 #include <vector>
 #include <array>
 #include <string>
+
+#include "../view/CardStackView.h"
 #include "Score.h"
-#include "../CardStackRepresenter.h"
 #include "Pile.h"
 #include "Foundation.h"
 #include "CardStack.h"
@@ -48,10 +49,10 @@ public:
 	bool areAllFoundationsComplete() const;
 	inline int getNumberOfPiles() const {return piles.size();}
 	inline int getNumberOfFundations() const {return foundations.size();}
-	CardStackRepresenter getRemainderRepresenter() const {return this->remainder.getCardsRepresenter();}
-	CardStackRepresenter getWasterRepresenter() const {return this->waste.getCardsRepresenter();}
-	CardStackRepresenter getFoundationRepresenter(int foundationNumber) const {return this->foundations.at(foundationNumber).getCardsRepresenter();}
-	CardStackRepresenter getPileRepresenter(int pileNumber) const {return this->piles.at(pileNumber).getCardsRepresenter();}
+	CardStackView getRemainderRepresenter() const {return this->remainder.getCardsRepresenter();}
+	CardStackView getWasterRepresenter() const {return this->waste.getCardsRepresenter();}
+	CardStackView getFoundationRepresenter(int foundationNumber) const {return this->foundations.at(foundationNumber).getCardsRepresenter();}
+	CardStackView getPileRepresenter(int pileNumber) const {return this->piles.at(pileNumber).getCardsRepresenter();}
 
 	CardStack* getRemainder(){return &this->remainder;}
 	CardStack* getWaste(){return &this->waste;}

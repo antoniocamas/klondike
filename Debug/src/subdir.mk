@@ -4,20 +4,14 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
-../src/CardStackRepresenter.cpp \
-../src/CardStackRepresenterConsoleLinux.cpp \
 ../src/Klondike.cpp \
 ../src/main.cpp 
 
 OBJS += \
-./src/CardStackRepresenter.o \
-./src/CardStackRepresenterConsoleLinux.o \
 ./src/Klondike.o \
 ./src/main.o 
 
 CPP_DEPS += \
-./src/CardStackRepresenter.d \
-./src/CardStackRepresenterConsoleLinux.d \
 ./src/Klondike.d \
 ./src/main.d 
 

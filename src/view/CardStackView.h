@@ -5,8 +5,8 @@
  *      Author: antonio
  */
 
-#ifndef SRC_CARDSTACKREPRESENTER_H_
-#define SRC_CARDSTACKREPRESENTER_H_
+#ifndef SRC_VIEW_CARDSTACKVIEW_H_
+#define SRC_VIEW_CARDSTACKVIEW_H_
 
 #include <vector>
 #include <string>
@@ -15,17 +15,18 @@
 
 namespace card {
 
-class CardStackRepresenter {
+class CardStackView {
 private:
 	vector<Card>::const_iterator beginIt;
 	vector<Card>::const_iterator endIt;
 protected:
-	virtual string representCard(Card card) const;
+	virtual string representCard(Card card);
 public:
-	CardStackRepresenter(){};
-	CardStackRepresenter(vector<Card>::const_iterator b, vector<Card>::const_iterator e): beginIt(b), endIt(e) {}
-	virtual ~CardStackRepresenter();
-	CardStackRepresenter& operator=(CardStackRepresenter other);
+	CardStackView(){};
+	CardStackView(vector<Card>::const_iterator b,
+			vector<Card>::const_iterator e): beginIt(b), endIt(e) {};
+	virtual ~CardStackView();
+	CardStackView& operator=(CardStackView other);
 
 	vector<string> upTurnedCards2String();
 	string topCard2String();
@@ -36,4 +37,4 @@ public:
 
 } /* namespace card */
 
-#endif /* SRC_CARDSTACKREPRESENTER_H_ */
+#endif /* SRC_VIEW_CARDSTACKVIEW_H_ */

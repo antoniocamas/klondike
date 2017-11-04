@@ -71,8 +71,8 @@ bool CardStack::isPuttingDownPossible(Card inCommingCard) const {
 	return false;
 }
 
-CardStackRepresenter CardStack::getCardsRepresenter() const {
-	return CardStackRepresenter(
+CardStackView CardStack::getCardsRepresenter() const {
+	return CardStackView(
 			vector<Card>::const_iterator(this->cards.begin()),
 			vector<Card>::const_iterator(this->cards.end()));
 }

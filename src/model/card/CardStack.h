@@ -10,7 +10,8 @@
 
 #include <vector>
 #include <string>
-#include "../../CardStackRepresenter.h"
+
+#include "../../view/CardStackView.h"
 #include "Card.h"
 
 
@@ -38,7 +39,7 @@ public:
 	vector<Card> getUpTurnedCards();
 	const Card * showTopCard(){return &(this->cards.back());};
 	void shuffle();
-	CardStackRepresenter getCardsRepresenter() const;
+	CardStackView getCardsRepresenter() const;
 
 	virtual bool isPuttingDownPossible(Card) const;
 	//debug funtion

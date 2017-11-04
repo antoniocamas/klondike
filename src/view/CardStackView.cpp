@@ -5,29 +5,30 @@
  *      Author: antonio
  */
 
+#include "CardStackView.h"
+
 #include <vector>
 #include <string>
 #include <algorithm>
 
-#include "CardStackRepresenter.h"
 #include "Card.h"
 
 using namespace std;
 
 namespace card {
 
-CardStackRepresenter::~CardStackRepresenter() {
+CardStackView::~CardStackView() {
 	// TODO Auto-generated destructor stub
 }
 
-CardStackRepresenter& CardStackRepresenter::operator =(
-		CardStackRepresenter other) {
+CardStackView& CardStackView::operator =(
+		CardStackView other) {
 	this->beginIt = other.beginIt;
 	this->endIt = other.endIt;
 	return *this;
 }
 
-vector<string> CardStackRepresenter::upTurnedCards2String() {
+vector<string> CardStackView::upTurnedCards2String() {
 	vector<string> cardsString;
 	for (auto it = this->beginIt; it != this->endIt; ++it) {
 		if ((*it).isUpTurned())
@@ -36,7 +37,7 @@ vector<string> CardStackRepresenter::upTurnedCards2String() {
 	return cardsString;
 }
 
-vector<string> CardStackRepresenter::topCard2String(int numberOfCards) {
+vector<string> CardStackView::topCard2String(int numberOfCards) {
 	vector<string> cardsString;
 	vector<Card>::const_iterator firstCardIt;
 
@@ -51,7 +52,7 @@ vector<string> CardStackRepresenter::topCard2String(int numberOfCards) {
 	return cardsString;
 }
 
-string CardStackRepresenter::topCard2String() {
+string CardStackView::topCard2String() {
 	vector<string> cardsString = this->topCard2String(1);
 
 	if (cardsString.empty())
@@ -60,15 +61,15 @@ string CardStackRepresenter::topCard2String() {
 	return cardsString.at(0);
 }
 
-vector<string> CardStackRepresenter::allCard2String() {
+vector<string> CardStackView::allCard2String() {
 	return this->topCard2String(this->getNumberOfCardsInTheStack());
 }
 
-string CardStackRepresenter::representCard(Card card) const {
+string CardStackView::representCard(Card card){
 	return card.card2string();
 }
 
-int CardStackRepresenter::getNumberOfCardsInTheStack() {
+int CardStackView::getNumberOfCardsInTheStack() {
 	return distance(this->beginIt, this->endIt);
 }
 

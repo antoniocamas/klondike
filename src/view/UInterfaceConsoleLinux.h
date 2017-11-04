@@ -27,8 +27,14 @@ class UInterfaceConsoleLinux {
 private:
 	map<string,string> tableElementRepresenter = {
 			{"remainder", "r"}, {"waste", "w"}, {"foundation","f"},
-			{"pile", "p"}, {"backCard", "@"}
+			{"pile", "p"}, {"backCard", "@"}, {"card", ".{1,2}[aA-zZ]"}
 	};
+
+	map<string,vector<string>> suitFrenchDeckConsoleLinux = {
+			{"Clubs", {BLACK,string("C")}}, {"Hearts", {RED, string("H")}},
+			{"Spades", {BLACK, string("S")}}, { "Diamonds", {RED, string("D")}}
+	};
+
 	Table * table;
 	IOConsoleLinux io;
 
