@@ -27,6 +27,7 @@ src \
 src/controller \
 src/model \
 src/model/card \
+src/utils \
 src/view \
 test \
 

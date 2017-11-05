@@ -12,7 +12,11 @@
 #include "MovementController.h"
 #include "Remainder2WasteController.h"
 #include "Waste2PileController.h"
+#include "Waste2FoundationController.h"
+#include "Pile2PileController.h"
+#include "Pile2FoundationController.h"
 #include "MovementBuilderTextMode.h"
+#include "CardViewConsoleLinux.h"
 
 //debug
 #include <iostream>
@@ -44,6 +48,26 @@ shared_ptr<MovementController> MovementBuilderTextMode::getMovement() const{
 	if (origin.front() == "waste"){
 		if(destination.front() == "pile")
 			return make_shared<Waste2PileController>(this->table, stoi(destination.back())-1);
+		else if(destination.front() == "foundation")
+			return make_shared<Waste2FoundationController>(this->table, stoi(destination.back())-1);
+	}
+
+
+	if (origin.front() == "pile"){
+		if(destination.front() == "foundation"){
+			return make_shared<Pile2FoundationController>(
+					this->table, stoi(origin.back())-1, stoi(destination.back())-1);
+		}
+		else if (destination.front() == "pile"){
+			CardViewConsoleLinux cardview;
+			cardview.createCardfromRepresentation(classifiers.at(2).back());
+			vector<string> origin = classifiers.front();
+			vector<string> destinatio = classifiers.at(1);
+			int originPileNumber = stoi(origin.back())-1;
+			int destPileNumber = stoi(destination.back())-1;
+			return make_shared<Pile2PileController>(this->table, originPileNumber,
+					destPileNumber, cardview.getCard());
+		}
 	}
 
 

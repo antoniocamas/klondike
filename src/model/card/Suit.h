@@ -10,7 +10,6 @@
 
 #include <iostream>
 #include <string>
-#include <map>
 
 using namespace std;
 
@@ -20,14 +19,12 @@ class Suit {
 private:
 	int numberOfCardsperSuit;
 	string name;
-	string shortName;
 	string color;
-	map<int, string> nicknames;
 
 public:
 	Suit(){};
-	Suit(string name, string color,	int numberOfCardsperSuit, map<int, string> nicknames);
-	virtual ~Suit();
+	Suit(string name, string color,	int numberOfCardsperSuit);
+	virtual ~Suit(){};
 
 	Suit & operator=(Suit other);
 	//Suit & operator=(Suit& ) = delete;
@@ -35,8 +32,6 @@ public:
 	inline bool operator==(const Suit & other) const {return other.name == this->name;}
 	inline string getColor(){return this->color;}
 	inline string getName()const {return this->name;}
-	inline string getShortName()const {return this->shortName;}
-	string getNickName(int number) const;
 	inline bool isFirstNumberOfSuit(int number) const {return number == 1;}
 	inline bool isLastNumberOfSuit(int number) const {return number == this->numberOfCardsperSuit;}
 

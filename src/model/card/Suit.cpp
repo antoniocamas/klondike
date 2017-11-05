@@ -15,38 +15,17 @@ using namespace card;
 namespace card {
 
 Suit::Suit(string name, string color,
-		int numberOfCards, map<int, string> nicknames) {
+		int numberOfCards) {
 	this->name = name;
-	this->shortName = this->name.at(0);
 	this->color = color;
 	this->numberOfCardsperSuit = numberOfCards;
-	this->nicknames = nicknames;
 }
-
-Suit::~Suit() {
-	// TODO Auto-generated destructor stub
-}
-
-string Suit::getNickName(int number) const {
-
-	std::map<int,string>::const_iterator iterator;
-
-	iterator = this->nicknames.find(number);
-	if (iterator != this->nicknames.end())
-		return iterator->second;
-
-	return to_string(number);
-}
-
-
-} /* namespace card */
 
 Suit& Suit::operator =(Suit other) {
 	this->name = other.name;
-	this->shortName = this->name.at(0);
 	this->color = other.color;
 	this->numberOfCardsperSuit = other.numberOfCardsperSuit;
-	this->nicknames = other.nicknames;
 	return *this;
 }
 
+} /* namespace card */

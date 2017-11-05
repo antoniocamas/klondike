@@ -27,10 +27,9 @@ UInterfaceConsoleLinux::~UInterfaceConsoleLinux() {
 }
 
 void UInterfaceConsoleLinux::showTable() {
-	//card::CardStackRepresenter cardRepresenter;
-	card::CardStackRepresenterConsoleLinux cardRepresenter;
-
+		card::CardStackViewConsoleLinux cardRepresenter;
 	io.printHeader();
+
 	cardRepresenter = table->getRemainderRepresenter();
 	io.printRemainder(cardRepresenter.getNumberOfCardsInTheStack() > 0);
 	cardRepresenter = table->getWasterRepresenter();
@@ -38,7 +37,7 @@ void UInterfaceConsoleLinux::showTable() {
 
 	for (int i = 0; i < table->getNumberOfFundations(); ++i){
 		cardRepresenter = table->getFoundationRepresenter(i);
-		io.printFoundation(cardRepresenter.topCard2String(), i+1);
+		io.printFoundation(cardRepresenter.allCard2String(), i+1);
 	}
 
 	io.printNewLine();

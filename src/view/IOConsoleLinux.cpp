@@ -25,24 +25,6 @@ IOConsoleLinux::~IOConsoleLinux() {
 string IOConsoleLinux::niceConsoleCard(string card) {
 
 string newCardRepresentation = card;
-//	if (card.empty())
-//		return card;
-//
-//	char suite = *(card.end()-1);
-//	string number = card
-//	switch (suite) {
-//	case 'H':
-//		RED + card + RESET;
-//		break;
-//	}
-//	case
-//
-//	if (suite == 'H')
-//		or suite == 'D')
-//		return RED + card + RESET;
-//
-//	return BLACK + card + RESET;
-
 	return newCardRepresentation;
 }
 
@@ -91,10 +73,12 @@ void IOConsoleLinux::printWaste(vector<string> cardsRepresentation) {
 	cout << representation;
 }
 
-void IOConsoleLinux::printFoundation(string cardsRepresentation,
+void IOConsoleLinux::printFoundation(vector<string> cardsRepresentation,
 		int foundationNumber) {
 
 	string representation = this->getBasicRepresentation("foundation", foundationNumber);
+	for (auto card : cardsRepresentation)
+		representation += "[" + this->niceConsoleCard(card);
 	if (!cardsRepresentation.empty())
 		representation += "]";
 	else
@@ -104,8 +88,7 @@ void IOConsoleLinux::printFoundation(string cardsRepresentation,
 	cout << representation;
 }
 
-void IOConsoleLinux::printPile(vector<string> cardsRepresentation,
-		int pileNumber) {
+void IOConsoleLinux::printPile(vector<string> cardsRepresentation, int pileNumber) {
 
 	string representation = this->getBasicRepresentation("pile", pileNumber);
 	for (auto card : cardsRepresentation)

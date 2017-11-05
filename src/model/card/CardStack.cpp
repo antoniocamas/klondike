@@ -42,7 +42,7 @@ vector<Card> CardStack::giveTopCardAway(int numberOfCards) {
 
 	int cards2give = std::min(size_t(numberOfCards), this->cards.size());
 	for (int i=0; i < cards2give; ++i){
-		topCards.push_back(this->giveTopCardAway());
+		topCards.insert(topCards.begin(), this->giveTopCardAway());
 	}
 	return topCards;
 }
@@ -58,6 +58,16 @@ vector<Card> CardStack::getUpTurnedCards() {
 	return upTurnedCards;
 }
 
+void CardStack::turnTopCard() {
+	if (!this->cards.empty())
+		this->cards.back().upTurn();
+}
+
+int CardStack::numberOfCardsOnTopOf(Card card){
+	vector<Card>::iterator foundCardIt = this->findCard(card);
+	return distance(foundCardIt,cards.end());
+}
+
 vector<Card>::iterator CardStack::findCard(Card card) {
 	for (vector<Card>::iterator it = this->cards.begin(); it != this->cards.end(); ++it)
 		if (card == (*it)){ return it;}
@@ -66,9 +76,7 @@ vector<Card>::iterator CardStack::findCard(Card card) {
 }
 
 bool CardStack::isPuttingDownPossible(Card inCommingCard) const {
-
-	cout << "debug: In CardStack is Putting Down Possible: " << inCommingCard.card2string() << endl;
-	return false;
+	return true;
 }
 
 CardStackView CardStack::getCardsRepresenter() const {

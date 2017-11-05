@@ -29,7 +29,8 @@ protected:
 	vector<Card>::iterator findCard(Card card);
 public:
 	CardStack(){};
-	virtual ~CardStack();
+	virtual ~CardStack()
+	;
 	bool isEmpty(){return cards.empty();}
 	size_t getNumberOfCards(){return this->cards.size(); }
 	void putCardOnTop(Card card){ this->cards.push_back(card);}
@@ -37,11 +38,14 @@ public:
 	Card giveTopCardAway();
 	vector<Card> giveTopCardAway(int numberOfCards);
 	vector<Card> getUpTurnedCards();
+	void turnTopCard();
+	int numberOfCardsOnTopOf(Card);
 	const Card * showTopCard(){return &(this->cards.back());};
 	void shuffle();
 	CardStackView getCardsRepresenter() const;
 
 	virtual bool isPuttingDownPossible(Card) const;
+	virtual bool isMovingTopStackPossible(Card){return false;}; //Only for Pile. Move Pile implementation to Composition.
 	//debug funtion
 //	string cards2string(){
 //		string repr;

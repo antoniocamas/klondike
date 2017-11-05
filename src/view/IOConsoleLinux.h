@@ -26,7 +26,7 @@ public:
 	void printHeader();
 	void printRemainder(bool cardLeft);
 	void printWaste(vector<string> cardsRepresentation);
-	void printFoundation(string cardsRepresentation, int foundationNumber);
+	void printFoundation(vector<string> cardsRepresentation, int foundationNumber);
 	void printPile(vector<string> cardsRepresentation, int pileNumber);
 	void printMessage(string message);
 	void printSplitter();

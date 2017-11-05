@@ -20,7 +20,7 @@ protected:
 
 public:
 	MovementController(Table* table){this->table = table;}
-	virtual ~MovementController();
+	virtual ~MovementController(){};
 
 	virtual bool isValid() = 0;
 	virtual void applyMovement();

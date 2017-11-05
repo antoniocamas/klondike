@@ -13,11 +13,14 @@
 using namespace card;
 class Pile: public card::CardStack {
 public:
-	Pile();
-	virtual ~Pile();
+	Pile(){};
+	virtual ~Pile(){};
 	using CardStack::giveTopCardAway;
 	vector<Card> giveTopCardAway(Card fistCard2Lift);
+
+	virtual bool isMovingTopStackPossible(Card);
 	virtual bool isPuttingDownPossible(Card inCommingCard)const;
+
 };
 
 #endif /* PILE_H_ */

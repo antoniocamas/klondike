@@ -14,10 +14,6 @@ Waste2PileController::Waste2PileController(Table * t, int pileNumber): MovementC
 	this->origin = this->table->getWaste();
 };
 
-Waste2PileController::~Waste2PileController() {
-	// TODO Auto-generated destructor stub
-}
-
 bool Waste2PileController::isValid(){
 	if (this->origin->isEmpty())
 		return false;

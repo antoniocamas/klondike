@@ -44,7 +44,7 @@ private:
 
 public:
 	Table();
-	virtual ~Table();
+	virtual ~Table(){};
 
 	bool areAllFoundationsComplete() const;
 	inline int getNumberOfPiles() const {return piles.size();}

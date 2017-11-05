@@ -12,16 +12,12 @@
 
 namespace card {
 
-class CardStackRepresenterConsoleLinux: public CardStackView {
-private:
-	std::map<string,vector<string>> suitFrenchDeckConsoleLinux;
-
+class CardStackViewConsoleLinux: public CardStackView {
 public:
-	//CardStackRepresenterConsoleLinux(map<string,vector<string>> * m): suitFrenchDeckConsoleLinux(m){};
-	CardStackRepresenterConsoleLinux();
-	virtual ~CardStackRepresenterConsoleLinux(){};
+	CardStackViewConsoleLinux(){};
+	virtual ~CardStackViewConsoleLinux(){};
 
-	CardStackRepresenterConsoleLinux & operator=(CardStackView other);
+	CardStackViewConsoleLinux & operator=(CardStackView other);
 
 private:
 	string representCard(Card card);

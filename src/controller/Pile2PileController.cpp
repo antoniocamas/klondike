@@ -5,6 +5,7 @@
  *      Author: antonio
  */
 
+#include <vector>
 #include "Pile2PileController.h"
 
 Pile2PileController::Pile2PileController(Table * t, int originPileNumber, int destinationPileNumber,
@@ -16,8 +17,15 @@ Pile2PileController::Pile2PileController(Table * t, int originPileNumber, int de
 
 
 void Pile2PileController::applyMovement() {
-	Card card = origin->giveTopCardAway();
-	destination->putCardOnTop(card);
+	vector<Card> cards = origin->giveTopCardAway(origin->numberOfCardsOnTopOf(originCard));
+	origin->turnTopCard();
+	destination->putCardOnTop(cards);
 }
 
-bool Pile2PileController::isValid() {return true;}
+bool Pile2PileController::isValid() {
+
+	if (origin->isMovingTopStackPossible(originCard) and
+			destination->isPuttingDownPossible(originCard))
+		return true;
+	return false;
+}

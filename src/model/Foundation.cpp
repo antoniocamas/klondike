@@ -14,10 +14,6 @@ Foundation::Foundation() {
 
 }
 
-Foundation::~Foundation() {
-	// TODO Auto-generated destructor stub
-}
-
 bool Foundation::isComplete() const {
 	if (this->cards.empty())
 			return false;
@@ -26,9 +22,6 @@ bool Foundation::isComplete() const {
 }
 
 bool Foundation::isPuttingDownPossible(Card inCommingCard) const {
-#include <iostream>
-	std::cout << "In foundation" << std::endl;
-
 	if (this->cards.empty())
 		return inCommingCard.isFirstNumberOfSuit();
 

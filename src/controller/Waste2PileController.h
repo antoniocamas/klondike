@@ -13,7 +13,7 @@
 class Waste2PileController: public MovementController {
 public:
 	Waste2PileController(Table * t, int p);
-	virtual ~Waste2PileController();
+	virtual ~Waste2PileController(){};
 
 	bool isValid();
 };

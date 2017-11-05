@@ -9,16 +9,9 @@
 #include "Table.h"
 #include "Card.h"
 
-//Movement::Movement(Tableau table) {
-//	this->table &table;
-//}
-
-MovementController::~MovementController() {
-	// TODO Auto-generated destructor stub
-}
-
 void MovementController::applyMovement() {
 	Card card = origin->giveTopCardAway();
+	origin->turnTopCard();
 	card.upTurn();
 	destination->putCardOnTop(card);
 }

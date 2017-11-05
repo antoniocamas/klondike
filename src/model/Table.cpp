@@ -5,30 +5,22 @@
  *      Author: antonio
  */
 
-#include <string>
-#include "Table.h"
-#include "Foundation.h"
 
-// debug
-#include <iostream>
+#include "Table.h"
 #include "Deck.h"
 
-Table::Table() {
+Table::Table(){
 	this->deal();
-}
-
-Table::~Table() {
-	// TODO Auto-generated destructor stub
 }
 
 void Table::deal()
 {
 	card::Deck deck;
 	deck.shuffle();
-	Card card;
+	card::Card card;
 
 	for (int pilesFull = 0; pilesFull < numberOfPiles; ++pilesFull) {
-		for (int i=7 ; i > pilesFull-1 ; --i){
+		for (int i=piles.size()-1 ; i > pilesFull-1 ; --i){
 			card = deck.giveTopCardAway();
 			if (i == pilesFull)
 				card.upTurn();
@@ -46,16 +38,3 @@ bool Table::areAllFoundationsComplete() const {
 
 	return true;
 }
-//void Tableau::applyMovement(Movement movement) {
-//	std::string::size_type sz;
-//	switch (std::stoi(movement.getStackDestination(), sz)){
-//	case stoi("foundation, sz"):
-//		cout << "Foundation detected" << endl;
-//		this->foundations.at(movement.getDestinationIndex()).isPuttingDownPossible(movement.getCardOrigin());
-//		break;
-//	case stoi("pile", sz):
-//		this->piles.at(movement.getDestinationIndex()).isPuttingDownPossible(movement.getCardOrigin());
-//		break;
-//	}
-//
-//}

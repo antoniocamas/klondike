@@ -10,7 +10,7 @@
 #include <string>
 
 namespace card {
-Card::Card(int number, Suit suit) {
+Card::Card(unsigned int number, Suit suit) {
 	this->number = number;
 	this->suit = suit;
 	this->upTurned = false;
@@ -31,9 +31,9 @@ Card& Card::operator =(Card other) {
 	return *this;
 }
 
-string Card::card2string() const {
-	return this->suit.getNickName(this->number) + " " + this->suit.getName();
-}
+//string Card::card2string() const {
+//	return this->suit.getNickName(this->number) + " " + this->suit.getName();
+//}
 
 //string Card::getCardRepesentation() const {
 //	if (!this->isUpTurned())

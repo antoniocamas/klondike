@@ -65,10 +65,6 @@ vector<string> CardStackView::allCard2String() {
 	return this->topCard2String(this->getNumberOfCardsInTheStack());
 }
 
-string CardStackView::representCard(Card card){
-	return card.card2string();
-}
-
 int CardStackView::getNumberOfCardsInTheStack() {
 	return distance(this->beginIt, this->endIt);
 }

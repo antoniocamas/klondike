@@ -11,15 +11,6 @@
 using namespace std;
 using namespace card;
 
-Pile::Pile() {
-	// TODO Auto-generated constructor stub
-
-}
-
-Pile::~Pile() {
-	// TODO Auto-generated destructor stub
-}
-
 vector<Card> Pile::giveTopCardAway(Card fistCard2Lift) {
 	vector<Card> cards2Return;
 	vector<Card>::iterator it = this->findCard(fistCard2Lift);
@@ -36,4 +27,17 @@ bool Pile::isPuttingDownPossible(Card inCommingCard) const{
 
 	return this->cards.back().isReverseConsecutiveNumber(inCommingCard) and
 			!(this->cards.back().isSameColor(inCommingCard));
+}
+
+bool Pile::isMovingTopStackPossible(Card card) {
+	vector<Card>::iterator foundCardIt = this->findCard(card);
+
+	if (foundCardIt == cards.end())
+		return false;
+
+	for (auto it = foundCardIt; it!= cards.end()-1; ++it)
+		if (!(*it).isReverseConsecutiveNumber(*(it+1)) or (*it).isSameColor(*(it+1)) or
+				(*it).isSameSuit(*(it+1)))
+				return false;
+	return true;
 }

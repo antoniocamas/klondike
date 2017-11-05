@@ -22,19 +22,20 @@ namespace card {
 //}st_suit;
 
 class Card {
-	int number;
+	unsigned int number;
 	Suit suit;
 	bool upTurned;
 public:
 	Card(){}
-	Card(int number, Suit suit);
+	Card(unsigned int number, Suit suit);
 	virtual ~Card();
 	Card & operator=(Card other);
 	bool operator==(Card otherCard) const;
 	bool operator!=(Card otherCard) const {return !((*this) == otherCard);};
-	string card2string() const;
+	//string card2string() const;
 	inline const Suit& getSuit() const {return this->suit;}
-	inline int  getNumber() const {return this->number;}
+	inline unsigned int  getNumber() const {return this->number;}
+	inline string getSuitName() const {return this->suit.getName();}
 	inline bool isUpTurned()const{return this->upTurned;}
 	inline void turn(){this->upTurned = !this->upTurned;}
 	inline void upTurn(){if(!this->upTurned){this->turn();}}

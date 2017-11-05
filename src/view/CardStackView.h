@@ -20,11 +20,11 @@ private:
 	vector<Card>::const_iterator beginIt;
 	vector<Card>::const_iterator endIt;
 protected:
-	virtual string representCard(Card card);
+	virtual string representCard(Card card){return NULL;};
 public:
 	CardStackView(){};
 	CardStackView(vector<Card>::const_iterator b,
-			vector<Card>::const_iterator e): beginIt(b), endIt(e) {};
+		vector<Card>::const_iterator e): beginIt(b), endIt(e) {};
 	virtual ~CardStackView();
 	CardStackView& operator=(CardStackView other);
 

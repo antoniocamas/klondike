@@ -10,6 +10,7 @@ RM := rm
 -include sources.mk
 -include test/subdir.mk
 -include src/view/subdir.mk
+-include src/utils/subdir.mk
 -include src/model/card/subdir.mk
 -include src/model/subdir.mk
 -include src/controller/subdir.mk

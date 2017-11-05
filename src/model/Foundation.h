@@ -16,7 +16,7 @@ using namespace card;
 class Foundation: public Pile {
 public:
 	Foundation();
-	virtual ~Foundation();
+	virtual ~Foundation(){};
 	bool isComplete() const;
 	bool isPuttingDownPossible(Card inCommingCard) const;
 
