@@ -13,12 +13,20 @@ Remainder2WasteController::Remainder2WasteController(Table * t): MovementControl
 	this->origin = this->table->getRemainder();
 };
 
-
-Remainder2WasteController::~Remainder2WasteController() {
-	// TODO Auto-generated destructor stub
+void Remainder2WasteController::applyMovement() {
+	if (!this->origin->isEmpty()){
+		MovementController::applyMovement();
+	}
+	else{
+		vector<Card> cardsWaste = destination->giveTopCardAway(destination->getNumberOfCards());
+		vector<Card> cards4Remainder;
+		for (auto card :cardsWaste)
+			cards4Remainder.insert(cards4Remainder.begin(), card);
+		origin->putCardOnTop(cards4Remainder);
+	}
 }
 
 bool Remainder2WasteController::isValid() {
-	return !this->origin->isEmpty();
+	return !this->origin->isEmpty() or !this->destination->isEmpty();
 }
 

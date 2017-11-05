@@ -14,8 +14,9 @@
 class Remainder2WasteController: public MovementController {
 public:
 	Remainder2WasteController(Table * t);
-	virtual ~Remainder2WasteController();
+	virtual ~Remainder2WasteController(){};
 
+	void applyMovement();
 	bool isValid();
 };
 

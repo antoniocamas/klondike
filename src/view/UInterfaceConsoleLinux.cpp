@@ -37,7 +37,7 @@ void UInterfaceConsoleLinux::showTable() {
 
 	for (int i = 0; i < table->getNumberOfFundations(); ++i){
 		cardRepresenter = table->getFoundationRepresenter(i);
-		io.printFoundation(cardRepresenter.allCard2String(), i+1);
+		io.printFoundation(cardRepresenter.topCard2String(1), i+1);
 	}
 
 	io.printNewLine();

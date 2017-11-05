@@ -19,5 +19,4 @@ bool Pile2FoundationController::isValid() {
 		return false;
 	const card::Card * card = this->origin->showTopCard();
 	return this->destination->isPuttingDownPossible(*card);
-
 }

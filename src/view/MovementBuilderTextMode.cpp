@@ -15,6 +15,7 @@
 #include "Waste2FoundationController.h"
 #include "Pile2PileController.h"
 #include "Pile2FoundationController.h"
+#include "Foundation2PileController.h"
 #include "MovementBuilderTextMode.h"
 #include "CardViewConsoleLinux.h"
 
@@ -52,7 +53,6 @@ shared_ptr<MovementController> MovementBuilderTextMode::getMovement() const{
 			return make_shared<Waste2FoundationController>(this->table, stoi(destination.back())-1);
 	}
 
-
 	if (origin.front() == "pile"){
 		if(destination.front() == "foundation"){
 			return make_shared<Pile2FoundationController>(
@@ -70,17 +70,11 @@ shared_ptr<MovementController> MovementBuilderTextMode::getMovement() const{
 		}
 	}
 
-
-
-
-
-//	if(classifiers.at(0) == "remainder"){
-//		shared_ptr<MovementController> movement(new Remainder2WasteController(this->table));
-//		return movement;
-//	}
-	//retrievecardifneeded
-	//createmovement
-	//returnit
+	if (origin.front() == "foundation")
+		if(destination.front() == "pile"){
+			return make_shared<Foundation2PileController>(
+					this->table, stoi(origin.back())-1, stoi(destination.back())-1);
+		}
 
 
 	return movement;
