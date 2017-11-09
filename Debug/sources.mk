@@ -29,5 +29,6 @@ src/model \
 src/model/card \
 src/utils \
 src/view \
+src/view/console \
 test \
 

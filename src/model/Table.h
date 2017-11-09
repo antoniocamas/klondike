@@ -13,7 +13,6 @@
 #include <string>
 
 #include "../view/CardStackView.h"
-#include "Score.h"
 #include "Pile.h"
 #include "Foundation.h"
 #include "CardStack.h"
@@ -21,20 +20,12 @@
 
 using namespace std;
 
-//typedef enum {
-//	remainder,
-//	waste,
-//	pile,
-//	foundation
-//}TableauArea;
-
 //const int numberOfFoundations = 4;
 //const int numberOfPiles = 3;
 
 class Table {
 private:
 
-	Score score;
 	array<Pile,7> piles;
 	array<Foundation,4> foundations;
 	CardStack remainder;

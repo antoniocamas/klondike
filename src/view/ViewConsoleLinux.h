@@ -16,13 +16,14 @@
 #include <string>
 #include <memory>
 
+#include "View.h"
 #include "Table.h"
 #include "ActionController.h"
 #include "IOConsoleLinux.h"
 
 using namespace std;
 
-class UInterfaceConsoleLinux {
+class ViewConsoleLinux: public View {
 
 private:
 	map<string,string> tableElementRepresenter = {
@@ -30,15 +31,15 @@ private:
 			{"pile", "p"}, {"backCard", "@"}, {"card", ".{1,2}[aA-zZ]"}
 	};
 
-	Table * table;
 	IOConsoleLinux io;
 
 public:
-	UInterfaceConsoleLinux(Table * table);
-	virtual ~UInterfaceConsoleLinux();
+	ViewConsoleLinux();
+	virtual ~ViewConsoleLinux(){};
 	void showTable();
 	void showWinMessage();
 	shared_ptr<ActionController> getAction();
+	//void getNextMovement();
 private:
 	static void inline printMessage(const string message) { cout << message << endl; }
 };

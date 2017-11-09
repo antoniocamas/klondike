@@ -23,7 +23,6 @@ class InputManagerTextMode {
 	string foundation;
 	string pile;
 	regex validCommandsRegex;
-	//Table * table;
 	vector<string> dataFromUser;
 
 public:

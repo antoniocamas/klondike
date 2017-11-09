@@ -19,10 +19,9 @@
 #include "MovementController.h"
 #include "Pile2PileController.h"
 #include "Suit.h"
-#include "Score.h"
 #include "Table.h"
-#include "UInterfaceConsoleLinux.h"
 #include "view/CardStackView.h"
+#include "view/ViewConsoleLinux.h"
 
 using namespace std;
 using namespace card;

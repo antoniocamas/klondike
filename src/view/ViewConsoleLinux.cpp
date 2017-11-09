@@ -5,10 +5,11 @@
  *      Author: antonio
  */
 
+#include "ViewConsoleLinux.h"
+
 #include <iostream>
 #include <string>
 #include <memory>
-#include "UInterfaceConsoleLinux.h"
 #include "CardStackView.h"
 #include "ActionController.h"
 #include "ActionGame.h"
@@ -19,14 +20,9 @@
 
 using namespace std;
 
-UInterfaceConsoleLinux::UInterfaceConsoleLinux(Table * table):table(table), io(this->tableElementRepresenter){
-}
+ViewConsoleLinux::ViewConsoleLinux(): io(this->tableElementRepresenter){}
 
-UInterfaceConsoleLinux::~UInterfaceConsoleLinux() {
-	// TODO Auto-generated destructor stub
-}
-
-void UInterfaceConsoleLinux::showTable() {
+void ViewConsoleLinux::showTable() {
 		card::CardStackViewConsoleLinux cardRepresenter;
 	io.printHeader();
 
@@ -49,14 +45,14 @@ void UInterfaceConsoleLinux::showTable() {
 	}
 }
 
-void UInterfaceConsoleLinux::showWinMessage() {
+void ViewConsoleLinux::showWinMessage() {
 	showTable();
 	io.printSplitter();
 	io.printMessage("\tCongratulations, you have won Klondike!!!\n");
 }
 
 
-shared_ptr<ActionController> UInterfaceConsoleLinux::getAction() {
+shared_ptr<ActionController> ViewConsoleLinux::getAction() {
 
 	io.printSplitter();
 
@@ -90,3 +86,31 @@ shared_ptr<ActionController> UInterfaceConsoleLinux::getAction() {
 	return action;
 }
 
+//void ViewConsoleLinux::getNextMovement() {
+//
+//	io.printSplitter();
+//
+//	string message = "\tEnter the ";
+//
+//
+//	InputManagerTextMode inputManager(this->table, this->tableElementRepresenter);
+//	do{
+//		io.printMessage(message + inputManager.getNextExpectedElement() + ": ");
+//		string input = io.getInput();
+//
+//		if (inputManager.isInputCorrect(input)){
+//			inputManager.addNewInput(input);
+//		}
+//		else
+//			io.printMessage("\tI coudn't understand what you mean \n");
+//
+//	}while(!inputManager.isEnoughInput());
+//
+//
+//
+////		if (!action->isValid())
+////			io.printMessage("\t\tInvalid Movement!!\n");
+//
+//
+//
+//}

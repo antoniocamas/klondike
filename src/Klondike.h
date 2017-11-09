@@ -8,12 +8,7 @@
 #ifndef KLONDIKE_H_
 #define KLONDIKE_H_
 
-#include "Table.h"
-
 class Klondike {
-private:
-Table table;
-
 public:
 	Klondike(){};
 	virtual ~Klondike(){};

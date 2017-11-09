@@ -27,7 +27,7 @@ InputManagerTextMode::InputManagerTextMode(Table* table,
 	this->pile = tableElementRepresenter["pile"] + "[1-" + to_string(
 			table->getNumberOfPiles()) + "]";
 
-	//regex is something like "r|w|f[1-4]|p[1-7]]|card ..."
+	//regex is something like "r|w|f[1-4]|p[1-7]]"
 	this->validCommandsRegex  = this->remainder + "|" + this->waste + "|"
 			+ this->foundation + "|" + this->pile;
 
