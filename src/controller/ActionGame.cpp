@@ -6,19 +6,15 @@
  */
 
 #include <memory>
-#include "Remainder2WasteController.h"
 #include "MovementController.h"
 #include "ActionGame.h"
 
 ActionGame::ActionGame(Table * t, shared_ptr<MovementController> movement): ActionController(t) {
 	this->movement = movement;
 };
-ActionGame::~ActionGame() {
-	// TODO Auto-generated destructor stub
-}
 
 bool ActionGame::isValid() {
-	if (movement == NULL)
+	if (movement == nullptr)
 		return false;
 	return this->movement->isValid();
 }

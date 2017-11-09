@@ -13,8 +13,9 @@ Configurator* Configurator::instance = nullptr;
 
 Configurator::Configurator() {
 
-	this->suitNumberOfCards = 10;
-	//this->suitNumberOfCards = 13;
+	this->numberOfPiles = 7;
+
+	this->suitNumberOfCards = 13;
 	this->suitModel = {
 		{"Clubs", "black"}, {"Diamonds", "red"}, {"Spades", "black"}, {"Hearts", "red"}
 	};

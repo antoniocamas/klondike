@@ -19,8 +19,10 @@ void Table::deal()
 	deck.shuffle();
 	card::Card card;
 
+	int numberOfPiles = Configurator::getInstance()->getNumberOfPiles();
+
 	for (int pilesFull = 0; pilesFull < numberOfPiles; ++pilesFull) {
-		for (int i=piles.size()-1 ; i > pilesFull-1 ; --i){
+		for (int i=numberOfPiles-1 ; i > pilesFull-1 ; --i){
 			card = deck.giveTopCardAway();
 			if (i == pilesFull)
 				card.upTurn();

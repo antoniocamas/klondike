@@ -49,6 +49,13 @@ void UInterfaceConsoleLinux::showTable() {
 	}
 }
 
+void UInterfaceConsoleLinux::showWinMessage() {
+	showTable();
+	io.printSplitter();
+	io.printMessage("\tCongratulations, you have won Klondike!!!\n");
+}
+
+
 shared_ptr<ActionController> UInterfaceConsoleLinux::getAction() {
 
 	io.printSplitter();
@@ -82,3 +89,4 @@ shared_ptr<ActionController> UInterfaceConsoleLinux::getAction() {
 
 	return action;
 }
+

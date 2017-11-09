@@ -19,9 +19,6 @@
 #include "MovementBuilderTextMode.h"
 #include "CardViewConsoleLinux.h"
 
-//debug
-#include <iostream>
-
 using namespace std;
 
 MovementBuilderTextMode::MovementBuilderTextMode(Table * table,
@@ -97,13 +94,14 @@ vector<vector<string>> MovementBuilderTextMode::translateInput() const {
 		}
 	}
 
-	for (auto it = classifiers.begin(); it != classifiers.end(); ++it) {
-		cout << "Element: ";
-		for(unsigned int i = 0; i < (*it).size(); ++i){
-			cout << " " << (*it)[i];
-		}
-		cout << endl;
-	}
+//#include <iostream>
+//	for (auto it = classifiers.begin(); it != classifiers.end(); ++it) {
+//		cout << "Element: ";
+//		for(unsigned int i = 0; i < (*it).size(); ++i){
+//			cout << " " << (*it)[i];
+//		}
+//		cout << endl;
+//	}
 
 	return classifiers;
 }

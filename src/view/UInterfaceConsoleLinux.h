@@ -37,6 +37,7 @@ public:
 	UInterfaceConsoleLinux(Table * table);
 	virtual ~UInterfaceConsoleLinux();
 	void showTable();
+	void showWinMessage();
 	shared_ptr<ActionController> getAction();
 private:
 	static void inline printMessage(const string message) { cout << message << endl; }

@@ -5,8 +5,6 @@
  *      Author: antonio
  */
 
-#include <vector>
-#include <string>
 #include <memory>
 
 #include "Klondike.h"
@@ -15,11 +13,10 @@
 #include "ActionController.h"
 
 
-Klondike::~Klondike() {
-	// TODO Auto-generated destructor stub
-}
+#include "View.h"
+#include "Controller.h"
 
-void Klondike::startGame()
+void Klondike::play()
 {
 	shared_ptr<ActionController> action;
 	UInterfaceConsoleLinux uinterface(&table);
@@ -30,5 +27,7 @@ void Klondike::startGame()
 			action->execute();
 	}while(!this->table.areAllFoundationsComplete());
 
-	uinterface.showTable();
+	uinterface.showWinMessage();
 }
+
+

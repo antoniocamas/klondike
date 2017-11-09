@@ -21,6 +21,8 @@ private:
 	map<string,vector<string>> suitRepresentationGuide;
 	map<int, string> cardNicknames;
 
+	int numberOfPiles;
+
 	static Configurator* instance;
 	Configurator();
 
@@ -36,6 +38,7 @@ public:
 	map<string,vector<string>> getSuitRepresentationGuide() const {return suitRepresentationGuide;};
 	const int getSuitNumberOfCards() const {return suitNumberOfCards;}
 	const map<string, string> getSuitModel(){return suitModel;}
+	const int getNumberOfPiles(){return numberOfPiles;}
 
 
 };

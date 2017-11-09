@@ -16,9 +16,9 @@ Table table;
 
 public:
 	Klondike(){};
+	virtual ~Klondike(){};
 
-	void startGame();
-	virtual ~Klondike();
+	void play();
 };
 
 #endif /* KLONDIKE_H_ */

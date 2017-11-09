@@ -32,7 +32,7 @@ int main ()
 	cout << "Clondike Project" << endl;
 
 	Klondike game;
-	game.startGame();
+	game.play();
 
 	return 0;
 /////////////////////////////////

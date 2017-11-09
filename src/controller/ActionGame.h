@@ -19,7 +19,7 @@ class ActionGame: public ActionController {
 
 public:
 	ActionGame(Table * t, shared_ptr<MovementController> m);
-	virtual ~ActionGame();
+	virtual ~ActionGame(){};
 
 	bool isValid();
 	void execute();

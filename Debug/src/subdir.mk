@@ -6,16 +6,19 @@
 CPP_SRCS += \
 ../src/Configurator.cpp \
 ../src/Klondike.cpp \
+../src/Logic.cpp \
 ../src/main.cpp 
 
 OBJS += \
 ./src/Configurator.o \
 ./src/Klondike.o \
+./src/Logic.o \
 ./src/main.o 
 
 CPP_DEPS += \
 ./src/Configurator.d \
 ./src/Klondike.d \
+./src/Logic.d \
 ./src/main.d 
 
 

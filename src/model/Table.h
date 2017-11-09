@@ -28,15 +28,15 @@ using namespace std;
 //	foundation
 //}TableauArea;
 
-const int numberOfFoundations = 4;
-const int numberOfPiles = 7;
+//const int numberOfFoundations = 4;
+//const int numberOfPiles = 3;
 
 class Table {
 private:
 
 	Score score;
-	array<Pile,numberOfPiles> piles;
-	array<Foundation,numberOfFoundations> foundations;
+	array<Pile,7> piles;
+	array<Foundation,4> foundations;
 	CardStack remainder;
 	CardStack waste;
 
