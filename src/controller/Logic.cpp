@@ -17,14 +17,14 @@ shared_ptr<Controller> Logic::getController() {
 	shared_ptr<Controller> controller;
 
 	switch(state){
-	case START:
-		state = INGAME;
+	case State::START:
+		state = State::INGAME;
 		break;
-	case INGAME:
-		controller = make_shared<InGameController>(&table, view);
+	case State::INGAME:
+		controller = make_shared<InGameController>(&table, view, state);
 		break;
-	case FINISH:
-		state = EXIT;
+	case State::FINISH:
+		state = State::EXIT;
 		break;
 	default:
 		break;

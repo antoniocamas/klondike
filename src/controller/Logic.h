@@ -21,11 +21,11 @@ private:
 	Table table;
 
 public:
-	Logic(std::shared_ptr<View> v): state(START),view(v){view->setTable(&table);};
+	Logic(std::shared_ptr<View> v): state(State::START),view(v){view->setTable(&table);};
 	virtual ~Logic(){};
 
 	std::shared_ptr<Controller> getController();
-	bool isTimeToExit(){ return (state == EXIT);}
+	bool isTimeToExit(){ return (state == State::EXIT);}
 
 
 };

@@ -20,7 +20,10 @@ void InGameController::control() {
 
 	if(movementController->isValid())
 		movementController->applyMovement();
-//	action = view->getAction();
-//	if (action->isValid())
-//		action->execute();
+
+	if (table->areAllFoundationsComplete()){
+		view->showWinMessage();
+		state = State::FINISH;
+	}
+
 }
