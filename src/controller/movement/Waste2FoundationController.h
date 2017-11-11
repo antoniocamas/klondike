@@ -5,10 +5,10 @@
  *      Author: antonio
  */
 
-#ifndef SRC_CONTROLLER_WASTE2FOUNDATIONCONTROLLER_H_
-#define SRC_CONTROLLER_WASTE2FOUNDATIONCONTROLLER_H_
+#ifndef SRC_CONTROLLER_MOVEMENT_WASTE2FOUNDATIONCONTROLLER_H_
+#define SRC_CONTROLLER_MOVEMENT_WASTE2FOUNDATIONCONTROLLER_H_
 
-#include "MovementController.h"
+#include "movement/MovementController.h"
 
 class Waste2FoundationController: public MovementController {
 public:
@@ -18,4 +18,4 @@ public:
 	bool isValid();
 };
 
-#endif /* SRC_CONTROLLER_WASTE2FOUNDATIONCONTROLLER_H_ */
+#endif /* SRC_CONTROLLER_MOVEMENT_WASTE2FOUNDATIONCONTROLLER_H_ */

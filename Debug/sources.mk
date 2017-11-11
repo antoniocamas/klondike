@@ -25,6 +25,7 @@ C_DEPS :=
 SUBDIRS := \
 src \
 src/controller \
+src/controller/movement \
 src/model \
 src/model/card \
 src/utils \

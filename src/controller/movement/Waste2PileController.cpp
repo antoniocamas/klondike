@@ -5,9 +5,10 @@
  *      Author: antonio
  */
 
+#include "movement/Waste2PileController.h"
+
 #include "Card.h"
 #include "Pile.h"
-#include "Waste2PileController.h"
 
 Waste2PileController::Waste2PileController(Table * t, int pileNumber): MovementController(t){
 	this->destination = &(*this->table->getPile(pileNumber));

@@ -5,11 +5,11 @@
  *      Author: antonio
  */
 
-#ifndef SRC_CONTROLLER_REMAINDER2WASTECONTROLLER_H_
-#define SRC_CONTROLLER_REMAINDER2WASTECONTROLLER_H_
+#ifndef SRC_CONTROLLER_MOVEMENT_REMAINDER2WASTECONTROLLER_H_
+#define SRC_CONTROLLER_MOVEMENT_REMAINDER2WASTECONTROLLER_H_
 
+#include "movement/MovementController.h"
 #include "Table.h"
-#include "MovementController.h"
 
 class Remainder2WasteController: public MovementController {
 public:
@@ -20,4 +20,4 @@ public:
 	bool isValid();
 };
 
-#endif /* SRC_CONTROLLER_REMAINDER2WASTECONTROLLER_H_ */
+#endif /* SRC_CONTROLLER_MOVEMENT_REMAINDER2WASTECONTROLLER_H_ */

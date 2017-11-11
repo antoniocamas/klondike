@@ -5,8 +5,9 @@
  *      Author: antonio
  */
 
+#include "movement/Pile2PileController.h"
+
 #include <vector>
-#include "Pile2PileController.h"
 
 Pile2PileController::Pile2PileController(Table * t, int originPileNumber, int destinationPileNumber,
 		Card originCard): MovementController(t), originCard(originCard) {

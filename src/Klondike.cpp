@@ -8,10 +8,11 @@
 #include <memory>
 
 #include "Klondike.h"
+
+#include "controller/Logic.h"
 //#include "Table.h"
 //#include "ActionController.h"
 
-#include "Logic.h"
 #include "ViewConsoleLinux.h"
 
 //void Klondike::play()

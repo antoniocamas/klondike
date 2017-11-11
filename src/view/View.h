@@ -10,18 +10,20 @@
 
 #include <memory>
 #include "ActionController.h"
+#include "MovementDescriber.h"
 
 class View {
 protected:
 	Table * table;
 public:
-	View();
-	virtual ~View();
+	View(){};
+	virtual ~View(){};
 
 	virtual void setTable(Table *t){table = t;};
 	virtual void showTable() = 0;
 	virtual void showWinMessage() = 0;
 	virtual shared_ptr<ActionController> getAction() = 0;
+	virtual MovementDescriber getNextMovement() = 0;
 };
 
 #endif /* SRC_VIEW_VIEW_H_ */

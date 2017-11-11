@@ -6,8 +6,8 @@
  */
 
 #include <memory>
-#include "MovementController.h"
 #include "ActionGame.h"
+#include "movement/MovementController.h"
 
 ActionGame::ActionGame(Table * t, shared_ptr<MovementController> movement): ActionController(t) {
 	this->movement = movement;

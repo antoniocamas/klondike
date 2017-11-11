@@ -14,6 +14,8 @@
 #include <regex>
 #include <map>
 #include "Table.h"
+#include "Card.h"
+#include "MovementDescriber.h"
 
 using namespace std;
 
@@ -23,25 +25,26 @@ class InputManagerTextMode {
 	string foundation;
 	string pile;
 	regex validCommandsRegex;
-	vector<string> dataFromUser;
+	MovementDescriber movement;
+	map<string, string> inputDictionary;
 
 public:
-	InputManagerTextMode(Table* t, std::map<string, string>& r);
-	virtual ~InputManagerTextMode();
+	InputManagerTextMode(Table* t, map<string, string>& r);
+	virtual ~InputManagerTextMode(){};
 
 	bool isInputCorrect(string data)const;
 	bool isEnoughInput();
 	void addNewInput(string data);
 	string getNextExpectedElement() const;
-	vector<string> getUserData(){return this->dataFromUser;}
+	MovementDescriber getMovement(){return this->movement;}
 
 private:
-	string getOrigin() const;
-	bool isRemaninderTheOrigin() const;
-	bool isWasteOrFoundationTheOrigin() const;
-	bool isPileTheOrigin() const;
-	bool isFoundationTheDestination() const;
+	void setOriginCard(string data);
+	void setOrigin(string data);
+	void setDestination(string data);
 
+	void translateInput2Stack(string, string&, unsigned int&);
+	card::Card translateInput2Card(string input);
 };
 
 #endif /* SRC_VIEW_INPUTMANAGERTEXTMODE_H_ */

@@ -10,14 +10,15 @@
 //Delete. Just Tests
 #include <iostream>
 #include <vector>
+
+#include "controller/movement/MovementController.h"
+#include "controller/movement/Pile2PileController.h"
 #include "Pile.h"
 #include "Foundation.h"
 #include "Card.h"
 #include "CardIterator.h"
 #include "CardStack.h"
 #include "Deck.h"
-#include "MovementController.h"
-#include "Pile2PileController.h"
 #include "Suit.h"
 #include "Table.h"
 #include "view/CardStackView.h"

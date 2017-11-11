@@ -11,7 +11,7 @@
 #include <memory>
 #include "Table.h"
 #include "ActionController.h"
-#include "MovementController.h"
+#include "movement/MovementController.h"
 
 class ActionGame: public ActionController {
 

@@ -11,13 +11,12 @@
 
 namespace card {
 Card::Card(unsigned int number, Suit suit) {
-	this->number = number;
+	if (suit.isLastNumberOfSuit(0))
+		this->number = 0;
+	else
+		this->number = number;
 	this->suit = suit;
 	this->upTurned = false;
-}
-
-Card::~Card() {
-	// TODO Auto-generated destructor stub
 }
 
 bool Card::operator ==(Card otherCard) const {
@@ -30,16 +29,4 @@ Card& Card::operator =(Card other) {
 	this->upTurned = other.upTurned;
 	return *this;
 }
-
-//string Card::card2string() const {
-//	return this->suit.getNickName(this->number) + " " + this->suit.getName();
-//}
-
-//string Card::getCardRepesentation() const {
-//	if (!this->isUpTurned())
-//		return "";
-//
-//	return this->suit.getNickName(this->number) + " " + this->suit.getShortName();
-//}
-
 }

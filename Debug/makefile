@@ -14,6 +14,7 @@ RM := rm
 -include src/utils/subdir.mk
 -include src/model/card/subdir.mk
 -include src/model/subdir.mk
+-include src/controller/movement/subdir.mk
 -include src/controller/subdir.mk
 -include src/subdir.mk
 -include subdir.mk

@@ -37,11 +37,18 @@ int CardViewConsoleLinux::getNumberfromRepresentation(string representation) {
 		if ((*it).second == name)
 			return (*it).first;
 
-	return stoi(name);
+	int number = 0;
+	try {
+	    number = stoi(name);
+	}
+	catch (const std::invalid_argument& ia) {}
+	return number;
 }
 
 Suit CardViewConsoleLinux::getSuitfromRepresentation(string representation){
 	string name = getSuitNamefromRepresentation(representation);
+	if (name == "")
+		return Suit();
 	string color = getSuitColorfromName(name);
 	return Suit(name, color, Configurator::getInstance()->getSuitNumberOfCards());
 }
@@ -58,7 +65,7 @@ string CardViewConsoleLinux::getSuitNamefromRepresentation(string representation
 		if ((*it).second.at(1) == suitShortName)
 			return (*it).first;
 
-	return nullptr;
+	return "";
 }
 
 string CardViewConsoleLinux::getSuitColorfromName(string suitName){

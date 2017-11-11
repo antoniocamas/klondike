@@ -10,13 +10,15 @@
 #include <iostream>
 #include <string>
 #include <memory>
+
+#include "../controller/movement/MovementControllerCreator.h"
 #include "CardStackView.h"
 #include "ActionController.h"
 #include "ActionGame.h"
 #include "CardStackViewConsoleLinux.h"
-#include "MovementBuilderTextMode.h"
 #include "InputManagerTextMode.h"
 #include "IOConsoleLinux.h"
+#include "MovementDescriber.h"
 
 using namespace std;
 
@@ -52,65 +54,59 @@ void ViewConsoleLinux::showWinMessage() {
 }
 
 
-shared_ptr<ActionController> ViewConsoleLinux::getAction() {
-
-	io.printSplitter();
-
-	shared_ptr<ActionGame> action = NULL;
-	string message = "\tEnter the ";
-
-	do{
-		InputManagerTextMode inputManager(this->table, this->tableElementRepresenter);
-		do{
-			io.printMessage(message + inputManager.getNextExpectedElement() + ": ");
-			string input = io.getInput();
-
-			if (inputManager.isInputCorrect(input)){
-					inputManager.addNewInput(input);
-			}
-			else
-				io.printMessage("\tI coudn't understand what you mean \n");
-
-		}while(!inputManager.isEnoughInput());
-
-		MovementBuilderTextMode movementBuilder(this->table,
-				inputManager.getUserData(),	this->tableElementRepresenter);
-		shared_ptr<MovementController> movement = movementBuilder.getMovement();
-		action = make_shared<ActionGame>(this->table, movement);
-
-		if (!action->isValid())
-			io.printMessage("\t\tInvalid Movement!!\n");
-
-	}while(!action->isValid());
-
-	return action;
-}
-
-//void ViewConsoleLinux::getNextMovement() {
+//shared_ptr<ActionController> ViewConsoleLinux::getAction() {
 //
 //	io.printSplitter();
 //
+//	shared_ptr<ActionGame> action = NULL;
 //	string message = "\tEnter the ";
 //
-//
-//	InputManagerTextMode inputManager(this->table, this->tableElementRepresenter);
 //	do{
-//		io.printMessage(message + inputManager.getNextExpectedElement() + ": ");
-//		string input = io.getInput();
+//		InputManagerTextMode inputManager(this->table, this->tableElementRepresenter);
+//		do{
+//			io.printMessage(message + inputManager.getNextExpectedElement() + ": ");
+//			string input = io.getInput();
 //
-//		if (inputManager.isInputCorrect(input)){
-//			inputManager.addNewInput(input);
-//		}
-//		else
-//			io.printMessage("\tI coudn't understand what you mean \n");
+//			if (inputManager.isInputCorrect(input)){
+//					inputManager.addNewInput(input);
+//			}
+//			else
+//				io.printMessage("\tI coudn't understand what you mean \n");
 //
-//	}while(!inputManager.isEnoughInput());
+//		}while(!inputManager.isEnoughInput());
 //
+//		MovementBuilderTextMode movementBuilder(this->table,
+//				inputManager.getUserData(),	this->tableElementRepresenter);
+//		shared_ptr<MovementController> movement = movementBuilder.getMovement();
+//		action = make_shared<ActionGame>(this->table, movement);
 //
+//		if (!action->isValid())
+//			io.printMessage("\t\tInvalid Movement!!\n");
 //
-////		if (!action->isValid())
-////			io.printMessage("\t\tInvalid Movement!!\n");
+//	}while(!action->isValid());
 //
-//
-//
+//	return action;
 //}
+
+MovementDescriber ViewConsoleLinux::getNextMovement() {
+
+	io.printSplitter();
+
+	string message = "\tEnter the ";
+
+
+	InputManagerTextMode inputManager(this->table, this->tableElementRepresenter);
+	do{
+		io.printMessage(message + inputManager.getNextExpectedElement() + ": ");
+		string input = io.getInput();
+
+		if (inputManager.isInputCorrect(input)){
+			inputManager.addNewInput(input);
+		}
+		else
+			io.printMessage("\tI coudn't understand what you mean \n");
+
+	}while(!inputManager.isEnoughInput());
+
+	return inputManager.getMovement();
+}

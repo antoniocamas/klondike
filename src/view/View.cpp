@@ -7,12 +7,3 @@
 
 #include "View.h"
 
-View::View() {
-	// TODO Auto-generated constructor stub
-
-}
-
-View::~View() {
-	// TODO Auto-generated destructor stub
-}
-

@@ -5,11 +5,11 @@
  *      Author: antonio
  */
 
-#ifndef SRC_CONTROLLER_PILE2PILECONTROLLER_H_
-#define SRC_CONTROLLER_PILE2PILECONTROLLER_H_
+#ifndef SRC_CONTROLLER_MOVEMENT_PILE2PILECONTROLLER_H_
+#define SRC_CONTROLLER_MOVEMENT_PILE2PILECONTROLLER_H_
 
 #include "Card.h"
-#include "MovementController.h"
+#include "movement/MovementController.h"
 
 using namespace card;
 
@@ -25,4 +25,4 @@ public:
 	void applyMovement();
 };
 
-#endif /* SRC_CONTROLLER_PILE2PILECONTROLLER_H_ */
+#endif /* SRC_CONTROLLER_MOVEMENT_PILE2PILECONTROLLER_H_ */

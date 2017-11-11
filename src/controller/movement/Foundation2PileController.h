@@ -5,10 +5,10 @@
  *      Author: antonio
  */
 
-#ifndef SRC_CONTROLLER_FOUNDATION2PILECONTROLLER_H_
-#define SRC_CONTROLLER_FOUNDATION2PILECONTROLLER_H_
+#ifndef SRC_CONTROLLER_MOVEMENT_FOUNDATION2PILECONTROLLER_H_
+#define SRC_CONTROLLER_MOVEMENT_FOUNDATION2PILECONTROLLER_H_
 
-#include "MovementController.h"
+#include "movement/MovementController.h"
 
 class Foundation2PileController: public MovementController {
 public:
@@ -18,4 +18,4 @@ public:
 	bool isValid();
 };
 
-#endif /* SRC_CONTROLLER_FOUNDATION2PILECONTROLLER_H_ */
+#endif /* SRC_CONTROLLER_MOVEMENT_FOUNDATION2PILECONTROLLER_H_ */

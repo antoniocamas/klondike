@@ -5,10 +5,10 @@
  *      Author: antonio
  */
 
-#ifndef SRC_CONTROLLER_WASTE2PILECONTROLLER_H_
-#define SRC_CONTROLLER_WASTE2PILECONTROLLER_H_
+#ifndef SRC_CONTROLLER_MOVEMENT_WASTE2PILECONTROLLER_H_
+#define SRC_CONTROLLER_MOVEMENT_WASTE2PILECONTROLLER_H_
 
-#include "MovementController.h"
+#include "movement/MovementController.h"
 
 class Waste2PileController: public MovementController {
 public:
@@ -18,4 +18,4 @@ public:
 	bool isValid();
 };
 
-#endif /* SRC_CONTROLLER_WASTE2PILECONTROLLER_H_ */
+#endif /* SRC_CONTROLLER_MOVEMENT_WASTE2PILECONTROLLER_H_ */

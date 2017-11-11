@@ -5,9 +5,9 @@
  *      Author: antonio
  */
 
-#include "MovementController.h"
 #include "Table.h"
 #include "Card.h"
+#include "movement/MovementController.h"
 
 void MovementController::applyMovement() {
 	Card card = origin->giveTopCardAway();

@@ -22,7 +22,7 @@ private:
 	string color;
 
 public:
-	Suit(){};
+	Suit():numberOfCardsperSuit(0){};
 	Suit(string name, string color,	int numberOfCardsperSuit);
 	virtual ~Suit(){};
 

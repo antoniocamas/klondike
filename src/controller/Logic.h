@@ -5,8 +5,8 @@
  *      Author: antonio
  */
 
-#ifndef SRC_LOGIC_H_
-#define SRC_LOGIC_H_
+#ifndef SRC_CONTROLLER_LOGIC_H_
+#define SRC_CONTROLLER_LOGIC_H_
 
 #include <memory>
 #include "Table.h"
@@ -30,4 +30,4 @@ public:
 
 };
 
-#endif /* SRC_LOGIC_H_ */
+#endif /* SRC_CONTROLLER_LOGIC_H_ */

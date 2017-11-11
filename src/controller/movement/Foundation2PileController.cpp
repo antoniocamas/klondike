@@ -5,7 +5,7 @@
  *      Author: antonio
  */
 
-#include "Foundation2PileController.h"
+#include "movement/Foundation2PileController.h"
 
 Foundation2PileController::Foundation2PileController(Table * t,
 		int originFoundationNumber, int destinationPileNumber): MovementController(t){

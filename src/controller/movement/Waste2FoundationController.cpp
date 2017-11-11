@@ -5,7 +5,7 @@
  *      Author: antonio
  */
 
-#include "Waste2FoundationController.h"
+#include "movement/Waste2FoundationController.h"
 
 Waste2FoundationController::Waste2FoundationController(Table * t, int foundationNumber): MovementController(t){
 	this->destination = &(*this->table->getFoundation(foundationNumber));

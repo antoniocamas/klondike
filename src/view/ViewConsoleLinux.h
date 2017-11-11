@@ -38,8 +38,8 @@ public:
 	virtual ~ViewConsoleLinux(){};
 	void showTable();
 	void showWinMessage();
-	shared_ptr<ActionController> getAction();
-	//void getNextMovement();
+	shared_ptr<ActionController> getAction(){};
+	MovementDescriber getNextMovement();
 private:
 	static void inline printMessage(const string message) { cout << message << endl; }
 };

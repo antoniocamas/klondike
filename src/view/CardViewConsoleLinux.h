@@ -24,6 +24,7 @@ public:
 
 	string getRepresentation(Card c);
 	void createCardfromRepresentation(string repr);
+	bool isCardCreated(){return !card.isEmpty();}
 	Card getCard()const {return card;};
 
 private:

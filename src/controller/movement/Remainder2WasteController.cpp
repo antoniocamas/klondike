@@ -5,8 +5,9 @@
  *      Author: antonio
  */
 
+#include "movement/Remainder2WasteController.h"
+
 #include "CardStack.h"
-#include "Remainder2WasteController.h"
 
 Remainder2WasteController::Remainder2WasteController(Table * t): MovementController(t){
 	this->destination = this->table->getWaste();
