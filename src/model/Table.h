@@ -5,18 +5,17 @@
  *      Author: antonio
  */
 
-#ifndef TABLEAU_H_
-#define TABLEAU_H_
+#ifndef TABLE_H_
+#define TABLE_H_
 
 #include <vector>
 #include <array>
 #include <string>
 
-#include "../view/CardStackView.h"
+#include "CardStackView.h"
 #include "Pile.h"
 #include "Foundation.h"
-#include "CardStack.h"
-#include "Deck.h"
+#include "GameCardStack.h"
 
 using namespace std;
 
@@ -28,8 +27,8 @@ private:
 
 	array<Pile,7> piles;
 	array<Foundation,4> foundations;
-	CardStack remainder;
-	CardStack waste;
+	GameCardStack remainder;
+	GameCardStack waste;
 
 	void deal();
 
@@ -45,11 +44,11 @@ public:
 	CardStackView getFoundationRepresenter(int foundationNumber) const {return this->foundations.at(foundationNumber).getCardsRepresenter();}
 	CardStackView getPileRepresenter(int pileNumber) const {return this->piles.at(pileNumber).getCardsRepresenter();}
 
-	CardStack* getRemainder(){return &this->remainder;}
-	CardStack* getWaste(){return &this->waste;}
+	GameCardStack* getRemainder(){return &this->remainder;}
+	GameCardStack* getWaste(){return &this->waste;}
 	Pile* getPile(int pileNumber){return &this->piles[pileNumber];}
 	Foundation* getFoundation(int foundationNumber){return &this->foundations[foundationNumber];}
 };
 
 
-#endif /* TABLEAU_H_ */
+#endif /* TABLE_H_ */

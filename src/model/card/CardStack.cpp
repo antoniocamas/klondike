@@ -5,25 +5,17 @@
  *      Author: antonio
  */
 
-#include "CardStack.h"
-
 #include <vector>
 #include <algorithm>
 #include <cstdlib>
 #include <ctime>
 
 #include "Card.h"
-
-//debug
-#include <iostream>
+#include "CardStack.h"
 
 using namespace card;
 
 namespace card {
-
-CardStack::~CardStack() {
-	// TODO Auto-generated destructor stub
-}
 
 void CardStack::putCardOnTop(vector<Card> otherCards) {
 	this->cards.insert(this->cards.end(),
@@ -75,10 +67,6 @@ vector<Card>::iterator CardStack::findCard(Card card) {
 	return this->cards.end();
 }
 
-bool CardStack::isPuttingDownPossible(Card inCommingCard) const {
-	return true;
-}
-
 CardStackView CardStack::getCardsRepresenter() const {
 	return CardStackView(
 			vector<Card>::const_iterator(this->cards.begin()),
@@ -86,7 +74,7 @@ CardStackView CardStack::getCardsRepresenter() const {
 }
 
 int CardStack::randomGenerator (int i) {
-	std::srand ( unsigned ( std::time(0) ) );
+	std::srand (unsigned (std::time(0)));
 	return std::rand()%i;
 }
 

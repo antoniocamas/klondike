@@ -5,21 +5,18 @@
  *      Author: antonio
  */
 
-#include "IOConsoleLinux.h"
 #include <iostream>
 #include <algorithm>
 #include <vector>
 #include <string>
 #include <cstdlib>
 
+#include "IOConsoleLinux.h"
+
 using namespace std;
 
 IOConsoleLinux::IOConsoleLinux(std::map<string, string>& tableElementRepresenter) {
 	this->tableElementRepresenter = tableElementRepresenter;
-}
-
-IOConsoleLinux::~IOConsoleLinux() {
-	// TODO Auto-generated destructor stub
 }
 
 string IOConsoleLinux::niceConsoleCard(string card) {

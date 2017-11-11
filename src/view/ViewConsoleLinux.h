@@ -17,8 +17,6 @@
 #include <memory>
 
 #include "View.h"
-#include "Table.h"
-#include "ActionController.h"
 #include "IOConsoleLinux.h"
 
 using namespace std;
@@ -38,7 +36,6 @@ public:
 	virtual ~ViewConsoleLinux(){};
 	void showTable();
 	void showWinMessage();
-	shared_ptr<ActionController> getAction(){};
 	MovementDescriber getNextMovement();
 private:
 	static void inline printMessage(const string message) { cout << message << endl; }

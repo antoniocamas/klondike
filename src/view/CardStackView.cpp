@@ -17,10 +17,6 @@ using namespace std;
 
 namespace card {
 
-CardStackView::~CardStackView() {
-	// TODO Auto-generated destructor stub
-}
-
 CardStackView& CardStackView::operator =(
 		CardStackView other) {
 	this->beginIt = other.beginIt;

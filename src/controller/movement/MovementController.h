@@ -8,13 +8,13 @@
 #ifndef SRC_MOVEMENT_H_
 #define SRC_MOVEMENT_H_
 
-#include "CardStack.h"
+#include "GameCardStack.h"
 
 class MovementController {
 
 protected:
-	card::CardStack* origin;
-	card::CardStack* destination;
+	GameCardStack* origin;
+	GameCardStack* destination;
 
 public:
 	MovementController(){};

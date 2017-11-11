@@ -8,14 +8,15 @@
 #ifndef PILE_H_
 #define PILE_H_
 
-#include "CardStack.h"
+#include "GameCardStack.h"
+#include "Card.h"
 
 using namespace card;
-class Pile: public card::CardStack {
+class Pile: public GameCardStack {
 public:
 	Pile(){};
 	virtual ~Pile(){};
-	using CardStack::giveTopCardAway;
+	using GameCardStack::giveTopCardAway;
 	vector<Card> giveTopCardAway(Card fistCard2Lift);
 
 	virtual bool isMovingTopStackPossible(Card);

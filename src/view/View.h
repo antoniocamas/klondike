@@ -9,7 +9,7 @@
 #define SRC_VIEW_VIEW_H_
 
 #include <memory>
-#include "ActionController.h"
+#include "Table.h"
 #include "MovementDescriber.h"
 
 class View {
@@ -22,7 +22,6 @@ public:
 	virtual void setTable(Table *t){table = t;};
 	virtual void showTable() = 0;
 	virtual void showWinMessage() = 0;
-	virtual shared_ptr<ActionController> getAction() = 0;
 	virtual MovementDescriber getNextMovement() = 0;
 };
 

@@ -20,7 +20,7 @@ private:
 	map<string, string> tableElementRepresenter;
 public:
 	IOConsoleLinux(std::map<string, string>& r);
-	virtual ~IOConsoleLinux();
+	virtual ~IOConsoleLinux(){};
 
 	string niceConsoleCard(string card);
 	void printHeader();

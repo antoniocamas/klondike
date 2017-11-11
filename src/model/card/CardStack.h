@@ -11,12 +11,8 @@
 #include <vector>
 #include <string>
 
-#include "../../view/CardStackView.h"
+#include "CardStackView.h"
 #include "Card.h"
-
-
-//just for debuggin
-
 
 using namespace std;
 namespace card {
@@ -25,12 +21,10 @@ class CardStack {
 protected:
 	vector<Card> cards;
 
-
-	vector<Card>::iterator findCard(Card card);
 public:
 	CardStack(){};
-	virtual ~CardStack()
-	;
+	virtual ~CardStack(){};
+
 	bool isEmpty(){return cards.empty();}
 	size_t getNumberOfCards(){return this->cards.size(); }
 	void putCardOnTop(Card card){ this->cards.push_back(card);}
@@ -44,12 +38,8 @@ public:
 	void shuffle();
 	CardStackView getCardsRepresenter() const;
 
-	virtual bool isPuttingDownPossible(Card) const;
-	virtual bool isMovingTopStackPossible(Card){return false;}; //Only for Pile. Move Pile implementation to Composition.
-	//debug funtion
-//	string cards2string(){
-//		string repr;
-//		for (auto card : cards){repr += card.card2string() + "\n\t";} return repr;}
+protected:
+	vector<Card>::iterator findCard(Card card);
 
 private:
 	static int randomGenerator(int i);

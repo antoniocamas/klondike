@@ -7,7 +7,7 @@
 
 
 #include "Table.h"
-#include "Deck.h"
+#include "GameDeck.h"
 
 Table::Table(){
 	this->deal();
@@ -15,7 +15,7 @@ Table::Table(){
 
 void Table::deal()
 {
-	card::Deck deck;
+	GameDeck deck;
 	deck.shuffle();
 	card::Card card;
 
