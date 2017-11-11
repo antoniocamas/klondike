@@ -5,22 +5,10 @@
  *      Author: antonio
  */
 
-#include "movement/Foundation2PileController.h"
+#include "Foundation2PileController.h"
 
-Foundation2PileController::Foundation2PileController(Table * t,
-		int originFoundationNumber, int destinationPileNumber): MovementController(t){
-	this->origin = &(*this->table->getFoundation(originFoundationNumber));
-	this->destination = &(*this->table->getPile(destinationPileNumber));
-}
-
-bool Foundation2PileController::isValid(){
-
-#include <iostream>
-	using namespace std;
-	cout << "Foundation2PileController" << endl;
-	if (this->origin->isEmpty())
-		return false;
-	const card::Card * card = this->origin->showTopCard();
-	return this->destination->isPuttingDownPossible(*card);
-
+Foundation2PileController::Foundation2PileController(Table * table,
+		int originFoundationNumber, int destinationPileNumber){
+	this->origin = &(*table->getFoundation(originFoundationNumber));
+	this->destination = &(*table->getPile(destinationPileNumber));
 }

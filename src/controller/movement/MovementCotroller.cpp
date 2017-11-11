@@ -5,12 +5,11 @@
  *      Author: antonio
  */
 
-#include "Table.h"
 #include "Card.h"
-#include "movement/MovementController.h"
+#include "MovementController.h"
 
 void MovementController::applyMovement() {
-	Card card = origin->giveTopCardAway();
+	card::Card card = origin->giveTopCardAway();
 	origin->turnTopCard();
 	card.upTurn();
 	destination->putCardOnTop(card);

@@ -5,18 +5,11 @@
  *      Author: antonio
  */
 
-#include "movement/Pile2FoundationController.h"
+#include "Pile2FoundationController.h"
 
-Pile2FoundationController::Pile2FoundationController(Table * t,
-		int originPileNumber, int destinationFoundationNumber) : MovementController(t){
+Pile2FoundationController::Pile2FoundationController(Table * table,
+		int originPileNumber, int destinationFoundationNumber) {
 
-	this->origin = &(*this->table->getPile(originPileNumber));
-	this->destination = &(*this->table->getFoundation(destinationFoundationNumber));
-}
-
-bool Pile2FoundationController::isValid() {
-	if (this->origin->isEmpty())
-		return false;
-	const card::Card * card = this->origin->showTopCard();
-	return this->destination->isPuttingDownPossible(*card);
+	this->origin = &(*table->getPile(originPileNumber));
+	this->destination = &(*table->getFoundation(destinationFoundationNumber));
 }

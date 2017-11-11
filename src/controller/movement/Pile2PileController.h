@@ -8,8 +8,9 @@
 #ifndef SRC_CONTROLLER_MOVEMENT_PILE2PILECONTROLLER_H_
 #define SRC_CONTROLLER_MOVEMENT_PILE2PILECONTROLLER_H_
 
+#include "Table.h"
 #include "Card.h"
-#include "movement/MovementController.h"
+#include "MovementController.h"
 
 using namespace card;
 

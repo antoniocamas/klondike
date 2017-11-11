@@ -8,18 +8,16 @@
 #ifndef SRC_MOVEMENT_H_
 #define SRC_MOVEMENT_H_
 
-#include "Table.h"
 #include "CardStack.h"
 
 class MovementController {
 
 protected:
-	Table * table;
-	CardStack* origin;
-	CardStack* destination;
+	card::CardStack* origin;
+	card::CardStack* destination;
 
 public:
-	MovementController(Table* table){this->table = table;}
+	MovementController(){};
 	virtual ~MovementController(){};
 
 	virtual bool isValid() = 0;

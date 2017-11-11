@@ -9,11 +9,12 @@
 
 #include <vector>
 
-Pile2PileController::Pile2PileController(Table * t, int originPileNumber, int destinationPileNumber,
-		Card originCard): MovementController(t), originCard(originCard) {
+Pile2PileController::Pile2PileController(Table * table,
+		int originPileNumber, int destinationPileNumber,
+		Card originCard): originCard(originCard) {
 
-	this->origin = &(*this->table->getPile(originPileNumber));
-	this->destination = &(*this->table->getPile(destinationPileNumber));
+	this->origin = &(*table->getPile(originPileNumber));
+	this->destination = &(*table->getPile(destinationPileNumber));
 }
 
 

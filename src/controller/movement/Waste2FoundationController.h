@@ -8,14 +8,13 @@
 #ifndef SRC_CONTROLLER_MOVEMENT_WASTE2FOUNDATIONCONTROLLER_H_
 #define SRC_CONTROLLER_MOVEMENT_WASTE2FOUNDATIONCONTROLLER_H_
 
-#include "movement/MovementController.h"
+#include "Table.h"
+#include "OneCardMovementController.h"
 
-class Waste2FoundationController: public MovementController {
+class Waste2FoundationController: public OneCardMovementController {
 public:
 	Waste2FoundationController(Table * t, int foundationNumber);
 	virtual ~Waste2FoundationController(){};
-
-	bool isValid();
 };
 
 #endif /* SRC_CONTROLLER_MOVEMENT_WASTE2FOUNDATIONCONTROLLER_H_ */

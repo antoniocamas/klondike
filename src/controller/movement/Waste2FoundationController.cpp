@@ -5,16 +5,9 @@
  *      Author: antonio
  */
 
-#include "movement/Waste2FoundationController.h"
+#include "Waste2FoundationController.h"
 
-Waste2FoundationController::Waste2FoundationController(Table * t, int foundationNumber): MovementController(t){
-	this->destination = &(*this->table->getFoundation(foundationNumber));
-	this->origin = this->table->getWaste();
-}
-
-bool Waste2FoundationController::isValid() {
-	if (this->origin->isEmpty())
-		return false;
-	const card::Card * card = this->origin->showTopCard();
-	return this->destination->isPuttingDownPossible(*card);
+Waste2FoundationController::Waste2FoundationController(Table * table, int foundationNumber){
+	this->destination = &(*table->getFoundation(foundationNumber));
+	this->origin = table->getWaste();
 }

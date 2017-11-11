@@ -5,19 +5,12 @@
  *      Author: antonio
  */
 
-#include "movement/Waste2PileController.h"
+#include "Waste2PileController.h"
 
-#include "Card.h"
-#include "Pile.h"
+//#include "Card.h"
+//#include "Pile.h"
 
-Waste2PileController::Waste2PileController(Table * t, int pileNumber): MovementController(t){
-	this->destination = &(*this->table->getPile(pileNumber));
-	this->origin = this->table->getWaste();
+Waste2PileController::Waste2PileController(Table * table, int pileNumber){
+	this->destination = &(*table->getPile(pileNumber));
+	this->origin = table->getWaste();
 };
-
-bool Waste2PileController::isValid(){
-	if (this->origin->isEmpty())
-		return false;
-	const card::Card * card = this->origin->showTopCard();
-	return this->destination->isPuttingDownPossible(*card);
-}
