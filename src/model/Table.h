@@ -12,7 +12,7 @@
 #include <array>
 #include <string>
 
-#include "CardStackView.h"
+#include "card/CardStackShowcase.h"
 #include "Pile.h"
 #include "Foundation.h"
 #include "GameCardStack.h"
@@ -39,10 +39,10 @@ public:
 	bool areAllFoundationsComplete() const;
 	inline int getNumberOfPiles() const {return piles.size();}
 	inline int getNumberOfFundations() const {return foundations.size();}
-	CardStackView getRemainderRepresenter() const {return this->remainder.getCardsRepresenter();}
-	CardStackView getWasterRepresenter() const {return this->waste.getCardsRepresenter();}
-	CardStackView getFoundationRepresenter(int foundationNumber) const {return this->foundations.at(foundationNumber).getCardsRepresenter();}
-	CardStackView getPileRepresenter(int pileNumber) const {return this->piles.at(pileNumber).getCardsRepresenter();}
+	CardStackShowcase getRemainderRepresenter() const {return this->remainder.getCardsRepresenter();}
+	CardStackShowcase getWasterRepresenter() const {return this->waste.getCardsRepresenter();}
+	CardStackShowcase getFoundationRepresenter(int foundationNumber) const {return this->foundations.at(foundationNumber).getCardsRepresenter();}
+	CardStackShowcase getPileRepresenter(int pileNumber) const {return this->piles.at(pileNumber).getCardsRepresenter();}
 
 	GameCardStack* getRemainder(){return &this->remainder;}
 	GameCardStack* getWaste(){return &this->waste;}

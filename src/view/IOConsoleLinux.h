@@ -1,5 +1,5 @@
 /*
- * UIConsoleLinux.h
+ * IOConsoleLinux.h
  *
  *  Created on: Oct 15, 2017
  *      Author: antonio
@@ -22,7 +22,6 @@ public:
 	IOConsoleLinux(std::map<string, string>& r);
 	virtual ~IOConsoleLinux(){};
 
-	string niceConsoleCard(string card);
 	void printHeader();
 	void printRemainder(bool cardLeft);
 	void printWaste(vector<string> cardsRepresentation);
@@ -35,8 +34,6 @@ public:
 	string getInput();
 
 private:
-	void lowercase(string* message);
-	void uppercase(string* message);
 	string getBasicRepresentation(string element){return this->getBasicRepresentation(element, 0);};
 	string getBasicRepresentation(string element, int number);
 

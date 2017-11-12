@@ -11,37 +11,29 @@
 #include <string>
 #include <memory>
 
-#include "CardStackViewConsoleLinux.h"
+#include "CardStackShowcase.h"
 #include "InputManagerTextMode.h"
 #include "IOConsoleLinux.h"
 #include "MovementDescriber.h"
+#include "CardViewConsoleLinux.h"
 
 using namespace std;
-
-ViewConsoleLinux::ViewConsoleLinux(): io(this->tableElementRepresenter){}
+using namespace card;
 
 void ViewConsoleLinux::showTable() {
-		card::CardStackViewConsoleLinux cardRepresenter;
 	io.printHeader();
 
-	cardRepresenter = table->getRemainderRepresenter();
-	io.printRemainder(cardRepresenter.getNumberOfCardsInTheStack() > 0);
+	io.printRemainder(table->getRemainderRepresenter().getNumberOfCardsInTheStack() > 0);
+	io.printWaste(cards2String(table->getWasterRepresenter().top(3)));
 
-	cardRepresenter = table->getWasterRepresenter();
-	io.printWaste(cardRepresenter.topCard2String(3));
-
-	for (int i = 0; i < table->getNumberOfFundations(); ++i){
-		cardRepresenter = table->getFoundationRepresenter(i);
-		io.printFoundation(cardRepresenter.topCard2String(1), i+1);
-	}
+	for (int i = 0; i < table->getNumberOfFundations(); ++i)
+		io.printFoundation(cards2String(table->getFoundationRepresenter(i).top(1)), i+1);
 
 	io.printNewLine();
 	io.printSplitter();
 
-	for (int i = 0; i < table->getNumberOfPiles(); ++i){
-			cardRepresenter = table->getPileRepresenter(i);
-			io.printPile(cardRepresenter.allCard2String(), i+1);
-	}
+	for (int i = 0; i < table->getNumberOfPiles(); ++i)
+		io.printPile(cards2String(table->getPileRepresenter(i).all()), i+1);
 }
 
 void ViewConsoleLinux::showWinMessage() {
@@ -50,12 +42,19 @@ void ViewConsoleLinux::showWinMessage() {
 	io.printMessage("\tCongratulations, you have won Klondike!!!\n");
 }
 
+vector<string> ViewConsoleLinux::cards2String(vector<const Card*> cardsReferences){
+	vector<string> cardRepresentation;
+	CardViewConsoleLinux cardview;
+	for (auto it = cardsReferences.begin(); it != cardsReferences.end(); ++it)
+		cardRepresentation.push_back(cardview.getRepresentation(*(*it)));
+
+	return cardRepresentation;
+}
+
 MovementDescriber ViewConsoleLinux::getNextMovement() {
 
 	io.printSplitter();
-
 	string message = "\tEnter the ";
-
 
 	InputManagerTextMode inputManager(this->table, this->tableElementRepresenter);
 	do{

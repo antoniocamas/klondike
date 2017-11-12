@@ -19,9 +19,9 @@
 #include "CardIterator.h"
 #include "CardStack.h"
 #include "Deck.h"
+#include "model/card/CardStackShowcase.h"
 #include "Suit.h"
 #include "Table.h"
-#include "view/CardStackView.h"
 #include "view/ViewConsoleLinux.h"
 
 using namespace std;

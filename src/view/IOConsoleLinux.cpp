@@ -1,28 +1,22 @@
 /*
- * UIConsoleLinux.cpp
+ * IOConsoleLinux.cpp
  *
  *  Created on: Oct 15, 2017
  *      Author: antonio
  */
 
 #include <iostream>
-#include <algorithm>
 #include <vector>
 #include <string>
 #include <cstdlib>
 
+#include "StringHandler.h"
 #include "IOConsoleLinux.h"
 
 using namespace std;
 
 IOConsoleLinux::IOConsoleLinux(std::map<string, string>& tableElementRepresenter) {
 	this->tableElementRepresenter = tableElementRepresenter;
-}
-
-string IOConsoleLinux::niceConsoleCard(string card) {
-
-string newCardRepresentation = card;
-	return newCardRepresentation;
 }
 
 void IOConsoleLinux::printNewLine() {
@@ -34,7 +28,7 @@ void IOConsoleLinux::printMessage(string message) {
 }
 
 void IOConsoleLinux::printSplitter() {
-	cout << string(60, '-') << endl;
+	cout << string(80, '-') << endl;
 }
 
 void IOConsoleLinux::printHeader() {
@@ -59,7 +53,7 @@ void IOConsoleLinux::printWaste(vector<string> cardsRepresentation) {
 
 
 	for (auto card : cardsRepresentation)
-		representation += "[" + this->niceConsoleCard(card);
+		representation += "[" + card;
 	if (!cardsRepresentation.empty())
 		representation += "]";
 
@@ -75,7 +69,7 @@ void IOConsoleLinux::printFoundation(vector<string> cardsRepresentation,
 
 	string representation = this->getBasicRepresentation("foundation", foundationNumber);
 	for (auto card : cardsRepresentation)
-		representation += "[" + this->niceConsoleCard(card);
+		representation += "[" + card;
 	if (!cardsRepresentation.empty())
 		representation += "]";
 	else
@@ -86,10 +80,9 @@ void IOConsoleLinux::printFoundation(vector<string> cardsRepresentation,
 }
 
 void IOConsoleLinux::printPile(vector<string> cardsRepresentation, int pileNumber) {
-
 	string representation = this->getBasicRepresentation("pile", pileNumber);
 	for (auto card : cardsRepresentation)
-		representation += "[" + this->niceConsoleCard(card);
+		representation += "[" + card;
 	if (!cardsRepresentation.empty())
 		representation += "]";
 	else
@@ -97,7 +90,25 @@ void IOConsoleLinux::printPile(vector<string> cardsRepresentation, int pileNumbe
 	cout << representation << endl;
 }
 
+string IOConsoleLinux::getInput() {
+	string input;
+	cin >> input;
+	StringHandler stringHandler(input);
+	stringHandler.lowercase();
+	return stringHandler.getString();
+}
 
+string IOConsoleLinux::getBasicRepresentation(string element, int number){
+	string representation;
+	representation = this->tableElementRepresenter[element];
+	StringHandler stringHandler(representation);
+	stringHandler.uppercase();
+	representation = stringHandler.getString();
+	if (number != 0)
+		representation += to_string(number);
+	representation += ":(";
+	return representation;
+}
 
 void clear_screen()
 {
@@ -108,29 +119,3 @@ void clear_screen()
     std::system ("clear");
 #endif
 }
-
-string IOConsoleLinux::getInput() {
-	string input;
-	cin >> input;
-	lowercase(&input);
-	return input;
-}
-
-void IOConsoleLinux::lowercase(string* message) {
-	std::transform(message->begin(), message->end(), message->begin(), ::tolower);
-}
-
-void IOConsoleLinux::uppercase(string* message) {
-	std::transform(message->begin(), message->end(), message->begin(), ::toupper);
-}
-
-string IOConsoleLinux::getBasicRepresentation(string element, int number){
-	string representation;
-	representation = this->tableElementRepresenter[element];
-	this->uppercase(&representation);
-	if (number != 0)
-		representation += to_string(number);
-	representation += ":(";
-	return representation;
-}
-

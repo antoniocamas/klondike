@@ -14,8 +14,10 @@
 #include "StringHandler.h"
 
 string CardViewConsoleLinux::getRepresentation(Card card) {
-	SuitViewConsoleLinux suitview;
+	if (!card.isUpTurned() or card.isEmpty())
+		return "";
 
+	SuitViewConsoleLinux suitview;
 	return suitview.getColor(card.getSuitName())+ suitview.getNickName(card.getNumber()) +
 			suitview.getShortName(card.getSuitName()) + RESET ;
 }

@@ -18,6 +18,7 @@
 
 #include "View.h"
 #include "IOConsoleLinux.h"
+#include "Card.h"
 
 using namespace std;
 
@@ -32,13 +33,14 @@ private:
 	IOConsoleLinux io;
 
 public:
-	ViewConsoleLinux();
+	ViewConsoleLinux(): io(this->tableElementRepresenter){};
 	virtual ~ViewConsoleLinux(){};
 	void showTable();
 	void showWinMessage();
 	MovementDescriber getNextMovement();
 private:
 	static void inline printMessage(const string message) { cout << message << endl; }
+	vector<string> cards2String(vector<const card::Card*>);
 };
 
 void clear_screen();

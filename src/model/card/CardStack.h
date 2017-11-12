@@ -11,8 +11,8 @@
 #include <vector>
 #include <string>
 
-#include "CardStackView.h"
 #include "Card.h"
+#include "CardStackShowcase.h"
 
 using namespace std;
 namespace card {
@@ -36,7 +36,7 @@ public:
 	int numberOfCardsOnTopOf(Card);
 	const Card * showTopCard(){return &(this->cards.back());};
 	void shuffle();
-	CardStackView getCardsRepresenter() const;
+	CardStackShowcase getCardsRepresenter() const;
 
 protected:
 	vector<Card>::iterator findCard(Card card);

@@ -67,8 +67,8 @@ vector<Card>::iterator CardStack::findCard(Card card) {
 	return this->cards.end();
 }
 
-CardStackView CardStack::getCardsRepresenter() const {
-	return CardStackView(
+CardStackShowcase CardStack::getCardsRepresenter() const {
+	return CardStackShowcase(
 			vector<Card>::const_iterator(this->cards.begin()),
 			vector<Card>::const_iterator(this->cards.end()));
 }
