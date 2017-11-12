@@ -13,7 +13,7 @@
 
 class InGameController: public Controller {
 private:
-	State state;
+	State& state;
 public:
 	InGameController(Table * t, std::shared_ptr<View> v, State& s): Controller(t, v),state(s){};
 	virtual ~InGameController(){};

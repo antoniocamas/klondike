@@ -5,9 +5,8 @@
  *      Author: antonio
  */
 
-#include "controller/Logic.h"
-
 #include <memory>
+#include "Logic.h"
 #include "Controller.h"
 #include "InGameController.h"
 

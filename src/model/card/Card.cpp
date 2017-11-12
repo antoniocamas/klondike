@@ -7,7 +7,6 @@
 
 #include "Card.h"
 #include "Suit.h"
-#include <string>
 
 namespace card {
 Card::Card(unsigned int number, Suit suit) {

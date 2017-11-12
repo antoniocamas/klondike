@@ -40,4 +40,5 @@ private:
 };
 
 void clear_screen();
+
 #endif /* SRC_UICONSOLELINUX_H_ */

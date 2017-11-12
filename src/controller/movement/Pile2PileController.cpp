@@ -5,9 +5,8 @@
  *      Author: antonio
  */
 
-#include "movement/Pile2PileController.h"
-
 #include <vector>
+#include "Pile2PileController.h"
 
 Pile2PileController::Pile2PileController(Table * table,
 		int originPileNumber, int destinationPileNumber,
@@ -16,7 +15,6 @@ Pile2PileController::Pile2PileController(Table * table,
 	this->origin = &(*table->getPile(originPileNumber));
 	this->destination = &(*table->getPile(destinationPileNumber));
 }
-
 
 void Pile2PileController::applyMovement() {
 	vector<Card> cards = origin->giveTopCardAway(origin->numberOfCardsOnTopOf(originCard));

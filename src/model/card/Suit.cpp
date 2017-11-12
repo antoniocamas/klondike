@@ -4,10 +4,9 @@
  *  Created on: Oct 8, 2017
  *      Author: antonio
  */
-#include "Suit.h"
 
-#include <iostream>
 #include <string>
+#include "Suit.h"
 
 using namespace std;
 using namespace card;

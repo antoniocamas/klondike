@@ -9,11 +9,6 @@
 
 using namespace card;
 
-Foundation::Foundation() {
-	// TODO Auto-generated constructor stub
-
-}
-
 bool Foundation::isComplete() const {
 	if (this->cards.empty())
 			return false;

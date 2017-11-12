@@ -9,7 +9,6 @@
 #define SRC_MODEL_CARD_CARDSTACKSHOWCASE_H_
 
 #include <vector>
-#include <string>
 #include "Card.h"
 
 namespace card {

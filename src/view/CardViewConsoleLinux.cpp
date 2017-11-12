@@ -77,4 +77,3 @@ string CardViewConsoleLinux::getSuitColorfromName(string suitName){
 				return (*it).second;
 	return nullptr;
 }
-

@@ -10,9 +10,7 @@
 
 #include <map>
 #include <string>
-
 #include "CardStack.h"
-//#include "Configurator.h"
 
 using namespace std;
 
@@ -20,8 +18,6 @@ namespace card {
 
 class Deck: public CardStack {
 public:
-//	Deck(): Deck(Configurator::getInstance()->getSuitNumberOfCards(),
-//			Configurator::getInstance()->getSuitModel()){};
 	Deck(const int nCards, const map<string, string> suitsDefinition);
 	virtual ~Deck(){};
 };

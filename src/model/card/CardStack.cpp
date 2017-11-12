@@ -84,4 +84,3 @@ void CardStack::shuffle() {
 }
 
 } /* namespace card */
-

@@ -1,13 +1,3 @@
-/*
- * UInterface.h
- *
- *  Created on: Oct 1, 2017
- *      Author: antonio
- *
- *  This module is OS system dependent. This implementation is meant for Linux Terminal.
- *
- */
-
 #ifndef UINTERFACE_H_
 #define UINTERFACE_H_
 
@@ -42,7 +32,5 @@ private:
 	static void inline printMessage(const string message) { cout << message << endl; }
 	vector<string> cards2String(vector<const card::Card*>);
 };
-
-void clear_screen();
 
 #endif /* UINTERFACE_H_ */

@@ -1,21 +1,11 @@
-/*
- * UInterface.cpp
- *
- *  Created on: Oct 1, 2017
- *      Author: antonio
- */
-
-#include "ViewConsoleLinux.h"
-
-#include <iostream>
 #include <string>
-#include <memory>
-
+#include <vector>
 #include "CardStackShowcase.h"
 #include "InputManagerTextMode.h"
 #include "IOConsoleLinux.h"
 #include "MovementDescriber.h"
 #include "CardViewConsoleLinux.h"
+#include "ViewConsoleLinux.h"
 
 using namespace std;
 using namespace card;

@@ -26,6 +26,7 @@ public:
 	Card & operator=(Card other);
 	bool operator==(Card otherCard) const;
 	bool operator!=(Card otherCard) const {return !((*this) == otherCard);};
+
 	inline const Suit& getSuit() const {return this->suit;}
 	inline unsigned int  getNumber() const {return this->number;}
 	inline string getSuitName() const {return this->suit.getName();}

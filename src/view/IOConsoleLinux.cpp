@@ -7,9 +7,9 @@
 
 #include <iostream>
 #include <vector>
+#include <map>
 #include <string>
 #include <cstdlib>
-
 #include "StringHandler.h"
 #include "IOConsoleLinux.h"
 

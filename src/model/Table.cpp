@@ -5,7 +5,6 @@
  *      Author: antonio
  */
 
-
 #include "Table.h"
 #include "GameDeck.h"
 

@@ -26,8 +26,6 @@ public:
 
 	std::shared_ptr<Controller> getController();
 	bool isTimeToExit(){ return (state == State::EXIT);}
-
-
 };
 
 #endif /* SRC_CONTROLLER_LOGIC_H_ */

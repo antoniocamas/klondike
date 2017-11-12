@@ -11,15 +11,12 @@
 #include "Card.h"
 #include "Pile.h"
 
-using namespace card;
-
 class Foundation: public Pile {
 public:
-	Foundation();
+	Foundation(){};
 	virtual ~Foundation(){};
 	bool isComplete() const;
-	bool isPuttingDownPossible(Card inCommingCard) const;
-
+	bool isPuttingDownPossible(card::Card inCommingCard) const;
 };
 
 #endif /* FOUNDATION_H_ */

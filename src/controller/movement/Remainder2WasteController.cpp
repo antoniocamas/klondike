@@ -1,13 +1,4 @@
-/*
- * Remainder2WasteController.cpp
- *
- *  Created on: Oct 21, 2017
- *      Author: antonio
- */
-
-#include "movement/Remainder2WasteController.h"
-
-#include "CardStack.h"
+#include "Remainder2WasteController.h"
 
 Remainder2WasteController::Remainder2WasteController(Table * table){
 	this->destination = table->getWaste();
@@ -30,4 +21,3 @@ void Remainder2WasteController::applyMovement() {
 bool Remainder2WasteController::isValid() {
 	return !this->origin->isEmpty() or !this->destination->isEmpty();
 }
-

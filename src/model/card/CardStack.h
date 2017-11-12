@@ -9,8 +9,6 @@
 #define CARDSTACK_H_
 
 #include <vector>
-#include <string>
-
 #include "Card.h"
 #include "CardStackShowcase.h"
 

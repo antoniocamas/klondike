@@ -17,8 +17,7 @@ public:
 	virtual ~GameCardStack(){};
 
 	virtual bool isPuttingDownPossible(card::Card)const {return true;};
-	virtual bool isMovingTopStackPossible(card::Card){return false;}; //Only for Pile. Move Pile implementation to Composition.
-
+	virtual bool isMovingTopStackPossible(card::Card){return false;};
 };
 
 #endif /* SRC_MODEL_GAMECARDSTACK_H_ */

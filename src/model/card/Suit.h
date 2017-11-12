@@ -8,7 +8,6 @@
 #ifndef SUIT_H_
 #define SUIT_H_
 
-#include <iostream>
 #include <string>
 
 using namespace std;
@@ -25,9 +24,8 @@ public:
 	Suit():numberOfCardsperSuit(0){};
 	Suit(string name, string color,	int numberOfCardsperSuit);
 	virtual ~Suit(){};
-
 	Suit & operator=(Suit other);
-	//Suit & operator=(Suit& ) = delete;
+
 	inline bool isSameColor(const Suit& other) const {return other.color == this->color;}
 	inline bool operator==(const Suit & other) const {return other.name == this->name;}
 	inline string getColor(){return this->color;}

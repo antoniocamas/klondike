@@ -1,10 +1,3 @@
-/*
- * MovementBuilderTextMode.cpp
- *
- *  Created on: Oct 22, 2017
- *      Author: antonio
- */
-
 #include <memory>
 #include "MovementControllerCreator.h"
 #include "Foundation2PileController.h"

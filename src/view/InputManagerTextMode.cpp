@@ -1,36 +1,25 @@
-/*
- * MovementBuilderTextMode.cpp
- *
- *  Created on: Oct 21, 2017
- *      Author: antonio
- */
-
-#include "InputManagerTextMode.h"
-
 #include <vector>
 #include <string>
 #include <memory>
 #include <regex>
+#include "InputManagerTextMode.h"
 #include "MovementDescriber.h"
 #include "CardViewConsoleLinux.h"
 
 using namespace std;
 
 InputManagerTextMode::InputManagerTextMode(Table* table,
-		std::map<string, string>& inputDictionary) {
+		std::map<string, string>& inputDictionary):inputDictionary(inputDictionary)  {
 
-	this->inputDictionary = inputDictionary;
-	this->remainder = inputDictionary["remainder"];
-	this->waste = inputDictionary["waste"];
-	this->foundation = inputDictionary["foundation"] + "[1-" + to_string(
+	string remainder = inputDictionary["remainder"];
+	string waste = inputDictionary["waste"];
+	string foundation = inputDictionary["foundation"] + "[1-" + to_string(
 			table->getNumberOfFundations()) + "]";
-	this->pile = inputDictionary["pile"] + "[1-" + to_string(
+	string pile = inputDictionary["pile"] + "[1-" + to_string(
 			table->getNumberOfPiles()) + "]";
 
 	//regex is something like "r|w|f[1-4]|p[1-7]]"
-	this->validCommandsRegex  = this->remainder + "|" + this->waste + "|"
-			+ this->foundation + "|" + this->pile;
-
+	this->validCommandsRegex = remainder + "|" + waste + "|" + foundation + "|" + pile;
 }
 
 string InputManagerTextMode::getNextExpectedElement() const {

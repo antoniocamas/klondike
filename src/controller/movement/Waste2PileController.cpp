@@ -7,9 +7,6 @@
 
 #include "Waste2PileController.h"
 
-//#include "Card.h"
-//#include "Pile.h"
-
 Waste2PileController::Waste2PileController(Table * table, int pileNumber){
 	this->destination = &(*table->getPile(pileNumber));
 	this->origin = table->getWaste();

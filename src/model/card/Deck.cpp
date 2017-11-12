@@ -5,10 +5,8 @@
  *      Author: antonio
  */
 
-#include <iostream>
+#include <map>
 #include <string>
-#include <algorithm>
-
 #include "Card.h"
 #include "Deck.h"
 
@@ -26,6 +24,5 @@ Deck::Deck(const int numberOfCardsPerSuit, const map<string, string> suitsDefini
 		}
 	}
 }
-
 
 }

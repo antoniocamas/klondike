@@ -25,13 +25,14 @@ private:
 	Configurator();
 
 public:
+	virtual ~Configurator(){};
+
 	static Configurator* getInstance(){
 		if (Configurator::instance == nullptr)
 			instance = new Configurator;
 		return instance;
 	};
 
-	virtual ~Configurator(){};
 	map<int, string> getSuitNicknames() const{return cardNicknames;};
 	map<string,vector<string>> getSuitRepresentationGuide() const {return suitRepresentationGuide;};
 	const int getSuitNumberOfCards() const {return suitNumberOfCards;}

@@ -1,16 +1,7 @@
-/*
- * MovementBuilderTextMode.h
- *
- *  Created on: Oct 21, 2017
- *      Author: antonio
- */
-
 #ifndef SRC_VIEW_INPUTMANAGERTEXTMODE_H_
 #define SRC_VIEW_INPUTMANAGERTEXTMODE_H_
 
-#include <vector>
 #include <string>
-#include <memory>
 #include <regex>
 #include <map>
 #include "Table.h"
@@ -20,10 +11,6 @@
 using namespace std;
 
 class InputManagerTextMode {
-	string remainder;
-	string waste;
-	string foundation;
-	string pile;
 	regex validCommandsRegex;
 	MovementDescriber movement;
 	map<string, string> inputDictionary;
