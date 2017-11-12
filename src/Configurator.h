@@ -1,5 +1,5 @@
 /*
- * Configuration.h
+ * Configurator.h
  *
  *  Created on: Nov 4, 2017
  *      Author: antonio
@@ -21,16 +21,14 @@ private:
 	map<string,vector<string>> suitRepresentationGuide;
 	map<int, string> cardNicknames;
 
-	int numberOfPiles;
-
 	static Configurator* instance;
 	Configurator();
 
 public:
 	static Configurator* getInstance(){
-			if (Configurator::instance == nullptr)
-				instance = new Configurator;
-			return instance;
+		if (Configurator::instance == nullptr)
+			instance = new Configurator;
+		return instance;
 	};
 
 	virtual ~Configurator(){};
@@ -38,9 +36,6 @@ public:
 	map<string,vector<string>> getSuitRepresentationGuide() const {return suitRepresentationGuide;};
 	const int getSuitNumberOfCards() const {return suitNumberOfCards;}
 	const map<string, string> getSuitModel(){return suitModel;}
-	const int getNumberOfPiles(){return numberOfPiles;}
-
-
 };
 
 #endif /* SRC_CONFIGURATOR_H_ */

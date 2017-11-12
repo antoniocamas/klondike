@@ -1,5 +1,5 @@
 /*
- * Configuration.cpp
+ * Configurator.cpp
  *
  *  Created on: Nov 4, 2017
  *      Author: antonio
@@ -13,8 +13,6 @@ Configurator* Configurator::instance = nullptr;
 
 Configurator::Configurator() {
 
-	this->numberOfPiles = 7;
-
 	this->suitNumberOfCards = 13;
 	this->suitModel = {
 		{"Clubs", "black"}, {"Diamonds", "red"}, {"Spades", "black"}, {"Hearts", "red"}
@@ -24,13 +22,6 @@ Configurator::Configurator() {
 		{"Spades", {BLACK, string("S")}}, { "Diamonds", {RED, string("D")}}
 };
 	this->cardNicknames = {{1, "A"}, {11, "J"}, {12, "Q"}, {13, "K"}};
-
-//	const map<string, string> spanishSuits = {
-//			{"Bastos", "verde"}, {"Copas", "rojo"},
-//			{"Oros", "amarillo"}, {"Espadas", "azul"}
-//	};
-
-
 }
 
 

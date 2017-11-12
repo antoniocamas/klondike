@@ -1,5 +1,5 @@
 /*
- * Tableau.cpp
+ * Table.cpp
  *
  *  Created on: Oct 1, 2017
  *      Author: antonio
@@ -19,7 +19,7 @@ void Table::deal()
 	deck.shuffle();
 	card::Card card;
 
-	int numberOfPiles = Configurator::getInstance()->getNumberOfPiles();
+	int numberOfPiles= piles.size();
 
 	for (int pilesFull = 0; pilesFull < numberOfPiles; ++pilesFull) {
 		for (int i=numberOfPiles-1 ; i > pilesFull-1 ; --i){

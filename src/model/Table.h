@@ -1,5 +1,5 @@
 /*
- * TableLayout.h
+ * Table.h
  *
  *  Created on: Oct 1, 2017
  *      Author: antonio
@@ -12,15 +12,12 @@
 #include <array>
 #include <string>
 
-#include "card/CardStackShowcase.h"
+#include "CardStackShowcase.h"
 #include "Pile.h"
 #include "Foundation.h"
 #include "GameCardStack.h"
 
 using namespace std;
-
-//const int numberOfFoundations = 4;
-//const int numberOfPiles = 3;
 
 class Table {
 private:

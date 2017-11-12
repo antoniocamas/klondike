@@ -24,7 +24,7 @@ void ViewConsoleLinux::showTable() {
 	io.printHeader();
 
 	io.printRemainder(table->getRemainderRepresenter().getNumberOfCardsInTheStack() > 0);
-	io.printWaste(cards2String(table->getWasterRepresenter().top(3)));
+	io.printWaste(cards2String(table->getWasterRepresenter().top(1)));
 
 	for (int i = 0; i < table->getNumberOfFundations(); ++i)
 		io.printFoundation(cards2String(table->getFoundationRepresenter(i).top(1)), i+1);

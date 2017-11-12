@@ -8,12 +8,10 @@
 
 #include <memory>
 #include "InGameController.h"
-#include "ActionController.h"
 #include "MovementControllerCreator.h"
 
 void InGameController::control() {
 	view->showTable();
-	shared_ptr<ActionController> action;
 
 	MovementControllerCreator movementControllerCreator(this->table, view->getNextMovement());
 	shared_ptr<MovementController> movementController = movementControllerCreator.getMovement();
@@ -25,5 +23,4 @@ void InGameController::control() {
 		view->showWinMessage();
 		state = State::FINISH;
 	}
-
 }
