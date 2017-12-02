@@ -1,11 +1,7 @@
-/*
- * CardViewConsoleLinux.cpp
- *
- *  Created on: Nov 4, 2017
- *      Author: antonio
- */
 
+#include <memory>
 #include "Suit.h"
+#include "SuitFlyweightFactory.h"
 #include "Card.h"
 #include "SuitViewConsoleLinux.h"
 #include "CardViewConsoleLinux.h"
@@ -24,8 +20,7 @@ string CardViewConsoleLinux::getRepresentation(Card card) {
 
 void CardViewConsoleLinux::createCardfromRepresentation(string representation) {
 	int number = getNumberfromRepresentation(representation);
-	Suit suit = getSuitfromRepresentation(representation);
-	this->card = Card(number, suit);
+	this->card = Card(number, getSuitfromRepresentation(representation));
 }
 
 int CardViewConsoleLinux::getNumberfromRepresentation(string representation) {
@@ -47,12 +42,13 @@ int CardViewConsoleLinux::getNumberfromRepresentation(string representation) {
 	return number;
 }
 
-Suit CardViewConsoleLinux::getSuitfromRepresentation(string representation){
+shared_ptr<Suit> CardViewConsoleLinux::getSuitfromRepresentation(string representation){
 	string name = getSuitNamefromRepresentation(representation);
 	if (name == "")
-		return Suit();
+		return nullptr;
 	string color = getSuitColorfromName(name);
-	return Suit(name, color, Configurator::getInstance()->getSuitNumberOfCards());
+	SuitFlyweightFactory suitFlyweightFactory;
+	return suitFlyweightFactory.getSuit(name, color, Configurator::getInstance()->getSuitNumberOfCards());
 }
 
 string CardViewConsoleLinux::getSuitNamefromRepresentation(string representation) const {

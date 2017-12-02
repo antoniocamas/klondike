@@ -1,10 +1,3 @@
-/*
- * Suit.h
- *
- *  Created on: Oct 8, 2017
- *      Author: antonio
- */
-
 #ifndef SUIT_H_
 #define SUIT_H_
 

@@ -1,10 +1,3 @@
-/*
- * Configurator.cpp
- *
- *  Created on: Nov 4, 2017
- *      Author: antonio
- */
-
 #include "Configurator.h"
 #include "LinuxTerminalColor.h"
 

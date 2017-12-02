@@ -1,10 +1,3 @@
-/*
- * Suit.cpp
- *
- *  Created on: Oct 8, 2017
- *      Author: antonio
- */
-
 #include <string>
 #include "Suit.h"
 

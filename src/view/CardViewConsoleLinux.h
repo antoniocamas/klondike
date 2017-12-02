@@ -28,7 +28,7 @@ public:
 	Card getCard()const {return card;};
 
 private:
-	Suit getSuitfromRepresentation(string);
+	shared_ptr<Suit> getSuitfromRepresentation(string);
 	string getSuitNamefromRepresentation(string) const;
 	string getSuitColorfromName(string);
 	int getNumberfromRepresentation(string);

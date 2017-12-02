@@ -1,10 +1,3 @@
-/*
- * View.h
- *
- *  Created on: Nov 9, 2017
- *      Author: antonio
- */
-
 #ifndef SRC_VIEW_VIEW_H_
 #define SRC_VIEW_VIEW_H_
 

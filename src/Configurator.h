@@ -1,10 +1,3 @@
-/*
- * Configurator.h
- *
- *  Created on: Nov 4, 2017
- *      Author: antonio
- */
-
 #ifndef SRC_CONFIGURATOR_H_
 #define SRC_CONFIGURATOR_H_
 

@@ -1,10 +1,3 @@
-/*
- * Foundation.cpp
- *
- *  Created on: Oct 12, 2017
- *      Author: antonio
- */
-
 #include "Foundation.h"
 
 using namespace card;

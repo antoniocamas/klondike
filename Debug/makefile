@@ -16,6 +16,16 @@ RM := rm
 -include src/controller/movement/subdir.mk
 -include src/controller/subdir.mk
 -include src/subdir.mk
+-include build/CMakeFiles/klondike.dir/home/antonio/workspace/programming/klondike/src/view/subdir.mk
+-include build/CMakeFiles/klondike.dir/home/antonio/workspace/programming/klondike/src/utils/subdir.mk
+-include build/CMakeFiles/klondike.dir/home/antonio/workspace/programming/klondike/src/model/card/subdir.mk
+-include build/CMakeFiles/klondike.dir/home/antonio/workspace/programming/klondike/src/model/subdir.mk
+-include build/CMakeFiles/klondike.dir/home/antonio/workspace/programming/klondike/src/controller/movement/subdir.mk
+-include build/CMakeFiles/klondike.dir/home/antonio/workspace/programming/klondike/src/controller/subdir.mk
+-include build/CMakeFiles/klondike.dir/home/antonio/workspace/programming/klondike/src/subdir.mk
+-include build/CMakeFiles/3.5.1/CompilerIdCXX/subdir.mk
+-include build/CMakeFiles/3.5.1/CompilerIdC/subdir.mk
+-include build/CMakeFiles/subdir.mk
 -include subdir.mk
 -include objects.mk
 
