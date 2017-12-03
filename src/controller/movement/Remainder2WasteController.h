@@ -1,10 +1,3 @@
-/*
- * Remainder2WasteController.h
- *
- *  Created on: Oct 21, 2017
- *      Author: antonio
- */
-
 #ifndef SRC_CONTROLLER_MOVEMENT_REMAINDER2WASTECONTROLLER_H_
 #define SRC_CONTROLLER_MOVEMENT_REMAINDER2WASTECONTROLLER_H_
 
@@ -13,11 +6,11 @@
 
 class Remainder2WasteController: public MovementController {
 public:
-	Remainder2WasteController(Table * t);
-	virtual ~Remainder2WasteController(){};
+    Remainder2WasteController(Table * t);
+    virtual ~Remainder2WasteController(){};
 
-	void applyMovement();
-	bool isValid();
+    void applyMovement();
+    bool isValid();
 };
 
 #endif /* SRC_CONTROLLER_MOVEMENT_REMAINDER2WASTECONTROLLER_H_ */

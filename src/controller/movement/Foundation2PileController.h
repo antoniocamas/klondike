@@ -1,10 +1,3 @@
-/*
- * Foundation2PileController.h
- *
- *  Created on: Nov 5, 2017
- *      Author: antonio
- */
-
 #ifndef SRC_CONTROLLER_MOVEMENT_FOUNDATION2PILECONTROLLER_H_
 #define SRC_CONTROLLER_MOVEMENT_FOUNDATION2PILECONTROLLER_H_
 
@@ -13,8 +6,8 @@
 
 class Foundation2PileController: public OneCardMovementController {
 public:
-	Foundation2PileController(Table * t, int oriFoundation, int destPile);
-	virtual ~Foundation2PileController(){};
+    Foundation2PileController(Table * t, int oriFoundation, int destPile);
+    virtual ~Foundation2PileController(){};
 };
 
 #endif /* SRC_CONTROLLER_MOVEMENT_FOUNDATION2PILECONTROLLER_H_ */

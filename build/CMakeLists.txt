@@ -12,6 +12,7 @@ set (INCLUDE_PATHS
   ../src/model/card
   ../src/utils
   ../src/view
+  ../src/view/game
   )
 
 include_directories(${INCLUDE_PATHS})

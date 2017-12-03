@@ -1,10 +1,3 @@
-/*
- * LinuxTerminalColor.h
- *
- *  Created on: Oct 2, 2017
- *      Author: Internet
- */
-
 #ifndef LINUXTERMINALCOLOR_H_
 #define LINUXTERMINALCOLOR_H_
 

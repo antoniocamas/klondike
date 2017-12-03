@@ -1,26 +1,19 @@
-/*
- * InGameController.cpp
- *
- *  Created on: Nov 9, 2017
- *      Author: antonio
- */
-
 
 #include <memory>
 #include "InGameController.h"
 #include "MovementControllerCreator.h"
 
 void InGameController::control() {
-	view->showTable();
+    view->showTable();
 
-	MovementControllerCreator movementControllerCreator(this->table, view->getNextMovement());
-	shared_ptr<MovementController> movementController = movementControllerCreator.getMovement();
+    MovementControllerCreator movementControllerCreator(this->table, view->getNextMovement());
+    shared_ptr<MovementController> movementController = movementControllerCreator.getMovement();
 
-	if(movementController->isValid())
-		movementController->applyMovement();
+    if(movementController->isValid())
+	movementController->applyMovement();
 
-	if (table->areAllFoundationsComplete()){
-		view->showWinMessage();
-		state = State::FINISH;
-	}
+    if (table->areAllFoundationsComplete()){
+	view->showWinMessage();
+	state = State::FINISH;
+    }
 }

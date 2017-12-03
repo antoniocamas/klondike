@@ -7,15 +7,15 @@
 
 class View {
 protected:
-	Table * table;
+    Table * table;
 public:
-	View(){};
-	virtual ~View(){};
+    View(){};
+    virtual ~View(){};
 
-	virtual void setTable(Table *t){table = t;};
-	virtual void showTable() = 0;
-	virtual void showWinMessage() = 0;
-	virtual MovementDescriber getNextMovement() = 0;
+    virtual void setTable(Table *t){table = t;};
+    virtual void showTable() = 0;
+    virtual void showWinMessage() = 0;
+    virtual MovementDescriber getNextMovement() = 0;
 };
 
 #endif /* SRC_VIEW_VIEW_H_ */
