@@ -12,7 +12,6 @@ public:
     IOConsoleLinux(){};
     virtual ~IOConsoleLinux(){};
 
-    void printHeader();
     void printMessage(string message);
     void printSplitter();
     void printNewLine();

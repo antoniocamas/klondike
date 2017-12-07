@@ -1,11 +1,14 @@
+
 #include "ViewConsoleLinux.h"
 #include "ViewGameConsoleLinux.h"
+#include "ViewMenuConsoleLinux.h"
 
-#include <iostream>
-using namespace std;
 
 void ViewConsoleLinux::accept(MenuController* controller) {
-    std::cout << "In Menu" << std::endl;
+    ViewMenuConsoleLinux viewMenu =  ViewMenuConsoleLinux();
+    viewMenu.showMenu();
+    controller->visit(viewMenu.getOption());
+
 }
 
 void ViewConsoleLinux::accept(InGameController* controller) {

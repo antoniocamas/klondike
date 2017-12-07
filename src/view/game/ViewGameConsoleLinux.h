@@ -3,9 +3,6 @@
 
 #include <vector>
 #include <string>
-#include <memory>
-
-#include "IOConsoleLinux.h"
 #include "Table.h"
 #include "Card.h"
 #include "MovementDescriber.h"
@@ -32,7 +29,6 @@ public:
     void showWinMessage();
     MovementDescriber getNextMovement();
 private:
-    static void printMessage(const string message);
     vector<string> cards2String(vector<const card::Card*>);
 };
 

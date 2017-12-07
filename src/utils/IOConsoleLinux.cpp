@@ -18,12 +18,6 @@ void IOConsoleLinux::printSplitter() {
     cout << string(80, '-') << endl;
 }
 
-void IOConsoleLinux::printHeader() {
-    clear_screen();
-    this->printMessage("\t\tKlondike\n");
-    this->printSplitter();
-}
-
 string IOConsoleLinux::getInput() {
     string input;
     cin >> input;

@@ -1,10 +1,8 @@
 
-#include <iostream>
 #include <string>
 #include <vector>
 #include "CardStackShowcase.h"
 #include "InputManagerTextMode.h"
-#include "IOConsoleLinux.h"
 #include "MovementDescriber.h"
 #include "CardViewConsoleLinux.h"
 #include "ViewGameConsoleLinux.h"
@@ -67,8 +65,4 @@ MovementDescriber ViewGameConsoleLinux::getNextMovement() {
     }while(!inputManager.isEnoughInput());
 
     return inputManager.getMovement();
-}
-
-void ViewGameConsoleLinux::printMessage(const string message) {
-    std::cout << message << std::endl;
 }
