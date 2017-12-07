@@ -1,4 +1,5 @@
 
+#include <iostream>
 #include <string>
 #include <vector>
 #include "CardStackShowcase.h"
@@ -6,12 +7,12 @@
 #include "IOConsoleLinux.h"
 #include "MovementDescriber.h"
 #include "CardViewConsoleLinux.h"
-#include "ViewConsoleLinux.h"
+#include "ViewGameConsoleLinux.h"
 
 using namespace std;
 using namespace card;
 
-void ViewConsoleLinux::showTable() {
+void ViewGameConsoleLinux::showTable() {
     io.printHeader();
 
     io.printRemainder(table->getRemainderRepresenter().getNumberOfCardsInTheStack() > 0);
@@ -27,13 +28,13 @@ void ViewConsoleLinux::showTable() {
 	io.printPile(cards2String(table->getPileRepresenter(i).all()), i+1);
 }
 
-void ViewConsoleLinux::showWinMessage() {
+void ViewGameConsoleLinux::showWinMessage() {
     showTable();
     io.printSplitter();
     io.printMessage("\tCongratulations, you have won Klondike!!!\n");
 }
 
-vector<string> ViewConsoleLinux::cards2String(vector<const Card*> cardsReferences){
+vector<string> ViewGameConsoleLinux::cards2String(vector<const Card*> cardsReferences){
     vector<string> cardRepresentation;
     CardViewConsoleLinux cardview;
     for (auto it = cardsReferences.begin(); it != cardsReferences.end(); ++it)
@@ -42,8 +43,9 @@ vector<string> ViewConsoleLinux::cards2String(vector<const Card*> cardsReference
     return cardRepresentation;
 }
 
-MovementDescriber ViewConsoleLinux::getNextMovement() {
+MovementDescriber ViewGameConsoleLinux::getNextMovement() {
 
+    io.printMenuMessage();
     io.printSplitter();
     string message = "\tEnter the ";
 
@@ -51,6 +53,10 @@ MovementDescriber ViewConsoleLinux::getNextMovement() {
     do{
 	io.printMessage(message + inputManager.getNextExpectedElement() + ": ");
 	string input = io.getInput();
+	
+	if (input == "m") {
+	    return MovementDescriber();
+	}
 
 	if (inputManager.isInputCorrect(input)){
 	    inputManager.addNewInput(input);
@@ -61,4 +67,8 @@ MovementDescriber ViewConsoleLinux::getNextMovement() {
     }while(!inputManager.isEnoughInput());
 
     return inputManager.getMovement();
+}
+
+void ViewGameConsoleLinux::printMessage(const string message) {
+    std::cout << message << std::endl;
 }

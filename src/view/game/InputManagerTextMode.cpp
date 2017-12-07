@@ -17,9 +17,11 @@ InputManagerTextMode::InputManagerTextMode(
 	table->getNumberOfFundations()) + "]";
     string pile = inputDictionary["pile"] + "[1-" + to_string(
 	table->getNumberOfPiles()) + "]";
+    string menu = inputDictionary["menu"] ;
 
-    //regex is something like "r|w|f[1-4]|p[1-7]]"
-    this->validCommandsRegex = remainder + "|" + waste + "|" + foundation + "|" + pile;
+    //regex is something like "r|w|f[1-4]|p[1-7]|m"
+    this->validCommandsRegex = remainder + "|" + waste + "|" +
+	foundation + "|" + pile + "|" + menu;
 }
 
 string InputManagerTextMode::getNextExpectedElement() const {

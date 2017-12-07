@@ -4,16 +4,26 @@
 #include "MovementControllerCreator.h"
 
 void InGameController::control() {
-    view->showTable();
+    view->accept(this);
+}
 
-    MovementControllerCreator movementControllerCreator(this->table, view->getNextMovement());
+void InGameController::visit(MovementDescriber movementDescriber) {
+    movement = movementDescriber;
+    if (movement.getType() == NOTAMOVEMENT)
+	state = State::MENU;
+    else
+	move();
+}
+
+void InGameController::move() {
+    MovementControllerCreator movementControllerCreator(table, movement);
     shared_ptr<MovementController> movementController = movementControllerCreator.getMovement();
 
     if(movementController->isValid())
-	movementController->applyMovement();
+    	movementController->applyMovement();
 
     if (table->areAllFoundationsComplete()){
-	view->showWinMessage();
-	state = State::FINISH;
+//    	view->showWinMessage();
+    	state = State::FINISH;
     }
 }

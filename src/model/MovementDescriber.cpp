@@ -43,7 +43,7 @@ void MovementDescriber::transition2NextMovementElement(){
 
 MovementType MovementDescriber::getType() const {
 
-	MovementType mtype = NOTSUPPORTED;
+	MovementType mtype = NOTAMOVEMENT;
 
 	if (origin == "remainder")
 		mtype = REMAINDER2WASTE;

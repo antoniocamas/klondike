@@ -5,33 +5,32 @@
 #include <string>
 #include <cstdlib>
 #include "StringHandler.h"
-#include "IOConsoleLinux.h"
+#include "ViewTableElementConsoleLinux.h"
 
 using namespace std;
 
-IOConsoleLinux::IOConsoleLinux(std::map<string, string>& tableElementRepresenter) {
+ViewTableElementConsoleLinux::ViewTableElementConsoleLinux(std::map<string, string>& tableElementRepresenter) {
     this->tableElementRepresenter = tableElementRepresenter;
 }
 
-void IOConsoleLinux::printNewLine() {
-    cout << endl;
-}
-
-void IOConsoleLinux::printMessage(string message) {
-    cout << message;
-}
-
-void IOConsoleLinux::printSplitter() {
-    cout << string(80, '-') << endl;
-}
-
-void IOConsoleLinux::printHeader() {
+void ViewTableElementConsoleLinux::printHeader() {
     clear_screen();
     this->printMessage("\t\tKlondike\n");
     this->printSplitter();
 }
 
-void IOConsoleLinux::printRemainder(bool cardLeft) {
+void ViewTableElementConsoleLinux::printMenuMessage() {
+    
+    StringHandler stringHandler(tableElementRepresenter["menu"]);
+    stringHandler.uppercase();
+
+    printSplitter();
+    printMessage("\tPress '");
+    printMessage(stringHandler.getString());
+    printMessage("' at any moment to show the Menu \n");
+}
+
+void ViewTableElementConsoleLinux::printRemainder(bool cardLeft) {
     string representation = this->getBasicRepresentation("remainder");
     if (cardLeft)
 	representation += "[" + \
@@ -42,7 +41,7 @@ void IOConsoleLinux::printRemainder(bool cardLeft) {
     cout << representation << " ";
 }
 
-void IOConsoleLinux::printWaste(vector<string> cardsRepresentation) {
+void ViewTableElementConsoleLinux::printWaste(vector<string> cardsRepresentation) {
     string representation = this->getBasicRepresentation("waste");
 
 
@@ -58,7 +57,7 @@ void IOConsoleLinux::printWaste(vector<string> cardsRepresentation) {
     cout << representation;
 }
 
-void IOConsoleLinux::printFoundation(vector<string> cardsRepresentation,
+void ViewTableElementConsoleLinux::printFoundation(vector<string> cardsRepresentation,
 				     int foundationNumber) {
 
     string representation = this->getBasicRepresentation("foundation", foundationNumber);
@@ -73,7 +72,7 @@ void IOConsoleLinux::printFoundation(vector<string> cardsRepresentation,
     cout << representation;
 }
 
-void IOConsoleLinux::printPile(vector<string> cardsRepresentation, int pileNumber) {
+void ViewTableElementConsoleLinux::printPile(vector<string> cardsRepresentation, int pileNumber) {
     string representation = this->getBasicRepresentation("pile", pileNumber);
     for (auto card : cardsRepresentation)
 	representation += "[" + card;
@@ -84,15 +83,7 @@ void IOConsoleLinux::printPile(vector<string> cardsRepresentation, int pileNumbe
     cout << representation << endl;
 }
 
-string IOConsoleLinux::getInput() {
-    string input;
-    cin >> input;
-    StringHandler stringHandler(input);
-    stringHandler.lowercase();
-    return stringHandler.getString();
-}
-
-string IOConsoleLinux::getBasicRepresentation(string element, int number){
+string ViewTableElementConsoleLinux::getBasicRepresentation(string element, int number){
     string representation;
     representation = this->tableElementRepresenter[element];
     StringHandler stringHandler(representation);
@@ -102,14 +93,4 @@ string IOConsoleLinux::getBasicRepresentation(string element, int number){
 	representation += to_string(number);
     representation += ":(";
     return representation;
-}
-
-void clear_screen()
-{
-#ifdef WINDOWS
-    std::system("cls");
-#else
-    // Assume POSIX
-    std::system ("clear");
-#endif
 }

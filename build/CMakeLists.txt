@@ -13,6 +13,7 @@ set (INCLUDE_PATHS
   ../src/utils
   ../src/view
   ../src/view/game
+  ../src/view/menu
   )
 
 include_directories(${INCLUDE_PATHS})

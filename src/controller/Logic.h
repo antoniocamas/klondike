@@ -14,7 +14,9 @@ private:
     Table table;
 
 public:
-    Logic(std::shared_ptr<View> v): state(State::START),view(v){view->setTable(&table);};
+    Logic(std::shared_ptr<View> v): state(State::START),view(v){
+	view->setTable(&table);
+    };
     virtual ~Logic(){};
 
     std::shared_ptr<Controller> getController();

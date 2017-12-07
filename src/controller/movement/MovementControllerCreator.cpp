@@ -41,7 +41,7 @@ shared_ptr<MovementController> MovementControllerCreator::getMovement() const{
 	    movementDescriber.getDestinationIndex(),
 	    movementDescriber.getOriginCard());
 	break;
-    case NOTSUPPORTED:
+    case NOTAMOVEMENT:
 	break;
     }
 

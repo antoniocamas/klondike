@@ -4,6 +4,7 @@
 enum class State {
     START,
     INGAME,
+    MENU,
     FINISH,
     EXIT
 };

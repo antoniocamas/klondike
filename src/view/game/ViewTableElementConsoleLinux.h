@@ -1,37 +1,31 @@
-#ifndef SRC_UICONSOLELINUX_H_
-#define SRC_UICONSOLELINUX_H_
+#ifndef SRC_VIEWTABLEELEMENTCONSOLELINUX_H_
+#define SRC_VIEWTABLEELEMENTCONSOLELINUX_H_
 
-#include "LinuxTerminalColor.h"
 #include <vector>
 #include <string>
 #include <map>
+#include "LinuxTerminalColor.h"
+#include "IOConsoleLinux.h"
 
 using namespace std;
 
-class IOConsoleLinux {
+class ViewTableElementConsoleLinux: public IOConsoleLinux {
 private:
     map<string, string> tableElementRepresenter;
 public:
-    IOConsoleLinux(std::map<string, string>& r);
-    virtual ~IOConsoleLinux(){};
+    ViewTableElementConsoleLinux(map<string, string>& r);
+    virtual ~ViewTableElementConsoleLinux(){};
 
     void printHeader();
+    void printMenuMessage();
     void printRemainder(bool cardLeft);
     void printWaste(vector<string> cardsRepresentation);
     void printFoundation(vector<string> cardsRepresentation, int foundationNumber);
     void printPile(vector<string> cardsRepresentation, int pileNumber);
-    void printMessage(string message);
-    void printSplitter();
-    void printNewLine();
-
-    string getInput();
 
 private:
     string getBasicRepresentation(string element){return this->getBasicRepresentation(element, 0);};
     string getBasicRepresentation(string element, int number);
-
 };
 
-void clear_screen();
-
-#endif /* SRC_UICONSOLELINUX_H_ */
+#endif /* SRC_VIEWTABLEELEMENTCONSOLELINUX_H_ */
