@@ -11,6 +11,7 @@ private:
     State& state;
     std::map<const int, State> optionStateMap = {
 	{Option::NEWGAME.getValue(), State::NEWGAME}, {Option::PLAY.getValue(), State::INGAME},
+	{Option::UNDO.getValue(), State::UNDO}, {Option::REDO.getValue(), State::REDO},
 	{Option::QUIT.getValue(), State::EXIT}
     };
 

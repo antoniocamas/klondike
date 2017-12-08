@@ -4,13 +4,15 @@
 #include "State.h"
 #include "Controller.h"
 #include "MovementDescriber.h"
+#include "TableRegistry.h"
 
 class InGameController: public Controller {
 private:
     State& state;
     MovementDescriber movement;
+    TableRegistry* tableRegistry;
 public:
-    InGameController(Table * t, std::shared_ptr<View> v, State& s): Controller(t, v),state(s){};
+    InGameController(Table * t, std::shared_ptr<View> v, State& s, TableRegistry* tr);
     virtual ~InGameController(){};
     void control();
     void visit(MovementDescriber movement);

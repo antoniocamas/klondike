@@ -7,9 +7,11 @@ using namespace std;
 
 class Option final {
   public:
-    static const Option QUIT;
-    static const Option PLAY;
     static const Option NEWGAME;
+    static const Option PLAY;
+    static const Option UNDO;
+    static const Option REDO;
+    static const Option QUIT;
 
     int getValue(void) const;
     string const& getString(void) const;

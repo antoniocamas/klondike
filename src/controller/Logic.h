@@ -3,6 +3,7 @@
 
 #include <memory>
 #include "Table.h"
+#include "TableRegistry.h"
 #include "Controller.h"
 #include "View.h"
 #include "State.h"
@@ -12,6 +13,7 @@ private:
     State state;
     std::shared_ptr<View> view;
     std::shared_ptr<Table> table;
+    std::shared_ptr<TableRegistry> tableRegistry;
 
 public:
     Logic(std::shared_ptr<View> v): state(State::NEWGAME),view(v), table(0){

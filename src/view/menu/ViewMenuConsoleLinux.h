@@ -16,6 +16,8 @@ private:
     vector<Option> menuOptions = {
 	Option::NEWGAME,
 	Option::PLAY,
+	Option::UNDO,
+	Option::REDO,
 	Option::QUIT
     };
 
