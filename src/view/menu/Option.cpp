@@ -7,10 +7,10 @@ const Option Option::QUIT(3, "Quit Klondike");
 
 Option::Option(int val, string nam): value(val), name(nam) {}
 
-int Option::getValue() {
+int Option::getValue() const{
     return value;
 }
 
-const string& Option::getString() {
+const string& Option::getString() const{
     return name;
 }

@@ -2,9 +2,13 @@
 #define SRC_STATE_CLASS_H_
 
 enum class State {
-    START,
+    NEWGAME,
     INGAME,
     MENU,
+    UNDO,
+    REDO,
+    SAVE,
+    LOAD,
     FINISH,
     EXIT
 };

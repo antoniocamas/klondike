@@ -11,8 +11,8 @@ class Option final {
     static const Option PLAY;
     static const Option NEWGAME;
 
-    int getValue(void);
-    string const& getString(void);
+    int getValue(void) const;
+    string const& getString(void) const;
 
   private:
     Option(int value, string str);

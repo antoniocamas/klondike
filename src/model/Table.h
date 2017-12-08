@@ -1,10 +1,3 @@
-/*
- * Table.h
- *
- *  Created on: Oct 1, 2017
- *      Author: antonio
- */
-
 #ifndef TABLE_H_
 #define TABLE_H_
 

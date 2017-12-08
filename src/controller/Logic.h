@@ -11,16 +11,19 @@ class Logic {
 private:
     State state;
     std::shared_ptr<View> view;
-    Table table;
+    std::shared_ptr<Table> table;
 
 public:
-    Logic(std::shared_ptr<View> v): state(State::START),view(v){
-	view->setTable(&table);
+    Logic(std::shared_ptr<View> v): state(State::NEWGAME),view(v), table(0){
+	createNewGame();
     };
     virtual ~Logic(){};
 
     std::shared_ptr<Controller> getController();
     bool isTimeToExit(){ return (state == State::EXIT);}
+
+private:
+    void createNewGame();
 };
 
 #endif /* SRC_CONTROLLER_LOGIC_H_ */
