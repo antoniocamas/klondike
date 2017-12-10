@@ -13,6 +13,7 @@ private:
     map<string, string> suitModel;
     map<string,vector<string>> suitRepresentationGuide;
     map<int, string> cardNicknames;
+    string savingsDirectory;
 
     static Configurator* instance;
     Configurator();
@@ -30,6 +31,7 @@ public:
     map<string,vector<string>> getSuitRepresentationGuide() const {return suitRepresentationGuide;};
     const int getSuitNumberOfCards() const {return suitNumberOfCards;}
     const map<string, string> getSuitModel(){return suitModel;}
+    const string getSavingsDirectory() {return savingsDirectory;}
 };
 
 #endif /* SRC_CONFIGURATOR_H_ */

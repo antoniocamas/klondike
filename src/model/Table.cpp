@@ -2,6 +2,7 @@
 #include "GameDeck.h"
 #include "TableMemento.h"
 
+
 Table::Table(){
     this->deal();
 }

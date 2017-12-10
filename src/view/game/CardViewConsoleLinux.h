@@ -23,7 +23,6 @@ public:
 private:
     shared_ptr<Suit> getSuitfromRepresentation(string);
     string getSuitNamefromRepresentation(string) const;
-    string getSuitColorfromName(string);
     int getNumberfromRepresentation(string);
 
 };

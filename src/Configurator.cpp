@@ -14,6 +14,8 @@ Configurator::Configurator() {
 	{"Spades", {BLACK, string("S")}}, { "Diamonds", {RED, string("D")}}
     };
     this->cardNicknames = {{1, "A"}, {11, "J"}, {12, "Q"}, {13, "K"}};
+
+    this->savingsDirectory = "../data/saves";
 }
 
 

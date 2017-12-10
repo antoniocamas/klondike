@@ -14,10 +14,15 @@ class SuitFlyweightFactory {
 public:
     static map<string, std::shared_ptr<Suit>> suitPool;
 
-    SuitFlyweightFactory(){};
+    SuitFlyweightFactory();
     virtual ~SuitFlyweightFactory(){};
 
+    shared_ptr<card::Suit> getSuitIfExists(string name);
     shared_ptr<card::Suit> getSuit(string name, string color, int numberOfCardsperSuit);
+    
+private:
+    bool isSuitCreated(string);
+    
 };
 
 } /* namespace card */

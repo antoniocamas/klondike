@@ -8,7 +8,9 @@ set (INCLUDE_PATHS
   ../src/
   ../src/controller
   ../src/controller/movement
+  ../src/controller/usecases
   ../src/model
+  ../src/model/marshall
   ../src/model/card
   ../src/utils
   ../src/view

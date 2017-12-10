@@ -15,7 +15,7 @@ using namespace std;
 
 class Table {
 private:
-    array<Pile,7> piles;
+    array<Pile, 7> piles;
     array<Foundation,4> foundations;
     GameCardStack remainder;
     GameCardStack waste;

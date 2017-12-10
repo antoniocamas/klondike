@@ -23,6 +23,7 @@ public:
 
 private:
     friend class Table;
+    friend class TableMarshaller;
     TableMemento(){};
 
     void setState(array<Pile,7> p, array<Foundation,4> f, GameCardStack r, GameCardStack w);

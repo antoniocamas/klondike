@@ -18,6 +18,7 @@ public:
     virtual ~TableRegistry();
 
     void updateHistory(Table*);
+    void clear();
     TableMemento * undo();
     TableMemento * redo();
 

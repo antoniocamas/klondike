@@ -7,12 +7,10 @@ TableRegistry::TableRegistry() {
 }
 
 TableRegistry::~TableRegistry() {
-    for (auto it : history)
-	delete it;
+    clear();
 }
 
 void TableRegistry::updateHistory(Table *table) {
-
     beheadHistory();
     history.push_back(table->createMemento());
     historyMarker = history.size()-1;
@@ -42,4 +40,11 @@ TableMemento * TableRegistry::undo() {
 TableMemento * TableRegistry::redo() {
     historyMarker++;
     return history.at(historyMarker);
+}
+
+void TableRegistry::clear() {
+    for (auto it : history)
+	delete it;
+    history.clear();
+    historyMarker = history.size();
 }

@@ -3,7 +3,10 @@
 #include "InGameController.h"
 #include "MovementControllerCreator.h"
 
-InGameController::InGameController(Table * t, std::shared_ptr<View> v, State& s, TableRegistry* tr): Controller(t, v), state(s), tableRegistry(tr){};
+InGameController::InGameController(
+    Table * t, std::shared_ptr<View> v, State& s, TableRegistry* tr):
+    Controller(t, v), state(s), tableRegistry(tr) {
+};
 
 void InGameController::control() {
     view->accept(this);

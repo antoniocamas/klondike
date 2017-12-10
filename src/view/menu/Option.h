@@ -11,6 +11,8 @@ class Option final {
     static const Option PLAY;
     static const Option UNDO;
     static const Option REDO;
+    static const Option SAVE;
+    static const Option LOAD;
     static const Option QUIT;
 
     int getValue(void) const;

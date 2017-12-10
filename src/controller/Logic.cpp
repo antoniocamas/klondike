@@ -6,6 +6,8 @@
 #include "MenuController.h"
 #include "UndoController.h"
 #include "RedoController.h"
+#include "SaveController.h"
+#include "LoadController.h"
 
 using namespace std;
 
@@ -29,6 +31,14 @@ shared_ptr<Controller> Logic::getController() {
 	break;
     case State::REDO:
 	controller = make_shared<RedoController>(table.get(), view, tableRegistry.get());
+	state = State::INGAME;
+	break;
+    case State::SAVE:
+	controller = make_shared<SaveController>(table.get(), view);
+	state = State::INGAME;
+	break;
+    case State::LOAD:
+	controller = make_shared<LoadController>(table.get(), view, tableRegistry.get());
 	state = State::INGAME;
 	break;
     case State::FINISH:

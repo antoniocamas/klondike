@@ -18,6 +18,8 @@ private:
 	Option::PLAY,
 	Option::UNDO,
 	Option::REDO,
+	Option::SAVE,
+	Option::LOAD,
 	Option::QUIT
     };
 

@@ -44,11 +44,8 @@ int CardViewConsoleLinux::getNumberfromRepresentation(string representation) {
 
 shared_ptr<Suit> CardViewConsoleLinux::getSuitfromRepresentation(string representation){
     string name = getSuitNamefromRepresentation(representation);
-    if (name == "")
-	return nullptr;
-    string color = getSuitColorfromName(name);
     SuitFlyweightFactory suitFlyweightFactory;
-    return suitFlyweightFactory.getSuit(name, color, Configurator::getInstance()->getSuitNumberOfCards());
+    return suitFlyweightFactory.getSuitIfExists(name);
 }
 
 string CardViewConsoleLinux::getSuitNamefromRepresentation(string representation) const {
@@ -64,12 +61,4 @@ string CardViewConsoleLinux::getSuitNamefromRepresentation(string representation
 	    return (*it).first;
 
     return "";
-}
-
-string CardViewConsoleLinux::getSuitColorfromName(string suitName){
-    map<string, string> suitModel = Configurator::getInstance()->getSuitModel();
-    for (auto it = suitModel.begin(); it != suitModel.end(); ++it)
-	if ((*it).first == suitName)
-	    return (*it).second;
-    return nullptr;
 }
