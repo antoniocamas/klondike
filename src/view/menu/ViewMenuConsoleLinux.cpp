@@ -1,30 +1,28 @@
 
 #include <string>
 #include "ViewMenuConsoleLinux.h"
+#include "OptionMenu.h"
+
+ViewMenuConsoleLinux::ViewMenuConsoleLinux() {
+    vector<OptionMenu> menuOptions = {
+	OptionMenu(1, "New Game"),
+	OptionMenu(2, "Go back to Play"),
+	OptionMenu(3, "Undo movement"),
+	OptionMenu(4, "Redo movement"),
+	OptionMenu(5, "Save Game"),
+	OptionMenu(6, "Load Game"),
+	OptionMenu(0, "Quit Klondike")};
+
+    menu = make_shared<MenuText>(menuOptions);
+};
+
+ViewMenuConsoleLinux::~ViewMenuConsoleLinux() {
+};
 
 void ViewMenuConsoleLinux::showMenu() {
-    clear_screen();
-    io.printSplitter();
-    io.printMessage("\t\t Klondike Menu\n");
-    io.printSplitter();
-
-    for (auto line : menuOptions) {
-	io.printMessage(std::to_string(line.getValue()) + " - " + line.getString());
-	io.printNewLine();
-    }
+    menu->showMenu(" Klondike Menu");
 }
 
-const Option ViewMenuConsoleLinux::getOption() {
-    string input;
-    do {
-	io.printMessage("\tEnter and Option: ");
-	input = io.getInput();
-	
-	for (auto option : menuOptions) {
-	    if (std::to_string(option.getValue()) == input)
-		return option;
-	}
-
-	io.printMessage("Unknown Option\n");
-    }while(true);
+const OptionMenu ViewMenuConsoleLinux::getOption() {
+    return menu->getOption();
 }

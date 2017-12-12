@@ -15,15 +15,19 @@ using namespace std;
 class TableLoaderFileSystem: public TableLoaderImplementor {
 private:
     std::array<const string, 4> delimiters;
-    std::ifstream loadFile;
+    std::ifstream savingFile;
+    std::string directory;
+    std::string extension;
     
 public:
-    TableLoaderFileSystem(string name);
+    TableLoaderFileSystem();
     virtual ~TableLoaderFileSystem();
 
+    vector<string> getSavedGames();
     array<Pile,7> deserializePiles();
     array<Foundation,4> deserializeFoundations();
     GameCardStack deserializeGameCardStack(string);
+    
 
 private:
     vector<card::Card> deserializeCardStack(string);

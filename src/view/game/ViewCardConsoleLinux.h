@@ -1,5 +1,5 @@
-#ifndef SRC_VIEW_CARDVIEWCONSOLELINUX_H_
-#define SRC_VIEW_CARDVIEWCONSOLELINUX_H_
+#ifndef SRC_VIEW_VIEWCARDCONSOLELINUX_H_
+#define SRC_VIEW_VIEWCARDCONSOLELINUX_H_
 
 #include <string>
 #include "Suit.h"
@@ -7,13 +7,13 @@
 
 using namespace card;
 
-class CardViewConsoleLinux {
+class ViewCardConsoleLinux {
 private:
     Card card;
 public:
-    CardViewConsoleLinux(){};
-    CardViewConsoleLinux(Card card): card(card) {};
-    virtual ~CardViewConsoleLinux(){};
+    ViewCardConsoleLinux(){};
+    ViewCardConsoleLinux(Card card): card(card) {};
+    virtual ~ViewCardConsoleLinux(){};
 
     string getRepresentation(Card c);
     void createCardfromRepresentation(string repr);

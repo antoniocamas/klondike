@@ -2,19 +2,31 @@
 #include <memory>
 #include "TableLoaderFileSystem.h"
 #include "SuitFlyweightFactory.h"
+#include "FileSystemTools.h"
 #include "Configurator.h"
 
 using namespace std;
 
-TableLoaderFileSystem::TableLoaderFileSystem(string name):
-    TableLoaderImplementor(name), delimiters({":", " ", ",", "\n"}) {
-
-    string dir = Configurator::getInstance()->getSavingsDirectory();
-    loadFile.open(dir + "/" + savingName + ".sav");
+TableLoaderFileSystem::TableLoaderFileSystem():
+    TableLoaderImplementor(), delimiters({":", " ", ",", "\n"}) {
+    directory = Configurator::getInstance()->getSavingsDirectory();
+    extension = ".sav";
 };
 
 TableLoaderFileSystem::~TableLoaderFileSystem() {
-    loadFile.close();
+}
+
+vector<string> TableLoaderFileSystem::getSavedGames() {
+    vector<string> savedGames;
+    FileSystemTools fileSystemTool;
+    regex pattern("(.*)(" + extension +")");
+    smatch matches;
+    for (string item : fileSystemTool.listElementsInDir(directory)) {
+	if(regex_match(item, matches, pattern)){
+	    savedGames.push_back(matches[1]);
+	}
+    }
+    return savedGames;
 }
 
 array<Pile,7> TableLoaderFileSystem::deserializePiles() {
@@ -54,7 +66,6 @@ vector<Card> TableLoaderFileSystem::deserializeCardStack(string stackSerialized)
 }
 
 Card TableLoaderFileSystem::deserializeCard(string cardSerialized) {
-
     array<string,3> cardElements;
     size_t position;
     for (int i=0; i<cardElements.size(); i++) {
@@ -73,28 +84,25 @@ Card TableLoaderFileSystem::deserializeCard(string cardSerialized) {
 }
 
 array<string,2> TableLoaderFileSystem::findElement(string element) {
-    
+    savingFile.open(directory + "/" + savingName + extension);
     array<string,2> foundElement;
-    loadFile.clear();
-    loadFile.seekg(0, ios::beg);
-
     regex pattern("(" + element + ".*)(" + delimiters[0] + ")(.*)");
     smatch matches;
     string line;
-    while(getline(loadFile, line)){
+
+    while(getline(savingFile, line)){
 	if(regex_match(line, matches, pattern)){
 	    foundElement[0] = matches[1];
 	    foundElement[1] = matches[3];
 	    break;
 	}
     }
+    savingFile.close();
     return foundElement;
 }
 
 array<string,2> TableLoaderFileSystem::findCard(string cards) {
-    
     array<string,2> foundCard;
-
     size_t position;
     position = cards.find(delimiters[2]);
     if (position != std::string::npos) {

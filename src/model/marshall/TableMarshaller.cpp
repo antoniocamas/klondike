@@ -4,7 +4,7 @@
 
 using namespace std;
 
-TableMarshaller::TableMarshaller(string name): savingName(name), memento(nullptr) {
+TableMarshaller::TableMarshaller(): memento(nullptr) {
 }
 
 TableMarshaller::~TableMarshaller() {
@@ -12,9 +12,14 @@ TableMarshaller::~TableMarshaller() {
     delete memento;
 }
 
+void TableMarshaller::setSavingName(string name) {
+    savingName = name;
+};
+
 void TableMarshaller::setTableMemento(TableMemento* tableMemento) {
     memento = tableMemento;
-};
+}
+
 void TableMarshaller::save() {
     saverImp = make_shared<TableSaverFileSystem>(savingName);
 
@@ -24,10 +29,14 @@ void TableMarshaller::save() {
     saverImp->serializeWaste(memento->getStateWaste());
 }
 
+vector<string> TableMarshaller::getSavedGames() {
+    loaderImp = make_shared<TableLoaderFileSystem>();
+    return loaderImp->getSavedGames();
+}
+
 TableMemento* TableMarshaller::load() {
-    loaderImp = make_shared<TableLoaderFileSystem>(savingName);
     TableMemento * loadedMemento = new TableMemento();
-    
+    loaderImp->setSavingName(savingName);
     loadedMemento->setState(loaderImp->deserializePiles(),
 			    loaderImp->deserializeFoundations(),
 			    loaderImp->deserializeGameCardStack("remainder"),

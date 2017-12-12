@@ -4,7 +4,7 @@
 #include <regex>
 #include "InputManagerTextMode.h"
 #include "MovementDescriber.h"
-#include "CardViewConsoleLinux.h"
+#include "ViewCardConsoleLinux.h"
 
 using namespace std;
 
@@ -49,7 +49,7 @@ bool InputManagerTextMode::isInputCorrect(string data) const {
     bool correct = false;
 
     if (movement.getNextExpectedElement() == ORIGINCARD){
-	CardViewConsoleLinux cardChecker;
+	ViewCardConsoleLinux cardChecker;
 	cardChecker.createCardfromRepresentation(data);
 	correct = cardChecker.isCardCreated();
     }
@@ -110,7 +110,7 @@ void InputManagerTextMode::translateInput2Stack(string input, string &stack, uns
 }
 
 card::Card InputManagerTextMode::translateInput2Card(string input){
-    CardViewConsoleLinux cardCreator;
+    ViewCardConsoleLinux cardCreator;
     cardCreator.createCardfromRepresentation(input);
     return cardCreator.getCard();
 }

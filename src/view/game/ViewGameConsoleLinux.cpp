@@ -4,7 +4,7 @@
 #include "CardStackShowcase.h"
 #include "InputManagerTextMode.h"
 #include "MovementDescriber.h"
-#include "CardViewConsoleLinux.h"
+#include "ViewCardConsoleLinux.h"
 #include "ViewGameConsoleLinux.h"
 
 using namespace std;
@@ -34,9 +34,9 @@ void ViewGameConsoleLinux::showWinMessage() {
 
 vector<string> ViewGameConsoleLinux::cards2String(vector<const Card*> cardsReferences){
     vector<string> cardRepresentation;
-    CardViewConsoleLinux cardview;
+    ViewCardConsoleLinux viewcard;
     for (auto it = cardsReferences.begin(); it != cardsReferences.end(); ++it)
-	cardRepresentation.push_back(cardview.getRepresentation(*(*it)));
+	cardRepresentation.push_back(viewcard.getRepresentation(*(*it)));
 
     return cardRepresentation;
 }

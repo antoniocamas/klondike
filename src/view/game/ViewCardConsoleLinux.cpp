@@ -1,29 +1,28 @@
-
 #include <memory>
 #include "Suit.h"
 #include "SuitFlyweightFactory.h"
 #include "Card.h"
-#include "SuitViewConsoleLinux.h"
-#include "CardViewConsoleLinux.h"
+#include "ViewSuitConsoleLinux.h"
+#include "ViewCardConsoleLinux.h"
 #include "LinuxTerminalColor.h"
 #include "Configurator.h"
 #include "StringHandler.h"
 
-string CardViewConsoleLinux::getRepresentation(Card card) {
+string ViewCardConsoleLinux::getRepresentation(Card card) {
     if (!card.isUpTurned() or card.isEmpty())
 	return "";
 
-    SuitViewConsoleLinux suitview;
-    return suitview.getColor(card.getSuitName())+ suitview.getNickName(card.getNumber()) +
-	suitview.getShortName(card.getSuitName()) + RESET ;
+    ViewSuitConsoleLinux viewsuit;
+    return viewsuit.getColor(card.getSuitName())+ viewsuit.getNickName(card.getNumber()) +
+	viewsuit.getShortName(card.getSuitName()) + RESET ;
 }
 
-void CardViewConsoleLinux::createCardfromRepresentation(string representation) {
+void ViewCardConsoleLinux::createCardfromRepresentation(string representation) {
     int number = getNumberfromRepresentation(representation);
     this->card = Card(number, getSuitfromRepresentation(representation));
 }
 
-int CardViewConsoleLinux::getNumberfromRepresentation(string representation) {
+int ViewCardConsoleLinux::getNumberfromRepresentation(string representation) {
     StringHandler stringHandler(representation);
     stringHandler.cutNlastChars(1);
     stringHandler.uppercase();
@@ -42,13 +41,13 @@ int CardViewConsoleLinux::getNumberfromRepresentation(string representation) {
     return number;
 }
 
-shared_ptr<Suit> CardViewConsoleLinux::getSuitfromRepresentation(string representation){
+shared_ptr<Suit> ViewCardConsoleLinux::getSuitfromRepresentation(string representation){
     string name = getSuitNamefromRepresentation(representation);
     SuitFlyweightFactory suitFlyweightFactory;
     return suitFlyweightFactory.getSuitIfExists(name);
 }
 
-string CardViewConsoleLinux::getSuitNamefromRepresentation(string representation) const {
+string ViewCardConsoleLinux::getSuitNamefromRepresentation(string representation) const {
 
     StringHandler stringHandler(representation);
     stringHandler.keepNlastChars(1);

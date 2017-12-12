@@ -1,17 +1,17 @@
 
 #include <map>
 #include <string>
-#include "SuitViewConsoleLinux.h"
+#include "ViewSuitConsoleLinux.h"
 
-string SuitViewConsoleLinux::getColor(string suiteName) {
+string ViewSuitConsoleLinux::getColor(string suiteName) {
     return representationGuide[suiteName].at(0);
 }
 
-string SuitViewConsoleLinux::getShortName(string suiteName) {
+string ViewSuitConsoleLinux::getShortName(string suiteName) {
     return representationGuide[suiteName].at(1);
 }
 
-string SuitViewConsoleLinux::getNickName(int number) const {
+string ViewSuitConsoleLinux::getNickName(int number) const {
 
     std::map<int,string>::const_iterator iterator;
 

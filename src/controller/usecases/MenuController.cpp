@@ -5,7 +5,7 @@ void MenuController::control() {
     this->view->accept(this);
 }
 
-void MenuController::visit(Option option) {
+void MenuController::visit(OptionMenu option) {
     state = optionStateMap[option.getValue()];
 }
 	

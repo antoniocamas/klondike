@@ -1,5 +1,5 @@
-#ifndef SRC_VIEW_SUITVIEWCONSOLELINUX_H_
-#define SRC_VIEW_SUITVIEWCONSOLELINUX_H_
+#ifndef SRC_VIEW_VIEWSUITCONSOLELINUX_H_
+#define SRC_VIEW_VIEWSUITCONSOLELINUX_H_
 
 #include <map>
 #include <string>
@@ -8,20 +8,20 @@
 
 using namespace std;
 
-class SuitViewConsoleLinux {
+class ViewSuitConsoleLinux {
 private:
     map<string,vector<string>> representationGuide;
     map<int, string> cardNicknames;
 
 public:
-    SuitViewConsoleLinux():
+    ViewSuitConsoleLinux():
 	representationGuide(Configurator::getInstance()->getSuitRepresentationGuide()),
 	cardNicknames(Configurator::getInstance()->getSuitNicknames()) {};
-    virtual ~SuitViewConsoleLinux(){};
+    virtual ~ViewSuitConsoleLinux(){};
 
     string getColor(string suiteName);
     string getShortName(string suiteName);
     string getNickName(int number) const;
 };
 
-#endif /* SRC_VIEW_SUITVIEWCONSOLELINUX_H_ */
+#endif /* SRC_VIEW_VIEWSUITCONSOLELINUX_H_ */

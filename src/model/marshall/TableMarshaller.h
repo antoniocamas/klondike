@@ -2,6 +2,7 @@
 #define TABLEMARSHALLER_H_
 
 #include <memory>
+#include <vector>
 #include <string>
 #include "TableMemento.h"
 #include "TableLoaderImplementor.h"
@@ -14,12 +15,14 @@ private:
     TableMemento * memento;
     string savingName;
 public:
-    TableMarshaller(string);
+    TableMarshaller();
     virtual ~TableMarshaller();
 
+    void setSavingName(string);
     void setTableMemento(TableMemento*);
     void save();
     TableMemento* load();
+    vector<string> getSavedGames();
 };
 
 #endif /* TABLEMARSHALLER_H_ */

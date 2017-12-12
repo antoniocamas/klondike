@@ -3,7 +3,7 @@
 
 #include <string>
 #include <array>
-
+#include <vector>
 #include "Pile.h"
 #include "Foundation.h"
 #include "GameCardStack.h"
@@ -14,9 +14,11 @@ class TableLoaderImplementor {
 protected:
     string savingName;
 public:
-    TableLoaderImplementor(string name): savingName(name){};
+    TableLoaderImplementor(){};
     virtual ~TableLoaderImplementor(){};
 
+    virtual void setSavingName(string n){savingName = n;};
+    virtual vector<string> getSavedGames() = 0;
     virtual array<Pile,7> deserializePiles() = 0;
     virtual array<Foundation,4> deserializeFoundations() = 0;
     virtual GameCardStack deserializeGameCardStack(string) = 0;
