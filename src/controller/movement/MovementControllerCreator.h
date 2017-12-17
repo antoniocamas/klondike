@@ -10,11 +10,11 @@ using namespace std;
 
 class MovementControllerCreator {
 private:
-    Table * table;
+    Table* table;
     MovementDescriber movementDescriber;
 
 public:
-    MovementControllerCreator(Table * t, MovementDescriber m): table(t), movementDescriber(m){};
+    MovementControllerCreator(Table*, MovementDescriber);
     virtual ~MovementControllerCreator(){};
 
     shared_ptr<MovementController> getMovement() const;

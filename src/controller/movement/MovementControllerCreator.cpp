@@ -11,6 +11,10 @@
 
 using namespace std;
 
+MovementControllerCreator::MovementControllerCreator
+(Table* t, MovementDescriber m): table(t), movementDescriber(m) {
+};
+
 shared_ptr<MovementController> MovementControllerCreator::getMovement() const{
     shared_ptr<MovementController> movement = nullptr;
 

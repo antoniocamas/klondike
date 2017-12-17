@@ -5,7 +5,8 @@
 #include "MovementType.h"
 
 InGameController::InGameController(
-    Table * t, std::shared_ptr<View> v, State& s, TableRegistry* tr):
+    std::shared_ptr<Table> t, std::shared_ptr<View> v, State& s,
+    std::shared_ptr<TableRegistry> tr):
     Controller(t, v), state(s), tableRegistry(tr) {
 };
 
@@ -22,16 +23,15 @@ void InGameController::visit(MovementDescriber movementDescriber) {
 }
 
 void InGameController::move() {
-    MovementControllerCreator movementControllerCreator(table, movement);
+    MovementControllerCreator movementControllerCreator(table.get(), movement);
     shared_ptr<MovementController> movementController = movementControllerCreator.getMovement();
 
     if(movementController->isValid()) {
     	movementController->applyMovement();
-	tableRegistry->updateHistory(table);
+	tableRegistry->updateHistory(table.get());
     }
 
     if (table->areAllFoundationsComplete()){
-//    	view->showWinMessage();
     	state = State::FINISH;
     }
 }

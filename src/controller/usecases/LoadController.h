@@ -9,10 +9,10 @@
 
 class LoadController: public Controller {
 private:
-    TableRegistry* tableRegistry;
+    std::shared_ptr<TableRegistry> tableRegistry;
     TableMarshaller tableMarshaller;
 public:
-    LoadController(Table * t, std::shared_ptr<View> v,  TableRegistry* tr);
+    LoadController(std::shared_ptr<Table>, std::shared_ptr<View>,  std::shared_ptr<TableRegistry>);
     virtual ~LoadController(){};
     void control();
     void visit(string);

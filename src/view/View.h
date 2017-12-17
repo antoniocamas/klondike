@@ -7,6 +7,7 @@ class MenuController;
 class InGameController;
 class LoadController;
 class SaveController;
+class WinGameController;
 
 class View {
 protected:
@@ -18,6 +19,7 @@ public:
     virtual void accept(InGameController* controller) = 0;
     virtual void accept(LoadController* controller) = 0;
     virtual void accept(SaveController* controller) = 0;
+    virtual void accept(WinGameController* controller) = 0;
 };
 
 #endif /* SRC_VIEW_VIEW_H_ */

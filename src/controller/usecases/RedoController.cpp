@@ -1,8 +1,9 @@
 
 #include "RedoController.h"
 
-RedoController::RedoController(Table * t, std::shared_ptr<View> v, TableRegistry* tr):
-    Controller(t, v), tableRegistry(tr) {
+RedoController::RedoController(
+    std::shared_ptr<Table> t, std::shared_ptr<View> v,
+    std::shared_ptr<TableRegistry> tr): Controller(t, v), tableRegistry(tr) {
 };
 
 void RedoController::control() {

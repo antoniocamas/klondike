@@ -2,11 +2,11 @@
 #define SRC_CONTROLLER_LOGIC_H_
 
 #include <memory>
+#include "State.h"
 #include "Table.h"
 #include "TableRegistry.h"
 #include "Controller.h"
 #include "View.h"
-#include "State.h"
 
 class Logic {
 private:
@@ -16,13 +16,11 @@ private:
     std::shared_ptr<TableRegistry> tableRegistry;
 
 public:
-    Logic(std::shared_ptr<View> v): state(State::NEWGAME),view(v), table(0){
-	createNewGame();
-    };
+    Logic(std::shared_ptr<View> v);
     virtual ~Logic(){};
 
     std::shared_ptr<Controller> getController();
-    bool isTimeToExit(){ return (state == State::EXIT);}
+    bool isTimeToExit();
 
 private:
     void createNewGame();

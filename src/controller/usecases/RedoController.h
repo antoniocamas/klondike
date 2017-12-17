@@ -6,9 +6,10 @@
 
 class RedoController: public Controller {
 private:
-    TableRegistry* tableRegistry;
+    std::shared_ptr<TableRegistry> tableRegistry;
 public:
-    RedoController(Table * t, std::shared_ptr<View> v, TableRegistry* tr);
+    RedoController(std::shared_ptr<Table>, std::shared_ptr<View>,
+		   std::shared_ptr<TableRegistry>);
     virtual ~RedoController(){};
     void control();
 };

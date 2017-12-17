@@ -8,7 +8,7 @@ class SaveController: public Controller {
 private:
     TableMarshaller tableMarshaller;
 public:
-    SaveController(Table * t, std::shared_ptr<View> v);
+    SaveController(std::shared_ptr<Table> t, std::shared_ptr<View> v);
     virtual ~SaveController(){};
     void control();
     void visit(string);

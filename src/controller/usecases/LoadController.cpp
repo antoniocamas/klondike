@@ -2,7 +2,7 @@
 #include "TableMemento.h"
 
 LoadController::LoadController(
-    Table * t, std::shared_ptr<View> v,  TableRegistry* tr):
+    std::shared_ptr<Table> t, std::shared_ptr<View> v,  std::shared_ptr<TableRegistry> tr):
     Controller(t, v), tableRegistry(tr) {
     tableMarshaller = TableMarshaller();
 };
@@ -21,6 +21,6 @@ void LoadController::visit(string savingName) {
     
     table->setMemento(memento);
     tableRegistry->clear();
-    tableRegistry->updateHistory(table);
+    tableRegistry->updateHistory(table.get());
     delete memento;
 }

@@ -10,9 +10,10 @@ class InGameController: public Controller {
 private:
     State& state;
     MovementDescriber movement;
-    TableRegistry* tableRegistry;
+    std::shared_ptr<TableRegistry> tableRegistry;
 public:
-    InGameController(Table * t, std::shared_ptr<View> v, State& s, TableRegistry* tr);
+    InGameController(std::shared_ptr<Table>, std::shared_ptr<View>,
+		     State&, std::shared_ptr<TableRegistry>);
     virtual ~InGameController(){};
     void control();
     void visit(MovementDescriber movement);

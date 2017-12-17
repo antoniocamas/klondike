@@ -1,7 +1,7 @@
-
 #include "UndoController.h"
 
-UndoController::UndoController(Table * t, std::shared_ptr<View> v, TableRegistry* tr):
+UndoController::UndoController(
+    std::shared_ptr<Table> t, std::shared_ptr<View> v, std::shared_ptr<TableRegistry> tr):
     Controller(t, v), tableRegistry(tr) {
 };
 

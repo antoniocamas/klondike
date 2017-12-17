@@ -5,6 +5,7 @@
 #include "InGameController.h"
 #include "LoadController.h"
 #include "SaveController.h"
+#include "WinGameController.h"
 
 class ViewConsoleLinux: public View {
 protected:
@@ -18,6 +19,7 @@ public:
     void accept(InGameController* controller);
     void accept(LoadController* controller);
     void accept(SaveController* controller);
+    void accept(WinGameController* controller);
 };
 
 #endif /* SRC_VIEWCONSOLELINUX_H_ */

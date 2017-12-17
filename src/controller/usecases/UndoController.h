@@ -6,9 +6,10 @@
 
 class UndoController: public Controller {
 private:
-    TableRegistry* tableRegistry;
+    std::shared_ptr<TableRegistry> tableRegistry;
 public:
-    UndoController(Table * t, std::shared_ptr<View> v, TableRegistry* tr);
+    UndoController(std::shared_ptr<Table>, std::shared_ptr<View>,
+		   std::shared_ptr<TableRegistry> tr);
     virtual ~UndoController(){};
     void control();
 };

@@ -2,7 +2,7 @@
 
 using namespace std;
 
-SaveController::SaveController(Table * t, std::shared_ptr<View> v):
+SaveController::SaveController(std::shared_ptr<Table> t, std::shared_ptr<View> v):
     Controller(t, v) {
     tableMarshaller = TableMarshaller();
 };

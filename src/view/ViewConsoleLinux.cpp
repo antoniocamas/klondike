@@ -27,3 +27,8 @@ void ViewConsoleLinux::accept(SaveController* controller) {
     ViewSaveConsoleLinux viewSave = ViewSaveConsoleLinux();
     controller->visit(viewSave.getSavingName());
 }
+
+void ViewConsoleLinux::accept(WinGameController* controller) {
+    ViewGameConsoleLinux viewGame(table);
+    viewGame.showWinMessage();
+}

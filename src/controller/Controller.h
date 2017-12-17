@@ -7,11 +7,11 @@
 
 class Controller {
 protected:
-    Table * table;
+    std::shared_ptr<Table> table;
     std::shared_ptr<View> view;
 
 public:
-    Controller(Table * t, std::shared_ptr<View> v): table(t), view(v){};
+    Controller(std::shared_ptr<Table> t, std::shared_ptr<View> v): table(t), view(v){};
     virtual ~Controller(){};
 
     virtual void control() = 0;

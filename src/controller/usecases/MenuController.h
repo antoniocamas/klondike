@@ -17,7 +17,7 @@ private:
     };
 
 public:
-    MenuController(Table * t, std::shared_ptr<View> v, State& s): Controller(t, v), state(s){};
+    MenuController(std::shared_ptr<Table>, std::shared_ptr<View>, State&);
     virtual ~MenuController(){};
     void control();
     void visit(OptionMenu op);
