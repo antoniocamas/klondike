@@ -12,6 +12,7 @@ set (INCLUDE_PATHS
   ../src/model
   ../src/model/marshall
   ../src/model/card
+  ../src/model/movement
   ../src/utils
   ../src/utils/menu
   ../src/view

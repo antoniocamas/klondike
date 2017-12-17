@@ -2,6 +2,7 @@
 #include <memory>
 #include "InGameController.h"
 #include "MovementControllerCreator.h"
+#include "MovementType.h"
 
 InGameController::InGameController(
     Table * t, std::shared_ptr<View> v, State& s, TableRegistry* tr):
@@ -14,7 +15,7 @@ void InGameController::control() {
 
 void InGameController::visit(MovementDescriber movementDescriber) {
     movement = movementDescriber;
-    if (movement.getType() == NOTAMOVEMENT)
+    if (movement.getType() == MovementType::NOTAMOVEMENT)
 	state = State::MENU;
     else
 	move();
