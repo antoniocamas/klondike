@@ -11,7 +11,7 @@ class MovementClassifierBuilder {
 public:
     MovementClassifierBuilder(){};
     virtual ~MovementClassifierBuilder(){};
-    
+
     shared_ptr<MovementClassifier> getMovementClassifer(string, string);
 };
 

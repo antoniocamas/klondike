@@ -1,10 +1,3 @@
-/*
- * StringHandler.cpp
- *
- *  Created on: Nov 5, 2017
- *      Author: antonio
- */
-
 #include <algorithm>
 #include "StringHandler.h"
 

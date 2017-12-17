@@ -13,7 +13,7 @@ public:
     MovementClassfRemainder(string, string, shared_ptr<MovementClassifier>);
     MovementClassfRemainder(string, string);
     virtual ~MovementClassfRemainder(){};
-    
+
     MovementType getType() const;
 };
 

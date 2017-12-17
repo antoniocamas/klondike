@@ -27,7 +27,7 @@ private:
 public:
     MovementDescriber();
     virtual ~MovementDescriber(){};
-    
+
     MovementType getType() const;
     NextMovementElement getNextExpectedElement() const{return nextElement;};
 

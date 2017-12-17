@@ -52,4 +52,3 @@ shared_ptr<MovementController> MovementControllerCreator::getMovement() const{
 
     return movement;
 }
-

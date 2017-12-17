@@ -28,7 +28,7 @@ const OptionMenu MenuText::getOption() {
 	    if (to_string(option.getValue()) == input)
 		return option;
 	}
-	
+
 	io.printMessage("Unknown Option\n");
     }while(true);
 }

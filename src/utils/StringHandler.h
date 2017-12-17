@@ -1,10 +1,3 @@
-/*
- * StringHandler.h
- *
- *  Created on: Nov 5, 2017
- *      Author: antonio
- */
-
 #ifndef STRINGHANDLER_H_
 #define STRINGHANDLER_H_
 

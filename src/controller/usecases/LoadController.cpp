@@ -18,7 +18,7 @@ vector<string> LoadController::getSavedGames() {
 void LoadController::visit(string savingName) {
     tableMarshaller.setSavingName(savingName);
     TableMemento * memento = tableMarshaller.load();
-    
+
     table->setMemento(memento);
     tableRegistry->clear();
     tableRegistry->updateHistory(table.get());

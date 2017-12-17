@@ -10,7 +10,7 @@ class FileSystemTools {
 public:
     FileSystemTools(){};
     virtual ~FileSystemTools(){};
-    
+
     vector<string> listElementsInDir(string);
 };
 

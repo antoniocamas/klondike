@@ -1,4 +1,3 @@
-
 #include "Waste2PileController.h"
 
 Waste2PileController::Waste2PileController(Table * table, int pileNumber){

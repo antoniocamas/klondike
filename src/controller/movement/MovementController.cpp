@@ -1,4 +1,3 @@
-
 #include "Card.h"
 #include "MovementController.h"
 
@@ -8,5 +7,3 @@ void MovementController::applyMovement() {
     card.upTurn();
     destination->putCardOnTop(card);
 }
-
-

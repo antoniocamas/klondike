@@ -13,7 +13,7 @@ public:
     MovementClassfPile2Pile(string, string, shared_ptr<MovementClassifier>);
     MovementClassfPile2Pile(string, string);
     virtual ~MovementClassfPile2Pile(){};
-    
+
     MovementType getType() const;
 };
 

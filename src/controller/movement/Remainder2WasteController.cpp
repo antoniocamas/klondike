@@ -1,4 +1,3 @@
-
 #include "Remainder2WasteController.h"
 
 Remainder2WasteController::Remainder2WasteController(Table * table){

@@ -13,7 +13,7 @@ shared_ptr<Suit> SuitFlyweightFactory::getSuit(
     string name, string color, int numberOfCardsperSuit) {
 
     if (!isSuitCreated(name)) {
-        suitPool[name] = make_shared<Suit>(name, color, numberOfCardsperSuit);
+	suitPool[name] = make_shared<Suit>(name, color, numberOfCardsperSuit);
     }
     return suitPool[name];
 }
@@ -26,4 +26,3 @@ bool SuitFlyweightFactory::isSuitCreated(string name) {
     map<string, shared_ptr<Suit>>::iterator it = suitPool.find(name);
     return it != suitPool.end();
 }
-

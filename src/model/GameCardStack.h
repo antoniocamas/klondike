@@ -1,10 +1,3 @@
-/*
- * GameCardStack.h
- *
- *  Created on: Nov 11, 2017
- *      Author: antonio
- */
-
 #ifndef SRC_MODEL_GAMECARDSTACK_H_
 #define SRC_MODEL_GAMECARDSTACK_H_
 
@@ -13,11 +6,11 @@
 
 class GameCardStack: public card::CardStack {
 public:
-	GameCardStack(){};
-	virtual ~GameCardStack(){};
+    GameCardStack(){};
+    virtual ~GameCardStack(){};
 
-	virtual bool isPuttingDownPossible(card::Card)const {return true;};
-	virtual bool isMovingTopStackPossible(card::Card){return false;};
+    virtual bool isPuttingDownPossible(card::Card)const {return true;};
+    virtual bool isMovingTopStackPossible(card::Card){return false;};
 };
 
 #endif /* SRC_MODEL_GAMECARDSTACK_H_ */

@@ -9,11 +9,11 @@ class OptionMenu {
   private:
     int value;
     string name;
-    
+
   public:
     OptionMenu(int value, string str);
     ~OptionMenu(){};
-    
+
     int getValue(void) const;
     string const& getString(void) const;
 };

@@ -8,7 +8,7 @@ enum class MovementType {
     FOUNDATION2PILE,
     PILE22FOUNDATION,
     PILE2PILE,
-    NOTALLOWED,	
+    NOTALLOWED,
     NOTAMOVEMENT
 };
 

@@ -12,7 +12,7 @@ class MenuText {
 
 private:
     IOConsoleLinux io;
-    
+
 protected:
     vector<OptionMenu> menuOptions;
 

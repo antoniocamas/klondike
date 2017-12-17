@@ -13,7 +13,7 @@ public:
     MovementClassfWaste2Foundation(string, string, shared_ptr<MovementClassifier>);
     MovementClassfWaste2Foundation(string, string);
     virtual ~MovementClassfWaste2Foundation(){};
-    
+
     MovementType getType() const;
 };
 

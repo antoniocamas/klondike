@@ -1,4 +1,3 @@
-
 #include <memory>
 #include "InGameController.h"
 #include "MovementControllerCreator.h"
@@ -16,7 +15,7 @@ void InGameController::control() {
 
 void InGameController::visit(MovementDescriber movementDescriber) {
     movement = movementDescriber;
-   
+
     switch(movement.getType()) {
     case MovementType::NOTAMOVEMENT:
 	state = State::MENU;
@@ -33,11 +32,11 @@ void InGameController::move() {
     shared_ptr<MovementController> movementController = movementControllerCreator.getMovement();
 
     if(movementController->isValid()) {
-    	movementController->applyMovement();
+	movementController->applyMovement();
 	tableRegistry->updateHistory(table.get());
     }
 
     if (table->areAllFoundationsComplete()){
-    	state = State::FINISH;
+	state = State::FINISH;
     }
 }

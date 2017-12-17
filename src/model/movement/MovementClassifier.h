@@ -16,7 +16,7 @@ public:
     MovementClassifier(string, string, shared_ptr<MovementClassifier>);
     MovementClassifier(string, string);
     virtual ~MovementClassifier(){};
-    
+
     virtual MovementType getType() const = 0;
 
 protected:

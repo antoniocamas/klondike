@@ -18,7 +18,7 @@ private:
     std::ifstream savingFile;
     std::string directory;
     std::string extension;
-    
+
 public:
     TableLoaderFileSystem();
     virtual ~TableLoaderFileSystem();
@@ -27,7 +27,7 @@ public:
     array<Pile,7> deserializePiles();
     array<Foundation,4> deserializeFoundations();
     GameCardStack deserializeGameCardStack(string);
-    
+
 
 private:
     vector<card::Card> deserializeCardStack(string);

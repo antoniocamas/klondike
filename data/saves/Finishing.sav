@@ -1,0 +1,13 @@
+pile 0:
+pile 1:
+pile 2:13 Hearts 1,
+pile 3:13 Diamonds 1,
+pile 4:
+pile 5:
+pile 6:
+foundation 0:1 Diamonds 1,2 Diamonds 1,3 Diamonds 1,4 Diamonds 1,5 Diamonds 1,6 Diamonds 1,7 Diamonds 1,8 Diamonds 1,9 Diamonds 1,10 Diamonds 1,11 Diamonds 1,12 Diamonds 1,
+foundation 1:1 Hearts 1,2 Hearts 1,3 Hearts 1,4 Hearts 1,5 Hearts 1,6 Hearts 1,7 Hearts 1,8 Hearts 1,9 Hearts 1,10 Hearts 1,11 Hearts 1,12 Hearts 1,
+foundation 2:1 Clubs 1,2 Clubs 1,3 Clubs 1,4 Clubs 1,5 Clubs 1,6 Clubs 1,7 Clubs 1,8 Clubs 1,9 Clubs 1,10 Clubs 1,11 Clubs 1,12 Clubs 1,13 Clubs 1,
+foundation 3:1 Spades 1,2 Spades 1,3 Spades 1,4 Spades 1,5 Spades 1,6 Spades 1,7 Spades 1,8 Spades 1,9 Spades 1,10 Spades 1,11 Spades 1,12 Spades 1,13 Spades 1,
+remainder:
+waste:

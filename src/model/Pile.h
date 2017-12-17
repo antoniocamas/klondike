@@ -1,10 +1,3 @@
-/*
- * Pile.h
- *
- *  Created on: Oct 12, 2017
- *      Author: antonio
- */
-
 #ifndef PILE_H_
 #define PILE_H_
 
@@ -14,13 +7,13 @@
 using namespace card;
 class Pile: public GameCardStack {
 public:
-	Pile(){};
-	virtual ~Pile(){};
-	using GameCardStack::giveTopCardAway;
-	vector<Card> giveTopCardAway(Card fistCard2Lift);
+    Pile(){};
+    virtual ~Pile(){};
+    using GameCardStack::giveTopCardAway;
+    vector<Card> giveTopCardAway(Card fistCard2Lift);
 
-	virtual bool isMovingTopStackPossible(Card);
-	virtual bool isPuttingDownPossible(Card inCommingCard)const;
+    virtual bool isMovingTopStackPossible(Card);
+    virtual bool isPuttingDownPossible(Card inCommingCard)const;
 
 };
 

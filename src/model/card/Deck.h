@@ -1,10 +1,3 @@
-/*
- * Deck.h
- *
- *  Created on: Oct 1, 2017
- *      Author: antonio
- */
-
 #ifndef DECK_H_
 #define DECK_H_
 
@@ -18,8 +11,8 @@ namespace card {
 
 class Deck: public CardStack {
 public:
-	Deck(const int nCards, const map<string, string> suitsDefinition);
-	virtual ~Deck(){};
+    Deck(const int nCards, const map<string, string> suitsDefinition);
+    virtual ~Deck(){};
 };
 
 }

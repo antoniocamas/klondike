@@ -19,10 +19,10 @@ public:
 
     shared_ptr<card::Suit> getSuitIfExists(string name);
     shared_ptr<card::Suit> getSuit(string name, string color, int numberOfCardsperSuit);
-    
+
 private:
     bool isSuitCreated(string);
-    
+
 };
 
 } /* namespace card */

@@ -8,7 +8,7 @@ namespace card {
 
 Suit::Suit():numberOfCardsperSuit(0), name(""), color(""){
 };
-    
+
 Suit::Suit(string name, string color,
 	   int numberOfCards) {
     this->name = name;

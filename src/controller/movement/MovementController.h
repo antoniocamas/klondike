@@ -1,5 +1,5 @@
-#ifndef SRC_MOVEMENT_H_
-#define SRC_MOVEMENT_H_
+#ifndef SRC_MOVEMENTCONTROLLER_H_
+#define SRC_MOVEMENTCONTROLLER_H_
 
 #include "GameCardStack.h"
 
@@ -17,4 +17,4 @@ public:
     virtual void applyMovement();
 };
 
-#endif /* SRC_MOVEMENT_H_ */
+#endif /* SRC_MOVEMENTCONTROLLER_H_ */

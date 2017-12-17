@@ -1,4 +1,3 @@
-
 #include "Pile2FoundationController.h"
 
 Pile2FoundationController::Pile2FoundationController(
