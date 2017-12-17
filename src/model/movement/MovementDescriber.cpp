@@ -3,6 +3,10 @@
 #include "MovementClassifier.h"
 #include "MovementClassifierBuilder.h"
 
+MovementDescriber::MovementDescriber():
+    originIndex(0), destinatioIndex(0), nextElement(ORIGIN) {
+}
+
 void MovementDescriber::setOrigin(string origin, int index) {
     this->origin = origin;
     this->originIndex = index;

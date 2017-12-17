@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include <vector>
 #include <map>
@@ -20,7 +19,7 @@ void ViewTableElementConsoleLinux::printHeader() {
 }
 
 void ViewTableElementConsoleLinux::printMenuMessage() {
-    
+
     StringHandler stringHandler(tableElementRepresenter["menu"]);
     stringHandler.uppercase();
 

@@ -13,7 +13,7 @@ protected:
 public:
     ViewConsoleLinux(){};
     virtual ~ViewConsoleLinux(){};
-    
+
     void setTable(Table *t){table = t;};
     void accept(MenuController* controller);
     void accept(InGameController* controller);

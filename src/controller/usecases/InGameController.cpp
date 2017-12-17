@@ -16,10 +16,16 @@ void InGameController::control() {
 
 void InGameController::visit(MovementDescriber movementDescriber) {
     movement = movementDescriber;
-    if (movement.getType() == MovementType::NOTAMOVEMENT)
+   
+    switch(movement.getType()) {
+    case MovementType::NOTAMOVEMENT:
 	state = State::MENU;
-    else
+	break;
+    case MovementType::NOTALLOWED:
+	break;
+    default:
 	move();
+    }
 }
 
 void InGameController::move() {

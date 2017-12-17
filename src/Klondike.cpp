@@ -1,4 +1,3 @@
-
 #include <memory>
 #include "Klondike.h"
 #include "Logic.h"

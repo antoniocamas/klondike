@@ -17,5 +17,3 @@ Configurator::Configurator() {
 
     this->savingsDirectory = "../data/saves";
 }
-
-

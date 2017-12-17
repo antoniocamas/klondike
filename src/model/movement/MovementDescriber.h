@@ -25,7 +25,7 @@ private:
     NextMovementElement nextElement;
 
 public:
-    MovementDescriber():originIndex(0), destinatioIndex(0), nextElement(ORIGIN){};
+    MovementDescriber();
     virtual ~MovementDescriber(){};
     
     MovementType getType() const;

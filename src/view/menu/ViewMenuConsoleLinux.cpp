@@ -1,4 +1,3 @@
-
 #include <string>
 #include "ViewMenuConsoleLinux.h"
 #include "OptionMenu.h"

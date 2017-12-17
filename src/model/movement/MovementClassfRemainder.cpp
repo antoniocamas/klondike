@@ -10,7 +10,10 @@ MovementClassfRemainder::MovementClassfRemainder(string o, string d):
 }
 
 MovementType MovementClassfRemainder::getType() const{
-    if (origin == "remainder") {
+    if (origin.empty()) {
+	return MovementType::NOTAMOVEMENT;
+    }
+    else if (origin == "remainder") {
 	return MovementType::REMAINDER2WASTE;
     }
 

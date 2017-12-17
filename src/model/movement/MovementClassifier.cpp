@@ -17,5 +17,5 @@ MovementType MovementClassifier::getTypeNextNode() const {
 	return next->getType();
     }
     
-    return MovementType::NOTAMOVEMENT;
+    return MovementType::NOTALLOWED;
 }

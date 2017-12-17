@@ -1,4 +1,3 @@
-
 #include <string>
 #include <vector>
 #include "CardStackShowcase.h"
@@ -51,7 +50,7 @@ MovementDescriber ViewGameConsoleLinux::getNextMovement() {
     do{
 	io.printMessage(message + inputManager.getNextExpectedElement() + ": ");
 	string input = io.getInput();
-	
+
 	if (input == "m") {
 	    return MovementDescriber();
 	}
